@@ -65,18 +65,21 @@ export function Header() {
                 <span>{item.label}</span>
               </a>
             ))}
-            {socialLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 transition-colors hover:bg-teal-50 hover:text-teal-700"
-              >
-                {SOCIAL_ICON_MAP[link.label] ?? null}
-                <span>{link.label}</span>
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const isX = link.label === "X"
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 transition-colors hover:bg-teal-50 hover:text-teal-700"
+                >
+                  {SOCIAL_ICON_MAP[link.label] ?? null}
+                  <span className={isX ? "sr-only" : undefined}>{link.label}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
