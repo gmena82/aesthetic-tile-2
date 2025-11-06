@@ -86,16 +86,16 @@ export function Header() {
 
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3" aria-label="Aesthetic Tile home">
+          <Link href="/" className="flex items-center gap-4" aria-label="Aesthetic Tile home">
             <Image
               src="/images/aesthetic-tile-logo.png"
               alt="Aesthetic Tile logo"
-              width={48}
-              height={48}
-              className="size-12 object-contain"
+              width={64}
+              height={64}
+              className="size-16 object-contain"
               priority
             />
-            <span className="text-lg font-semibold text-slate-800">Aesthetic Tile</span>
+            <span className="text-xl font-semibold leading-tight text-slate-800 md:text-2xl">Aesthetic Tile</span>
           </Link>
 
           <button
