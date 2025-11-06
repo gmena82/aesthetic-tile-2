@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { serviceNav, socialLinks } from "./navigation"
@@ -58,18 +57,9 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-3" aria-label="Aesthetic Tile home">
-              <Image
-                src="/images/aesthetic-tile-logo.png"
-                alt="Aesthetic Tile logo"
-                width={56}
-                height={56}
-                className="size-14 object-contain"
-              />
-              <span className="text-xl font-semibold">Aesthetic Tile</span>
-            </Link>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start lg:justify-items-start">
+          <div className="space-y-3 max-w-[200px]">
+            <h3 className="text-lg font-semibold">Aesthetic Tile</h3>
             <p className="text-sm leading-6 text-slate-300">
               Professional tile installation services in Central Florida. Expert craftsmanship for kitchens,
               bathrooms, fireplaces, and specialty projects.
@@ -101,7 +91,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-3 text-sm text-slate-300">
               {contactItems.map((item) => (
@@ -118,25 +108,33 @@ export function Footer() {
               ))}
             </div>
             <p className="text-sm text-slate-400">Fully Licensed and Insured in Florida.</p>
-            <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
-              {socialLinks.map((link) => (
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10 py-2">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-slate-300">
+            {socialLinks.map((link) => {
+              const isX = link.label === "X"
+              return (
                 <a
                   key={link.href}
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 transition hover:border-teal-400 hover:text-teal-400"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 transition hover:border-teal-400 hover:text-teal-400 whitespace-nowrap"
                 >
                   {SOCIAL_ICON_MAP[link.label] ?? null}
-                  <span>{link.label}</span>
+                  <span className={isX ? "sr-only" : undefined}>{link.label}</span>
                 </a>
-              ))}
-            </div>
+              )
+            })}
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-6">
+      <div className="border-t border-white/10 py-3">
         <div className="mx-auto max-w-6xl px-6 text-center text-sm text-slate-400">
           <p>
             &copy; {currentYear} Aesthetic Tile. All rights reserved. Designed and hosted by {" "}

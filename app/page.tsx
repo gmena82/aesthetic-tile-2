@@ -13,42 +13,50 @@ const HERO_FEATURES = [
 
 const TESTIMONIALS = [
   {
-    quote: "Aesthetic Tile transformed our kitchen. The precision was incredible.",
-    author: "Jane D., Winter Garden, FL",
+    quote: "Absolutely great work by Brad. The attention to detail was amazing. Can't wait to have him come back and do our back splashes.",
+    author: "Alexis Lasalmonie",
   },
   {
-    quote: "Flawless shower work and immaculate floors. True professionals.",
-    author: "Mike T., Clermont, FL",
+    quote: "This is an excellent tile company! Very knowledgeable and professional. Great people to work in your home.",
+    author: "Colleen Underhill",
   },
   {
-    quote: "On time, communicative, and the craftsmanship shows.",
-    author: "Sarah K., Groveland, FL",
+    quote: "Aesthetic Tile did my kitchen and laundry room floors and they are beautiful. I couldn't be any happier. Great work, communication and so professional. Thank you Brad and Aesthetic Tile.",
+    author: "Holly Newman",
   },
 ]
 
-export const SERVICE_CARDS = serviceNav.map((service) => {
-  const imageMap: Record<string, string> = {
-    "/kitchen-backsplashes": "/images/img/kitchen-backsplash.png",
-    "/bathroom-shower": "/images/img/bathroom-shower.png",
-    "/floor-tile-installation": "/images/img/floor-tile.png",
-    "/fireplaces": "/images/img/fireplace.png",
-    "/special-projects": "/images/img/special-projects.png",
-  }
+export const SERVICE_CARDS = [
+  ...serviceNav.map((service) => {
+    const imageMap: Record<string, string> = {
+      "/kitchen-backsplashes": "/images/img/kitchen-backsplash.png",
+      "/bathroom-shower": "/images/img/bathroom-shower.png",
+      "/floor-tile-installation": "/images/img/floor-tile.png",
+      "/fireplaces": "/images/img/fireplace.png",
+      "/special-projects": "/images/img/special-projects.png",
+    }
 
-  const ctaMap: Record<string, string> = {
-    "/kitchen-backsplashes": "View Kitchen Backsplash Options",
-    "/bathroom-shower": "Explore Bathroom Tile Solutions",
-    "/floor-tile-installation": "See Flooring Installation Services",
-    "/fireplaces": "See Custom Fireplace Tile Surrounds",
-    "/special-projects": "Discover Special Tile Projects in Central Florida",
-  }
+    const ctaMap: Record<string, string> = {
+      "/kitchen-backsplashes": "View Kitchen Backsplash Options",
+      "/bathroom-shower": "Explore Bathroom Tile Solutions",
+      "/floor-tile-installation": "See Flooring Installation Services",
+      "/fireplaces": "See Custom Fireplace Tile Surrounds",
+      "/special-projects": "Discover Special Tile Projects in Central Florida",
+    }
 
-  return {
-    ...service,
-    image: imageMap[service.href] ?? "/images/img/kitchen-backsplash.png",
-    cta: ctaMap[service.href] ?? "Learn more",
+    return {
+      ...service,
+      image: imageMap[service.href] ?? "/images/img/kitchen-backsplash.png",
+      cta: ctaMap[service.href] ?? "Learn more",
+    }
+  }),
+  {
+    label: "Outside Projects",
+    href: "/services" as const,
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23000'/%3E%3C/svg%3E",
+    cta: "Explore Outdoor Tile Options",
   }
-})
+]
 
 export const CTA_FEATURES = [
   "Free Estimates",
@@ -58,7 +66,7 @@ export const CTA_FEATURES = [
 
 export default function Home() {
   return (
-    <div className="space-y-24 pb-24">
+    <div className="space-y-12 pb-16">
       <HeroSection />
       <VideoSection />
       <ExpertiseSection />
@@ -83,11 +91,11 @@ function HeroSection() {
         <div className="absolute inset-0 bg-slate-950/70" />
       </div>
 
-        <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center gap-10 px-6 py-32 text-center text-white">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur">
+        <div className="relative mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center justify-center gap-8 px-6 py-20 text-center text-white">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/50 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur shadow-lg shadow-teal-400/20">
           <span>Aesthetic Tile</span>
           <span className="text-white/60">•</span>
-          <span>Groveland & nearby</span>
+          <span>Claremont & nearby</span>
         </div>
 
         <div className="max-w-3xl space-y-6">
@@ -119,19 +127,21 @@ function HeroSection() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-white/80">
-            {HERO_FEATURES.map((feature, index) => (
-              <span key={feature} className="flex items-center gap-2">
-                {feature}
-                {index < HERO_FEATURES.length - 1 && <span className="text-white/50">•</span>}
-              </span>
-            ))}
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/50 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur shadow-lg shadow-teal-400/20">
+              {HERO_FEATURES.map((feature, index) => (
+                <span key={feature} className="flex items-center gap-2">
+                  {feature}
+                  {index < HERO_FEATURES.length - 1 && <span className="text-white/50">•</span>}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="relative bg-white/10 py-4">
-        <div className="mx-auto max-w-6xl px-6 text-sm font-semibold text-white/90 md:text-base">
+      <div className="relative -mt-8 py-3">
+        <div className="mx-auto max-w-6xl px-6 text-center text-lg font-semibold text-white md:text-xl">
           Serving Groveland, Clermont, Minneola, Winter Garden, Orlando & nearby communities
         </div>
       </div>
@@ -145,7 +155,7 @@ function VideoSection() {
       <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold text-slate-900">See Our Craftsmanship in Action</h2>
-          <p className="mt-3 text-base text-slate-600">Watch our expert tile installation process and attention to detail.</p>
+          <p className="mt-3 text-lg font-semibold text-slate-700">Watch our expert tile installation process and attention to detail.</p>
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
           <div className="relative aspect-video">
@@ -181,7 +191,7 @@ function ExpertiseSection() {
             Award-winning master craftsmen
           </span>
           <h2 className="text-3xl font-semibold text-slate-900">
-            We are the premier tile installation company in Central Florida.
+            We Are the Premier Tile Installation Company in Central Florida
           </h2>
           <p className="text-base leading-7 text-slate-600">
             Aesthetic Tile specializes in professional tile installation for residential and commercial projects. With over three
@@ -246,9 +256,9 @@ function ServicesSection() {
       <div className="mt-8 text-center">
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
+          className="relative inline-flex items-center justify-center rounded-full border-2 border-teal-400/60 bg-gradient-to-b from-white/90 via-white/80 to-white/60 px-7 py-3.5 text-base font-semibold text-teal-600 shadow-lg shadow-teal-400/20 backdrop-blur-sm transition-all before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/40 before:to-transparent before:opacity-50 hover:scale-105 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(20,184,166,0.5)] hover:shadow-lg"
         >
-          Request a Quote
+          <span className="relative z-10">Request a Quote</span>
         </Link>
       </div>
     </section>
@@ -269,10 +279,23 @@ function TestimonialsSection() {
               <div className="text-lg" aria-label="5 out of 5 stars">
                 <span className="text-amber-400">★★★★★</span>
               </div>
-              <p className="mt-4 grow text-base text-slate-700">“{testimonial.quote}”</p>
+              <p className="mt-4 grow text-base text-slate-700">"{testimonial.quote}"</p>
               <p className="mt-6 text-sm font-semibold text-slate-500">— {testimonial.author}</p>
             </article>
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <a
+            href="https://share.google/kvqCGEBq4yFBZwTgz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-base font-semibold text-teal-600 transition hover:text-teal-700"
+          >
+            Read More Reviews on Google
+            <svg className="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

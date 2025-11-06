@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { primaryNav, serviceNav, socialLinks } from "./navigation"
 import { SOCIAL_ICON_MAP } from "./social-icons"
@@ -45,6 +46,22 @@ const emailLink = {
 export function Header() {
   const { isOpen: mobileOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useMobileMenu()
   const hasShadow = useScrollShadow()
+  const pathname = usePathname()
+
+  const servicePaths = serviceNav.map((service) => service.href)
+  const isLinkActive = (href: string) => {
+    if (!pathname) return false
+    if (href === "/") return pathname === "/"
+    return pathname.startsWith(href)
+  }
+  const servicesActive =
+    isLinkActive("/services") || (pathname ? servicePaths.some((path) => pathname.startsWith(path)) : false)
+  const navButtonBase =
+    "relative inline-flex items-center gap-1 rounded-lg border border-slate-700/40 bg-gradient-to-b from-white/92 via-white/86 to-white/72 px-3 py-1.5 text-sm text-slate-700 transition-[color,border-color,box-shadow] hover:text-teal-700 hover:border-teal-400 hover:shadow-[0_0_10px_rgba(20,184,166,0.3)]"
+  const navButtonActive = "border-slate-800 text-teal-700"
+  const dropdownLinkBase =
+    "block rounded-md border border-slate-700/30 px-3 py-2 text-slate-600 transition-all hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700 hover:shadow-[0_0_10px_rgba(20,184,166,0.25)]"
+  const dropdownLinkActive = "border-teal-400 bg-teal-50 text-teal-700"
 
   return (
     <header className={`sticky top-0 z-50 bg-white transition-shadow ${hasShadow ? "shadow-md" : "shadow-sm"}`}>
@@ -85,17 +102,21 @@ export function Header() {
       </div>
 
       <div className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-4" aria-label="Aesthetic Tile home">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:grid md:grid-cols-[minmax(250px,1fr)_auto_minmax(250px,1fr)] md:items-center md:gap-8">
+          <Link
+            href="/"
+            className="flex items-center gap-4 md:justify-self-start"
+            aria-label="Aesthetic Tile home"
+          >
             <Image
               src="/images/aesthetic-tile-logo.png"
               alt="Aesthetic Tile logo"
-              width={72}
-              height={72}
-              className="h-[4.5rem] w-[4.5rem] object-contain"
+              width={80}
+              height={80}
+              className="h-[5rem] w-[5rem] object-contain"
               priority
             />
-            <span className="text-[1.375rem] font-semibold leading-tight text-slate-800 md:text-[1.65rem]">Aesthetic Tile</span>
+            <span className="text-[1.5rem] font-semibold leading-tight text-slate-800 md:text-[1.8rem]">Aesthetic Tile</span>
           </Link>
 
           <button
@@ -113,7 +134,7 @@ export function Header() {
             </span>
           </button>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden md:flex justify-center">
             <nav aria-label="Primary" className="flex items-center gap-6 text-sm font-medium text-slate-700">
               {primaryNav.map((item) => {
                 if (item.label !== "Services") {
@@ -121,7 +142,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="transition-colors hover:text-teal-700"
+                    className={`${navButtonBase} ${isLinkActive(item.href) ? navButtonActive : ""}`}
                     >
                       {item.label}
                     </Link>
@@ -132,7 +153,7 @@ export function Header() {
                   <div key={item.href} className="group relative">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1 transition-colors hover:text-teal-700"
+                      className={`${navButtonBase} ${servicesActive ? navButtonActive : ""}`}
                     >
                       {item.label}
                       <svg className="size-3" viewBox="0 0 20 20" aria-hidden>
@@ -142,13 +163,16 @@ export function Header() {
                         />
                       </svg>
                     </Link>
-                    <div className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-3 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:pointer-events-auto group-hover:block group-focus-within:pointer-events-auto group-focus-within:block">
+                    <span aria-hidden className="absolute left-0 right-0 top-full h-3" />
+                    <div className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
                       <ul className="space-y-1 text-sm">
                         {serviceNav.map((service) => (
                           <li key={service.href}>
                             <Link
                               href={service.href}
-                              className="block rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-teal-50 hover:text-teal-700"
+                              className={`${dropdownLinkBase} ${
+                                pathname && pathname.startsWith(service.href) ? dropdownLinkActive : ""
+                              }`}
                             >
                               {service.label}
                             </Link>
@@ -160,6 +184,8 @@ export function Header() {
                 )
               })}
             </nav>
+          </div>
+          <div className="hidden md:flex justify-end">
             <Link
               href="/contact"
               className="relative rounded-full border-2 border-teal-400/60 bg-gradient-to-b from-white/90 via-white/80 to-white/60 px-7 py-3.5 text-base font-semibold text-teal-600 shadow-lg shadow-teal-400/20 backdrop-blur-sm transition-all before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/40 before:to-transparent before:opacity-50 hover:scale-105 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(20,184,166,0.5)] hover:shadow-lg"
@@ -178,7 +204,11 @@ export function Header() {
                 <div key={item.href}>
                   <Link
                     href={item.href}
-                    className="block text-base font-semibold text-slate-800"
+                    className={`block rounded-lg border border-slate-700/40 px-3 py-1.5 text-base font-semibold transition-[color,border-color,box-shadow] ${
+                      isLinkActive(item.href)
+                        ? "border-slate-800 text-teal-700"
+                        : "text-slate-800 hover:text-teal-700 hover:border-teal-400 hover:shadow-[0_0_10px_rgba(20,184,166,0.25)]"
+                    }`}
                     onClick={closeMobileMenu}
                   >
                     {item.label}
@@ -189,7 +219,9 @@ export function Header() {
                         <li key={service.href}>
                           <Link
                             href={service.href}
-                            className="block text-slate-600 transition-colors hover:text-teal-700"
+                            className={`block rounded-lg border border-slate-700/30 px-2 py-1 text-slate-600 transition-[color,border-color,box-shadow] hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700 hover:shadow-[0_0_10px_rgba(20,184,166,0.2)] ${
+                              pathname && pathname.startsWith(service.href) ? "border-teal-300 bg-teal-50 text-teal-700" : ""
+                            }`}
                             onClick={closeMobileMenu}
                           >
                             {service.label}
