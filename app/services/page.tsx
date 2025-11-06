@@ -1,0 +1,200 @@
+import Image from "next/image"
+import Link from "next/link"
+import type { Metadata } from "next"
+
+import { ContactForm } from "../_components/ContactForm"
+import { CTA_FEATURES, SERVICE_CARDS } from "../page"
+
+const SERVICE_SECTIONS = SERVICE_CARDS.map((service) => {
+  const details: Record<string, string> = {
+    "/kitchen-backsplashes":
+      "A new backsplash can transform your kitchen. We install durable, easy-to-clean surfaces that protect your walls and elevate your home’s design.",
+    "/bathroom-shower":
+      "From spa-like showers to elegant bathroom floors, we create tile installations that combine beauty and functionality for years of enjoyment.",
+    "/floor-tile-installation":
+      "Meticulous floor tile installation for any room in your home. Expect a level, durable surface that stands up to daily life while enhancing value.",
+    "/fireplaces":
+      "Turn your fireplace into a statement piece with custom tilework. We handle contemporary, traditional, and statement surrounds with ease.",
+    "/special-projects":
+      "From custom mosaics to outdoor patios, we bring creativity and precision to unique tile applications tailored to your vision.",
+  }
+
+  return {
+    ...service,
+    description: details[service.href] ?? "Premium tile craftsmanship for your next project.",
+  }
+})
+
+export const metadata: Metadata = {
+  title: "Tile Installation Services in Central Florida | Aesthetic Tile",
+  description:
+    "Explore professional tile services for kitchens, bathrooms, floors, fireplaces, and specialty projects across Groveland, Clermont, and Central Florida.",
+  alternates: {
+    canonical: "https://www.aesthetictile-florida.com/services",
+  },
+}
+
+export default function ServicesPage() {
+  return (
+    <div className="space-y-24 pb-24">
+      <ServicesHero />
+      <IntroSection />
+      <StandardsSection />
+      <MaterialsSection />
+      <ServicesDetailSection />
+      <ServicesCta />
+    </div>
+  )
+}
+
+function ServicesHero() {
+  return (
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/img/hero-backsplash.png"
+          alt="Tile installation services highlighting a kitchen backsplash"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/70" />
+      </div>
+
+      <div className="relative mx-auto flex min-h-[60vh] max-w-5xl flex-col justify-center gap-6 px-6 py-24 text-center text-white">
+        <h1 className="text-4xl font-semibold sm:text-5xl">Expert Tile Installation Services in Central Florida</h1>
+        <p className="text-lg text-white/80">
+          Comprehensive tile installation for Groveland, Clermont, Minneola, Winter Garden, and the greater Orlando area. We pair meticulous preparation with precise execution for lasting results.
+        </p>
+        <p className="text-lg text-white/70">
+          Our team understands Florida’s climate demands—from robust waterproofing against humidity to selecting durable flooring options built for everyday living.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function IntroSection() {
+  return (
+    <section className="mx-auto max-w-5xl space-y-6 px-6 text-center">
+      <div className="space-y-3">
+        <h2 className="text-3xl font-semibold text-teal-600">Custom Tile Installation Services</h2>
+        <p className="text-lg font-medium text-slate-900">Serving Groveland, Clermont, & Central Florida</p>
+      </div>
+      <p className="text-base leading-7 text-slate-600">
+        Aesthetic Tile is your trusted partner for high-quality tile installation. As third-generation craftsmen, we transform homes with beautiful, durable tile work—from backsplashes and spa-ready showers to showpiece fireplaces and specialty projects. Every job receives meticulous prep, clean job sites, and flawless finishes built to last.
+      </p>
+    </section>
+  )
+}
+
+function StandardsSection() {
+  return (
+    <section className="mx-auto max-w-5xl space-y-4 px-6 text-center">
+      <h2 className="text-3xl font-semibold text-slate-900">Our Installation Standards</h2>
+      <p className="text-base leading-7 text-slate-600">
+        We build for longevity by following industry best practices, including applicable TCNA guidelines. We use high-quality mortars, membranes, and grouts, and prioritize critical steps like substrate preparation and waterproofing (Schluter®, Wedi®, and similar systems when specified) to deliver a durable, beautiful finish.
+      </p>
+    </section>
+  )
+}
+
+function MaterialsSection() {
+  return (
+    <section className="mx-auto max-w-5xl space-y-4 px-6 text-center">
+      <h2 className="text-3xl font-semibold text-slate-900">Materials We Work With</h2>
+      <p className="text-base leading-7 text-slate-600">
+        Ceramic, porcelain, natural stone, glass, and large-format tile—we help you choose the right material for each space, balancing aesthetics, performance, and long-term maintenance.
+      </p>
+    </section>
+  )
+}
+
+function ServicesDetailSection() {
+  return (
+    <section className="space-y-12">
+      {SERVICE_SECTIONS.map((service, index) => (
+        <div
+          key={service.href}
+          className={`bg-white ${index % 2 === 1 ? "bg-slate-50" : ""}`}
+        >
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 lg:grid-cols-2 lg:items-center">
+            {index % 2 === 1 ? <ServiceImage service={service} /> : <ServiceContent service={service} />}
+            {index % 2 === 1 ? <ServiceContent service={service} /> : <ServiceImage service={service} />}
+          </div>
+        </div>
+      ))}
+    </section>
+  )
+}
+
+function ServiceContent({ service }: { service: (typeof SERVICE_SECTIONS)[number] }) {
+  return (
+    <div className="space-y-4">
+      <h3 className="text-2xl font-semibold text-slate-900">{service.label}</h3>
+      <p className="text-base leading-7 text-slate-600">{service.description}</p>
+      <Link
+        href={service.href}
+        className="inline-flex items-center gap-2 rounded-full border border-teal-500 px-5 py-2 text-sm font-semibold text-teal-600 transition hover:bg-teal-50"
+      >
+        {service.cta}
+        <svg className="size-4" viewBox="0 0 20 20" aria-hidden>
+          <path
+            fill="currentColor"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          />
+        </svg>
+      </Link>
+    </div>
+  )
+}
+
+function ServiceImage({ service }: { service: (typeof SERVICE_SECTIONS)[number] }) {
+  return (
+    <div className="relative aspect-square overflow-hidden rounded-3xl shadow-lg">
+      <Image src={service.image} alt={service.label} fill className="object-cover" />
+    </div>
+  )
+}
+
+function ServicesCta() {
+  return (
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/contact-bg.webp"
+          alt="Custom kitchen backsplash installation in Clermont, Florida"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/70" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-6 py-24">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div className="space-y-6 text-white">
+            <h2 className="text-3xl font-semibold">Ready to Transform Your Space?</h2>
+            <p className="text-base leading-7 text-white/80">
+              Get a free estimate for your tile installation project. Professional craftsmanship, competitive pricing, and exceptional service guaranteed.
+            </p>
+            <div className="space-y-3">
+              {CTA_FEATURES.map((feature) => (
+                <div key={feature} className="flex items-center gap-3">
+                  <span className="flex size-8 items-center justify-center rounded-full bg-teal-500/20 text-teal-300">
+                    <svg className="size-4" viewBox="0 0 24 24" aria-hidden>
+                      <path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-semibold text-white/90">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <ContactForm subject="Aesthetic Tile — Services Page Inquiry" className="backdrop-blur-sm" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
