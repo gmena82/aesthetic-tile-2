@@ -90,12 +90,12 @@ export function Header() {
             <Image
               src="/images/aesthetic-tile-logo.png"
               alt="Aesthetic Tile logo"
-              width={64}
-              height={64}
-              className="size-16 object-contain"
+              width={72}
+              height={72}
+              className="h-[4.5rem] w-[4.5rem] object-contain"
               priority
             />
-            <span className="text-xl font-semibold leading-tight text-slate-800 md:text-2xl">Aesthetic Tile</span>
+            <span className="text-[1.375rem] font-semibold leading-tight text-slate-800 md:text-[1.65rem]">Aesthetic Tile</span>
           </Link>
 
           <button
