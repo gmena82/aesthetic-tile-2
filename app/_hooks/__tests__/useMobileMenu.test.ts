@@ -17,13 +17,13 @@ describe("useMobileMenu", () => {
     const { result } = renderHook(() => useMobileMenu())
 
     act(() => {
-      result.current.toggleMenu()
+      result.current.toggle()
     })
 
     expect(result.current.isOpen).toBe(true)
 
     act(() => {
-      result.current.toggleMenu()
+      result.current.toggle()
     })
 
     expect(result.current.isOpen).toBe(false)
@@ -33,7 +33,7 @@ describe("useMobileMenu", () => {
     const { result } = renderHook(() => useMobileMenu())
 
     act(() => {
-      result.current.toggleMenu()
+      result.current.toggle()
     })
 
     expect(result.current.isOpen).toBe(true)
@@ -49,7 +49,7 @@ describe("useMobileMenu", () => {
     const { result } = renderHook(() => useMobileMenu())
 
     act(() => {
-      result.current.toggleMenu()
+      result.current.toggle()
     })
 
     expect(document.body.classList.contains("overflow-hidden")).toBe(true)
@@ -59,7 +59,7 @@ describe("useMobileMenu", () => {
     const { result } = renderHook(() => useMobileMenu())
 
     act(() => {
-      result.current.toggleMenu()
+      result.current.toggle()
     })
 
     act(() => {

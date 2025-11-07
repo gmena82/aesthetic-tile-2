@@ -71,7 +71,7 @@ export const SERVICE_CARDS = [
   }),
   {
     label: "Outside Projects",
-    href: "/services" as const,
+    href: "/outside-projects" as const,
     image: "/images/services/outside-projects.webp",
     cta: "Explore Outdoor Tile Options",
   }

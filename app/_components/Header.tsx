@@ -66,9 +66,8 @@ export function Header() {
   const dropdownLinkActive = "border-teal-400 bg-teal-50 text-teal-700"
 
   const handleServiceLinkClick = () => {
-    setServicesDropdownOpen(false)
-    // Re-enable after a short delay to allow hover to work again
-    setTimeout(() => setServicesDropdownOpen(true), 100)
+    // Dropdown will close automatically when mouse leaves due to CSS hover rules
+    // No need to manipulate state here
   }
 
   return (
@@ -172,7 +171,9 @@ export function Header() {
                       </svg>
                     </Link>
                     <span aria-hidden className="absolute left-0 right-0 top-full h-3" />
-                    <div className={`pointer-events-none absolute left-1/2 top-full min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 ${servicesDropdownOpen ? "group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto" : ""} ${!servicesDropdownOpen ? "hidden" : "hidden"}`}>
+                    <div
+                      className={`pointer-events-none absolute left-1/2 top-full min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 ${servicesDropdownOpen ? "group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto" : "hidden"}`}
+                    >
                       <ul className="space-y-1 text-sm">
                         {serviceNav.map((service) => (
                           <li key={service.href}>
