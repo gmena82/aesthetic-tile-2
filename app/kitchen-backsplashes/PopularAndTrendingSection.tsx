@@ -135,7 +135,6 @@ const TABS: TabDefinition[] = [
         description:
           "Reflective surfaces that brighten the cook line with artisan color blends and metallic accents.",
         icon: "spark",
-        accent: "from-emerald-400 to-cyan-400",
       },
       {
         id: "xl-format",
@@ -188,7 +187,6 @@ const TABS: TabDefinition[] = [
         title: "Dimensional Relief Tile",
         description: "Hand-pressed ceramics with sculpted faces for artisanal depth and soft shadow play.",
         icon: "sparkle",
-        accent: "from-teal-400 to-emerald-500",
       },
       {
         id: "mixed-metal",
@@ -364,11 +362,11 @@ export function PopularAndTrendingSection() {
             {tab.cards.map((card) => (
               <article
                 key={card.id}
-                className={`group relative overflow-hidden rounded-3xl border border-white bg-white/80 p-6 shadow-lg shadow-slate-900/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/15`}
+                className="group relative overflow-hidden rounded-3xl border border-white bg-white/80 p-6 shadow-lg shadow-slate-900/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/15"
               >
                 <div
                   aria-hidden
-                  className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-teal-400/15 to-cyan-400/20 blur-2xl transition-transform duration-500 group-hover:scale-125 ${card.accent ?? ""}`}
+                  className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-teal-400/15 to-cyan-400/20 blur-2xl transition-transform duration-500 group-hover:scale-125"
                 />
 
                 <div className="relative flex items-center gap-4">
@@ -379,11 +377,6 @@ export function PopularAndTrendingSection() {
                 </div>
 
                 <p className="relative mt-4 text-sm leading-6 text-slate-600">{card.description}</p>
-
-                <div className="relative mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
-                  Hover for inspiration
-                  <span className="inline-flex size-1 rounded-full bg-teal-500" aria-hidden />
-                </div>
               </article>
             ))}
           </div>
