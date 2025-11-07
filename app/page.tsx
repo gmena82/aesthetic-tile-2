@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { CheckIcon } from "./_components/CheckIcon"
 import { ContactForm } from "./_components/ContactForm"
+import { TestimonialsCarousel } from "./_components/TestimonialsCarousel"
 import { serviceNav } from "./_components/navigation"
 
 const HERO_FEATURES = [
@@ -23,6 +24,24 @@ const TESTIMONIALS = [
   {
     quote: "Aesthetic Tile did my kitchen and laundry room floors and they are beautiful. I couldn't be any happier. Great work, communication and so professional. Thank you Brad and Aesthetic Tile.",
     author: "Holly Newman",
+  },
+  {
+    quote: "We worked with Aesthetic Tile while transforming a bathroom that was out of date and no longer functioning into something that was a piece of art! Aesthetic Tile was careful in their install and were quick to come back to site for any touchups or adjustments that were needed. They definitely stand behind their work!",
+    author: "Ben Fabish",
+    title: "Owner, Project Manager - Authentic Carpentry",
+  },
+  {
+    quote: "We hired Brad from Aesthetic Tile LLC to do the backsplash in our kitchen. We moved into this house EIGHT years ago and have been looking for the right tiles and contractor before committing - and was he ever worth the wait! Our backsplash looks incredible. His communication, professionalism and commitment to his work is incomparable and absolutely top notch. His work is absolutely the best we have ever seen, and the true icing on the cake is his hard work and communication. Trust us, we looked at tons of contractors before committing to Aesthetic Tile - we are happy to save others the search and share this incredible gem. Don't hesitate to book Aesthetic Tile LCC for any tile work!",
+    author: "Rebecca Yorinks",
+  },
+  {
+    quote: "Brad and his team do incredible tile work. I have been working with Brad now for some time as a general contractor. As someone who is always looking for high level professionals that are not only professional business men but experts in their field I am constantly evaluating subs to determine if they fit that criteria. Brad and his team are professionals. They work diligently to install tile to the highest standards and to insure a level of expertise that so many others not only fail to do but in truth should never be doing in the first place. If you're looking for a tile company to work with Aesthetic tile is the team to hire.",
+    author: "Joel Stickler",
+    title: "Stickler Construction LLC",
+  },
+  {
+    quote: "I hired this company to install a ton of tile in two bathrooms. They showed up on time every day and got the job done. They cleaned up after themselves. They were professional and they built everything to my needs. The end result is beautiful. I get compliments on my bathrooms frequently.",
+    author: "Tommy G",
   },
 ]
 
@@ -300,21 +319,10 @@ function TestimonialsSection() {
     <section id="testimonials" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="text-center text-3xl font-semibold text-slate-900">What Homeowners Are Saying</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((testimonial) => (
-            <article
-              key={testimonial.quote}
-              className="flex h-full flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5"
-            >
-              <div className="text-lg" aria-label="5 out of 5 stars">
-                <span className="text-amber-400">★★★★★</span>
-              </div>
-              <p className="mt-4 grow text-base text-slate-700">"{testimonial.quote}"</p>
-              <p className="mt-6 text-sm font-semibold text-slate-500">— {testimonial.author}</p>
-            </article>
-          ))}
+        <div className="mt-10">
+          <TestimonialsCarousel testimonials={TESTIMONIALS} />
         </div>
-        <div className="mt-8 text-center">
+        <div className="mt-12 text-center">
           <a
             href="https://share.google/kvqCGEBq4yFBZwTgz"
             target="_blank"
