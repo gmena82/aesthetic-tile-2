@@ -138,134 +138,152 @@ function SafetyAndMaterialsSection() {
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
-      
+
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-semibold text-slate-900">Fireplace Tile Artistry</h2>
-          <p className="mt-3 text-lg text-slate-600">Safety, materials, and stunning focal points</p>
+          <h2 className="text-4xl font-semibold text-slate-900">Fireplace Tile Expertise</h2>
+          <p className="mt-3 text-lg text-slate-600">Safety-first installation paired with curated materials</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* Safety & Expertise */}
           <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
             <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
+
             <div className="relative">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
                 <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  <path d="M12 2l6 6-6 6-6-6 6-6z" />
                 </svg>
                 Safety & Precision
               </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">Expert Installation</h3>
-              
+
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Heat-rated builds with code compliance</h3>
+
               <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                Fireplace installations balance design with technical requirements. We specify heat-appropriate materials, follow clearance codes, and plan layouts for symmetry and seamless transitions.
+                Every surround is engineered for the firebox it frames. We evaluate framing, substrates, and clearances before tile is set to guarantee longevity in high-heat zones.
               </p>
 
-              <div className="space-y-4 mb-6">
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Heat-appropriate setting materials and tile specifications</p>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M6 3h12v2H6V3zm0 4h12v2H6V7zm0 4h12v2H6v-2zm0 4h12v2H6v-2zm0 4h12v2H6v-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Heat-appropriate mortars</h4>
+                    <p className="mt-1 text-sm text-slate-600">Rated thinsets, mortars, and grout systems built for radiant output.</p>
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Local clearance codes around firebox compliance</p>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Clearance planning</h4>
+                    <p className="mt-1 text-sm text-slate-600">Mantel, hearth, and combustible spacing mapped to manufacturer specs.</p>
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Thorough framing, substrate, and firebox assessment</p>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-lg shadow-slate-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Structural prep</h4>
+                    <p className="mt-1 text-sm text-slate-600">Backer board, waterproofing, and deflection control before tile layout.</p>
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Coordination with electricians, carpenters, and designers</p>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2l1.9 6.1L20 10l-5.1 1.9L12 18l-2.9-6.1L4 10l6.1-1.9L12 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Trade coordination</h4>
+                    <p className="mt-1 text-sm text-slate-600">Electricians, carpenters, and AV pros looped in for seamless sequencing.</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
-                <h4 className="font-semibold text-slate-900 mb-2">Customization Options</h4>
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900">Customization menu</h4>
                 <ul className="space-y-1 text-sm text-slate-700">
-                  <li>• Simple surrounds sized to firebox</li>
+                  <li>• Hearths (flush, raised, or cantilevered)</li>
                   <li>• Floor-to-ceiling feature walls</li>
-                  <li>• Hearths (flush or raised)</li>
-                  <li>• Mantel integration & trim details</li>
+                  <li>• Wrapped corners with mitered edges</li>
+                  <li>• Mantel integration and lighting niches</li>
                 </ul>
-              </div>
-
-              <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
-                >
-                  Request Custom Fireplace Estimate
-                </Link>
               </div>
             </div>
           </div>
 
-          {/* Materials & Design */}
           <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
-            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+
             <div className="relative">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
                 <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M12 2L2 12l10 10 10-10L12 2z" />
                 </svg>
-                Premium Materials
+                Design & Materials
               </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">Stunning Focal Points</h3>
-              
+
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Focal points tailored to your room</h3>
+
               <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                Your fireplace anchors the room. We help you choose formats, proportions, and textures that complement your space—from modern minimal to warm and rustic.
+                From modern linear fireplaces to rustic hearth rebuilds, we pair tile, stone, and metal profiles that echo your cabinetry, floors, and furnishings.
               </p>
+
+              <div className="mb-6 space-y-3 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900">Material pairings</h4>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✓</span> Large-format porcelain with shadowline trim</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✓</span> Natural stone with waterfall hearth benches</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✓</span> Ledgestone accents paired with custom mantels</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✓</span> Hand-glazed ceramics for statement niches</li>
+                </ul>
+              </div>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
                   <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
                   <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Large Format Tile</h5>
-                    <p className="mt-1 text-xs text-slate-600">Sleek, modern panels with minimal joints</p>
+                    <h5 className="text-sm font-semibold text-slate-900">Laser-aligned layouts</h5>
+                    <p className="mt-1 text-xs text-slate-600">We snap reference lines to center tile on mantels, niches, and AV components.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
                   <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
                   <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Natural Stone</h5>
-                    <p className="mt-1 text-xs text-slate-600">Marble or granite for premium finishes</p>
+                    <h5 className="text-sm font-semibold text-slate-900">Lighting integration</h5>
+                    <p className="mt-1 text-xs text-slate-600">Recessed accent lighting and cable routing planned before tile setting.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
                   <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
                   <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Ledger/Stacked Stone</h5>
-                    <p className="mt-1 text-xs text-slate-600">Rich texture and depth</p>
+                    <h5 className="text-sm font-semibold text-slate-900">Finish detailing</h5>
+                    <p className="mt-1 text-xs text-slate-600">Mitered edges, sealed grout, and a camera-ready clean down at handoff.</p>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Mosaics & Patterns</h5>
-                    <p className="mt-1 text-xs text-slate-600">Custom statement details</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
-                <h4 className="font-semibold text-slate-900 mb-2">Design Planning</h4>
-                <p className="text-sm text-slate-700">
-                  Our designers map out tile layouts that align with mantels, built-ins, and TV niches. Large format panels stretch the eye vertically for height, while ledger stone adds natural texture.
-                </p>
               </div>
 
               <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
                 <p className="text-center text-sm font-medium text-slate-700">
-                  🔥 Samples, maintenance tips & color palettes at consultation
+                  🔥 Book a materials tour - we can meet at your Groveland shop or preferred showroom.
                 </p>
               </div>
             </div>
