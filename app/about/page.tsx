@@ -2,6 +2,7 @@ import Image from "next/image"
 import type { Metadata } from "next"
 
 import { ContactForm } from "../_components/ContactForm"
+import { CheckIcon } from "../_components/CheckIcon"
 import { CTA_FEATURES } from "../page"
 
 const STORY_PARAGRAPHS = [
@@ -412,11 +413,7 @@ function AboutCta() {
             <div className="space-y-3">
               {CTA_FEATURES.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 animate-pulse-3s">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                  </span>
+                  <CheckIcon />
                   <span className="text-sm font-semibold text-white/90">{feature}</span>
                 </div>
               ))}
