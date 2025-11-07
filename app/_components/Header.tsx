@@ -164,7 +164,16 @@ export function Header() {
                       </svg>
                     </Link>
                     <span aria-hidden className="absolute left-0 right-0 top-full h-3" />
-                    <div className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
+                    <div 
+                      className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto"
+                      onMouseLeave={(e) => {
+                        // Force the group to lose hover state by triggering a blur
+                        const parent = e.currentTarget.parentElement
+                        if (parent) {
+                          parent.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+                        }
+                      }}
+                    >
                       <ul className="space-y-1 text-sm">
                         {serviceNav.map((service) => (
                           <li key={service.href}>
@@ -173,6 +182,13 @@ export function Header() {
                               className={`${dropdownLinkBase} ${
                                 pathname && pathname.startsWith(service.href) ? dropdownLinkActive : ""
                               }`}
+                              onClick={(e) => {
+                                // Close dropdown when link is clicked
+                                const dropdown = e.currentTarget.closest('.group')
+                                if (dropdown) {
+                                  dropdown.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+                                }
+                              }}
                             >
                               {service.label}
                             </Link>
