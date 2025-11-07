@@ -51,11 +51,7 @@ export default function FireplacesPage() {
     <div className="space-y-24 pb-24">
       <HeroSection />
       <MainContentSection />
-      <SafetySection />
-      <FocalPointSection />
-      <MaterialsSection />
-      <CustomizationSection />
-      <TestimonialSection />
+      <SafetyAndMaterialsSection />
       <CallToActionSection />
       <FaqSection />
     </div>
@@ -137,123 +133,143 @@ function MainContentSection() {
   )
 }
 
-function SafetySection() {
+function SafetyAndMaterialsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Expertise You Can Trust: Safety and Precision
-        </h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            Fireplace installations balance design with technical requirements. We specify heat-appropriate setting
-            materials and tile, follow local clearance codes around the firebox, and plan layouts for symmetry and
-            clean transitions. Edges and corners are detailed for a seamless finish, including mitered corners where
-            suitable.
-          </p>
-          <p>
-            Every project begins with a thorough assessment of your existing structure. Our team verifies framing,
-            substrate, and firebox conditions before setting the first tile. This preparation allows us to deliver
-            installations that perform safely for the long term, even when exposed to the radiant heat of regular fires
-            or electric inserts.
-          </p>
-          <p>
-            We also coordinate with electricians, carpenters, and designers when needed to ensure your renovation moves
-            smoothly. With Aesthetic Tile, you gain a licensed and insured partner focused on craftsmanship, safety,
-            and communication from the first consultation to the final walkthrough.
-          </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-semibold text-slate-900">Fireplace Tile Artistry</h2>
+          <p className="mt-3 text-lg text-slate-600">Safety, materials, and stunning focal points</p>
         </div>
-      </div>
-    </section>
-  )
-}
 
-function FocalPointSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Creating a Stunning Focal Point</h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            Your fireplace anchors the room. We help you choose formats, proportions, and textures that complement your
-            cabinetry, flooring, and overall style—whether modern minimal or warm and rustic.
-          </p>
-          <p>
-            Our designers map out tile layouts that align with mantels, built-ins, and TV niches so every grout joint
-            lines up cleanly. Large format panels stretch the eye vertically for dramatic height, while horizontal
-            ledger stone can widen the room and add natural texture.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Safety & Expertise */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                Safety & Precision
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Expert Installation</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                Fireplace installations balance design with technical requirements. We specify heat-appropriate materials, follow clearance codes, and plan layouts for symmetry and seamless transitions.
+              </p>
 
-function MaterialsSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Popular Materials for Fireplace Surrounds
-        </h2>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Large format tile (LFT) for sleek, modern panels with minimal joints</li>
-          <li>Natural stone such as marble or granite for a premium finish</li>
-          <li>Ledger/stacked stone for rich texture and depth</li>
-          <li>Mosaics and patterned tile for custom statement details</li>
-        </ul>
-        <p className="mx-auto mt-6 max-w-3xl text-center text-base text-slate-600">
-          During our consultation, we bring samples and discuss maintenance, heat performance, and color palettes that
-          coordinate with your furnishings.
-        </p>
-      </div>
-    </section>
-  )
-}
+              <div className="space-y-4 mb-6">
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Heat-appropriate setting materials and tile specifications</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Local clearance codes around firebox compliance</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Thorough framing, substrate, and firebox assessment</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Coordination with electricians, carpenters, and designers</p>
+                </div>
+              </div>
 
-function CustomizationSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Our Customization Options</h2>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Simple surrounds sized to your firebox</li>
-          <li>Floor-to-ceiling feature walls</li>
-          <li>Hearths (flush or raised)</li>
-          <li>Mantel integration and trim details</li>
-        </ul>
-        <p className="mx-auto mt-6 max-w-3xl text-center text-base text-slate-600">
-          Beyond tile selection, we help you determine the right profile and finishing touches for your project. Add a
-          raised hearth for extra seating, wrap tile around corners for a seamless look, or frame the firebox with a
-          custom mantel.
-        </p>
-        <div className="mt-8 text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
-          >
-            Request a Custom Fireplace Estimate
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
+              <div className="rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900 mb-2">Customization Options</h4>
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Simple surrounds sized to firebox</li>
+                  <li>• Floor-to-ceiling feature walls</li>
+                  <li>• Hearths (flush or raised)</li>
+                  <li>• Mantel integration & trim details</li>
+                </ul>
+              </div>
 
-function TestimonialSection() {
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-1">
-          <article className="mx-auto flex h-full max-w-2xl flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
-            <div className="text-lg" aria-label="5 out of 5 stars">
-              <span className="text-amber-400">★★★★★</span>
+              <div className="mt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
+                >
+                  Request Custom Fireplace Estimate
+                </Link>
+              </div>
             </div>
-            <p className="mt-4 grow text-base text-slate-700">
-              Our new floor-to-ceiling tile fireplace is the highlight of our home. The attention to detail was superb.
-            </p>
-            <p className="mt-6 text-sm font-semibold text-slate-500">— Renee L., Winter Garden, FL</p>
-          </article>
+          </div>
+
+          {/* Materials & Design */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                </svg>
+                Premium Materials
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Stunning Focal Points</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                Your fireplace anchors the room. We help you choose formats, proportions, and textures that complement your space—from modern minimal to warm and rustic.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Large Format Tile</h5>
+                    <p className="mt-1 text-xs text-slate-600">Sleek, modern panels with minimal joints</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Natural Stone</h5>
+                    <p className="mt-1 text-xs text-slate-600">Marble or granite for premium finishes</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Ledger/Stacked Stone</h5>
+                    <p className="mt-1 text-xs text-slate-600">Rich texture and depth</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Mosaics & Patterns</h5>
+                    <p className="mt-1 text-xs text-slate-600">Custom statement details</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900 mb-2">Design Planning</h4>
+                <p className="text-sm text-slate-700">
+                  Our designers map out tile layouts that align with mantels, built-ins, and TV niches. Large format panels stretch the eye vertically for height, while ledger stone adds natural texture.
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  🔥 Samples, maintenance tips & color palettes at consultation
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

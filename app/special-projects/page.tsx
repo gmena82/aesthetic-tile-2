@@ -51,11 +51,8 @@ export default function SpecialProjectsPage() {
     <div className="space-y-24 pb-24">
       <HeroSection />
       <MainContentSection />
-      <WhatWeBuildSection />
-      <MaterialsSection />
-      <FloridaSection />
+      <ProjectsAndMaterialsSection />
       <ProcessSection />
-      <TestimonialSection />
       <CallToActionSection />
       <FaqSection />
     </div>
@@ -136,62 +133,126 @@ function MainContentSection() {
   )
 }
 
-function WhatWeBuildSection() {
+function ProjectsAndMaterialsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">What We Build</h2>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Custom mosaics and floor medallions</li>
-          <li>Accent and feature walls</li>
-          <li>Outdoor patios, porches, and walkways</li>
-          <li>Entryways, stair risers, fireplaces, and niche details</li>
-        </ul>
-      </div>
-    </section>
-  )
-}
-
-function MaterialsSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Materials & Design Options</h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            We work with ceramic, porcelain, natural stone, glass, and large-format panels. Patterns and layouts are
-            planned to suit the space—subway, herringbone, chevron, geometric mosaics, and medallion inlays. We help
-            match materials to performance needs and the overall design intent.
-          </p>
-          <p>
-            Mockups and samples confirm color variation, grout contrast, and lighting effects before the first tile is
-            placed. By integrating Schluter profiles, heated floor systems, or custom niches, we ensure your
-            installation blends function with a signature look that reflects your property.
-          </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-semibold text-slate-900">Custom & Specialty Work</h2>
+          <p className="mt-3 text-lg text-slate-600">Unique projects and exterior applications</p>
         </div>
-      </div>
-    </section>
-  )
-}
 
-function FloridaSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Exterior & Florida-Specific Considerations
-        </h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            For outdoor and specialty applications, we consider drainage, surface preparation, movement joints, slip
-            resistance, and exposure to heat and humidity. Proper setting materials and grout/seal selections help the
-            installation look great and perform season after season.
-          </p>
-          <p>
-            From screened lanais overlooking Clermont's lakes to poolside kitchens in Winter Garden, we evaluate
-            substrate conditions, waterproofing requirements, and expansion joints so the tile remains stable despite
-            rapid weather shifts.
-          </p>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* What We Build */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                Custom Projects
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">What We Build</h3>
+              
+              <div className="space-y-4 mb-6">
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Custom mosaics and floor medallions</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Accent and feature walls</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Outdoor patios, porches, and walkways</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-teal-500 text-lg">✓</span>
+                  <p className="text-sm text-slate-700">Entryways, stair risers, and niche details</p>
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4 mb-6">
+                <h4 className="font-semibold text-slate-900 mb-2">Materials & Design</h4>
+                <p className="text-sm text-slate-700">
+                  We work with ceramic, porcelain, natural stone, glass, and large-format panels. Patterns include subway, herringbone, chevron, geometric mosaics, and medallion inlays.
+                </p>
+              </div>
+
+              <div className="space-y-2 text-sm text-slate-600">
+                <p>• Mockups and samples for color confirmation</p>
+                <p>• Schluter profiles and heated floor integration</p>
+                <p>• Custom niches and signature details</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Florida Exterior */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Exterior Applications
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Florida-Specific Solutions</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                For outdoor and specialty applications, we consider drainage, movement joints, slip resistance, and exposure to heat and humidity. Proper materials help installations perform season after season.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Drainage & Surface Prep</h5>
+                    <p className="mt-1 text-xs text-slate-600">Proper slope and substrate preparation</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Movement Joints</h5>
+                    <p className="mt-1 text-xs text-slate-600">Expansion joints for weather shifts</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Waterproofing</h5>
+                    <p className="mt-1 text-xs text-slate-600">Substrate conditions and moisture barriers</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Heat & Humidity Resistance</h5>
+                    <p className="mt-1 text-xs text-slate-600">Setting materials for Florida climate</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  🌴 From lanais in Clermont to poolside kitchens in Winter Garden
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -220,26 +281,6 @@ function ProcessSection() {
           >
             Request a Custom Project Estimate
           </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TestimonialSection() {
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-1">
-          <article className="mx-auto flex h-full max-w-2xl flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
-            <div className="text-lg" aria-label="5 out of 5 stars">
-              <span className="text-amber-400">★★★★★</span>
-            </div>
-            <p className="mt-4 grow text-base text-slate-700">
-              Our custom mosaic entryway turned out better than we imagined. Clean lines, perfect layout—flawless work.
-            </p>
-            <p className="mt-6 text-sm font-semibold text-slate-500">— Natalie S., Clermont, FL</p>
-          </article>
         </div>
       </div>
     </section>
