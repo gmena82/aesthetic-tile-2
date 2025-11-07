@@ -60,6 +60,11 @@ const FAQS = [
     answer:
       "Demolition is part of our service. We perform clean, precise demo and maintain a tidy jobsite so your home stays protected and ready for installation.",
   },
+  {
+    question: "How long will my tile installation take from start to finish?",
+    answer:
+      "The timeline depends on the size and complexity of the job. A standard kitchen backsplash might take 1-2 days, while a full bathroom or large outdoor patio could take several days. We always include surface preparation, layout planning, tile setting, grouting and sealing in the schedule to ensure lasting quality.",
+  },
 ]
 
 export const metadata: Metadata = {
@@ -116,7 +121,7 @@ function AboutStory() {
         </p>
       </div>
 
-      <div className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
+      <div className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5 md:grid-cols-2 md:items-center">
         <div className="space-y-4 text-base leading-7 text-slate-600">
           <h3 className="text-2xl font-semibold text-slate-900">A New Chapter in the Sunshine State</h3>
           {STORY_PARAGRAPHS.map((paragraph) => (
@@ -232,9 +237,9 @@ function AboutCta() {
             <div className="space-y-3">
               {CTA_FEATURES.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
-                  <span className="flex size-8 items-center justify-center rounded-full bg-teal-500/20 text-teal-300">
-                    <svg className="size-4" viewBox="0 0 24 24" aria-hidden>
-                      <path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <span className="flex size-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 animate-pulse-3s">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </span>
                   <span className="text-sm font-semibold text-white/90">{feature}</span>
