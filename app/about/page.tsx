@@ -129,28 +129,70 @@ function AboutHero() {
 
 function AboutStory() {
   return (
-    <section className="mx-auto max-w-5xl space-y-16 px-6">
-      <div className="space-y-6 text-center">
-        <h2 className="text-3xl font-semibold text-slate-900">Our Story: A Legacy of Craftsmanship Moves to Groveland</h2>
-        <p className="mx-auto max-w-3xl text-base leading-7 text-slate-600">
-          The foundation of Aesthetic Tile rests on three generations of specialized knowledge. What began as a dedicated family trade has evolved into a professional tile company trusted by discerning homeowners, interior designers, and custom builders who demand superior quality.
-        </p>
-      </div>
-
-      <div className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5 md:grid-cols-2 md:items-center">
-        <div className="space-y-4 text-base leading-7 text-slate-600">
-          <h3 className="text-2xl font-semibold text-slate-900">A New Chapter in the Sunshine State</h3>
-          {STORY_PARAGRAPHS.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.1),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-6xl space-y-16 px-6">
+        <div className="space-y-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-400 backdrop-blur-sm">
+            Our Foundation
+          </div>
+          <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+            Our Story: A Legacy of Craftsmanship <br />
+            <span className="bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">Moves to Groveland</span>
+          </h2>
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-300">
+            The foundation of Aesthetic Tile rests on <span className="font-semibold text-teal-400">three generations</span> of specialized knowledge. What began as a dedicated family trade has evolved into a professional tile company trusted by discerning homeowners, interior designers, and custom builders who demand superior quality.
+          </p>
         </div>
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-          <Image
-            src="/images/Brad.webp"
-            alt="Brad from Aesthetic Tile installing tile"
-            fill
-            className="object-cover"
-          />
+
+        <div className="grid gap-10 overflow-hidden rounded-3xl border-2 border-teal-500/20 bg-gradient-to-br from-slate-800/90 via-slate-800/80 to-slate-900/90 p-8 shadow-2xl shadow-teal-500/10 backdrop-blur-sm md:grid-cols-2 md:items-center md:p-10">
+          <div className="space-y-5 text-base leading-7 text-slate-300">
+            <div className="flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg shadow-teal-500/30">
+                <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-white">A New Chapter in the Sunshine State</h3>
+            </div>
+            {STORY_PARAGRAPHS.map((paragraph, index) => (
+              <p key={paragraph} className={index === 0 ? "text-slate-200" : ""}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl shadow-slate-900/50 ring-2 ring-teal-500/30">
+            <Image
+              src="/images/Brad.webp"
+              alt="Brad from Aesthetic Tile installing tile"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+          </div>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-3">
+          {[
+            { number: "3", label: "Generations", sublabel: "of expertise" },
+            { number: "100%", label: "Owner-Led", sublabel: "installations" },
+            { number: "5★", label: "Rated", sublabel: "on Google" },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="group relative overflow-hidden rounded-2xl border border-teal-500/20 bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 text-center backdrop-blur-sm transition-all hover:border-teal-400/40 hover:shadow-lg hover:shadow-teal-500/20"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="relative">
+                <div className="text-4xl font-bold text-teal-400">{stat.number}</div>
+                <div className="mt-2 text-base font-semibold text-white">{stat.label}</div>
+                <div className="text-sm text-slate-400">{stat.sublabel}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
