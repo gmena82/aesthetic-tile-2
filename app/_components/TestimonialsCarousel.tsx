@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface Testimonial {
   quote: string
@@ -13,8 +13,14 @@ interface TestimonialsCarouselProps {
 }
 
 export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const totalSlides = testimonials.length
+  const baseIndex = totalSlides
+  const visibleCards = 3
+  const cardGapRem = 0.5 // tuned to match px-3 spacing without drift
+
+  const [currentIndex, setCurrentIndex] = useState(baseIndex)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const trackRef = useRef<HTMLDivElement | null>(null)
 
   // Truncate long testimonials to match Ben Fabish's length (approx 280 characters)
   const MAX_QUOTE_LENGTH = 280
@@ -26,6 +32,15 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
   // Create a continuous loop by duplicating testimonials
   const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials]
 
+  if (totalSlides === 0) {
+    return null
+  }
+
+  // Reset base index if testimonial count changes
+  useEffect(() => {
+    setCurrentIndex(baseIndex)
+  }, [baseIndex])
+
   useEffect(() => {
     if (!isAutoPlaying) return
 
@@ -36,25 +51,28 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     return () => clearInterval(timer)
   }, [isAutoPlaying])
 
-  // Seamlessly loop back when reaching the end
+  // Seamlessly loop back when reaching the ends
   useEffect(() => {
-    // When we've scrolled past the first copy of testimonials, instantly jump back without transition
-    if (currentIndex >= testimonials.length * 2) {
-      // Disable transition briefly
-      const timer = setTimeout(() => {
-        const container = document.querySelector('[data-carousel-track]') as HTMLElement
-        if (container) {
-          container.style.transition = 'none'
-          setCurrentIndex(testimonials.length)
-          // Re-enable transition after jump
-          setTimeout(() => {
-            container.style.transition = 'transform 500ms ease-out'
-          }, 50)
-        }
-      }, 0)
-      return () => clearTimeout(timer)
+    const track = trackRef.current
+    if (!track) return
+
+    if (currentIndex >= baseIndex + totalSlides) {
+      track.style.transition = "none"
+      setCurrentIndex((prev) => prev - totalSlides)
+      requestAnimationFrame(() => {
+        track.style.removeProperty("transition")
+      })
+      return
     }
-  }, [currentIndex, testimonials.length])
+
+    if (currentIndex < baseIndex) {
+      track.style.transition = "none"
+      setCurrentIndex((prev) => prev + totalSlides)
+      requestAnimationFrame(() => {
+        track.style.removeProperty("transition")
+      })
+    }
+  }, [currentIndex, baseIndex, totalSlides])
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => prev - 1)
@@ -68,13 +86,17 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
+  const translatePercentage = (100 / visibleCards) * currentIndex
+  const translateGap = cardGapRem * currentIndex
+
   return (
     <div className="relative">
       <div className="overflow-hidden">
         <div
+          ref={trackRef}
           data-carousel-track
           className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(calc(-${currentIndex * (100 / 3)}% - ${currentIndex * 0.5}rem))` }}
+          style={{ transform: `translateX(calc(-${translatePercentage}% - ${translateGap}rem))` }}
         >
           {extendedTestimonials.map((testimonial, index) => (
             <div key={index} className="w-1/3 flex-shrink-0 px-3">
