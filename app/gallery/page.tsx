@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 
 import { ContactForm } from "../_components/ContactForm"
 import { CTA_FEATURES } from "../page"
+import { GalleryGrid as GalleryGridClient } from "./GalleryGrid"
 
 const GALLERY_FAQS = [
   {
@@ -119,7 +120,7 @@ export default function GalleryPage() {
     <div className="space-y-24 pb-24">
       <GalleryHero />
       <GalleryIntro />
-      <GalleryGrid />
+      <GalleryGridClient items={GALLERY_ITEMS} />
       <GalleryFormCta />
       <FaqSection />
     </div>
@@ -164,33 +165,6 @@ function GalleryIntro() {
         >
           See something you love? Request a Quote
         </Link>
-      </div>
-    </section>
-  )
-}
-
-function GalleryGrid() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {GALLERY_ITEMS.map((item) => (
-          <figure
-            key={item.src}
-            className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5"
-          >
-            <div className="relative overflow-hidden">
-              <Image src={item.src} alt={item.alt} width={640} height={640} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
-              <div className="absolute inset-0 grid place-items-center bg-slate-950/30 opacity-0 transition group-hover:opacity-100">
-                <span className="flex size-12 items-center justify-center rounded-full bg-white/90 text-xl font-semibold text-slate-900">
-                  +
-                </span>
-              </div>
-            </div>
-            {item.caption ? (
-              <figcaption className="px-5 py-4 text-sm text-slate-600">{item.caption}</figcaption>
-            ) : null}
-          </figure>
-        ))}
       </div>
     </section>
   )
