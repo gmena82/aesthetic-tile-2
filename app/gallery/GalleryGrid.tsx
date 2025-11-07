@@ -51,33 +51,33 @@ export function GalleryGrid({ items }: GalleryGridProps) {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-h-[90vh] max-w-6xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative h-full w-full max-w-[95vw]" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute -right-4 -top-4 z-10 flex size-12 items-center justify-center rounded-full bg-white text-slate-900 shadow-xl transition hover:bg-slate-100"
+              className="absolute right-4 top-4 z-10 flex size-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-xl transition hover:bg-slate-100 hover:scale-110"
               aria-label="Close image"
             >
-              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
                 <path d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="overflow-hidden rounded-2xl bg-white shadow-2xl">
-              <div className="relative">
+            <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-2xl">
+              <div className="relative flex-1 overflow-hidden">
                 <Image
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  width={1920}
-                  height={1920}
-                  className="h-auto w-full max-h-[80vh] object-contain"
+                  width={2400}
+                  height={2400}
+                  className="h-full w-full object-contain"
                 />
               </div>
               {selectedImage.caption && (
-                <div className="border-t border-slate-200 bg-white px-6 py-4">
-                  <p className="text-sm text-slate-600">{selectedImage.caption}</p>
+                <div className="border-t border-slate-200 bg-white px-8 py-5">
+                  <p className="text-base text-slate-700">{selectedImage.caption}</p>
                 </div>
               )}
             </div>
