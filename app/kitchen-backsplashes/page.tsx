@@ -77,14 +77,11 @@ function HeroSection() {
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
           Expert Kitchen Backsplash Installation in Central Florida
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
-          Aesthetic Tile specializes in custom kitchen backsplash installations across Groveland, Clermont, Winter
-          Garden, Minneola, and the greater Orlando area. A well-planned backsplash ties together countertops,
-          cabinetry, and flooring—delivering both protection and standout design.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile specializes in custom kitchen backsplash installations across Groveland, Clermont, Winter Garden, Minneola, and the greater Orlando area. A well-planned backsplash ties together countertops, cabinetry, and flooring—delivering both protection and standout design.
         </p>
-        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
-          We understand the demands of Florida homes, from ensuring robust waterproofing against humidity to selecting
-          durable, stain-resistant materials that perform beautifully over time.
+        <p className="mx-auto mt-3 max-w-2xl text-lg leading-7 text-white/90">
+          We understand the demands of Florida homes, from ensuring robust waterproofing against humidity to selecting durable, stain-resistant materials that perform beautifully.
         </p>
         <div className="mt-6 flex justify-center">
           <Link
