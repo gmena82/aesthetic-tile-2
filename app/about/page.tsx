@@ -94,10 +94,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-24 pb-24">
+    <div className="pb-24">
       <AboutHero />
-      <AboutStory />
       <DifferenceSection />
+      <AboutStory />
       <WhatWeDoSection />
       <AboutCta />
       <FaqSection />
@@ -200,33 +200,85 @@ function AboutStory() {
 }
 
 function DifferenceSection() {
+  const iconMap: Record<string, JSX.Element> = {
+    "Meticulous Preparation": (
+      <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+    "Technical Precision": (
+      <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+      </svg>
+    ),
+    "Lasting Results": (
+      <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
+  }
+
   return (
-    <section className="mx-auto max-w-5xl space-y-8 px-6">
-      <div className="space-y-4 text-center">
-        <h2 className="text-3xl font-semibold text-slate-900">The Aesthetic Tile Difference</h2>
-        <p className="text-base leading-7 text-slate-600">
-          We combine generational expertise with disciplined process so every project feels elevated from the first consultation to the final clean up.
-        </p>
+    <section className="relative overflow-hidden bg-white py-24">
+      {/* Decorative background pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-br from-teal-500 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-bl from-slate-500 to-transparent" />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        {DIFFERENCE_POINTS.map((point) => (
-          <article key={point.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md shadow-slate-900/5">
-            <h3 className="text-lg font-semibold text-slate-900">{point.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-600">{point.description}</p>
-          </article>
-        ))}
-      </div>
+      <div className="relative mx-auto max-w-6xl space-y-16 px-6">
+        <div className="space-y-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-teal-50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-600 ring-1 ring-teal-500/20">
+            Why Choose Us
+          </div>
+          <h2 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
+            The Aesthetic Tile <span className="text-teal-600">Difference</span>
+          </h2>
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+            We combine generational expertise with disciplined process so every project feels elevated from the first consultation to the final clean up.
+          </p>
+        </div>
 
-      <figure className="overflow-hidden rounded-3xl">
-        <Image
-          src="/images/tile-installer-2.webp"
-          alt="Tile installer carefully working on a project"
-          width={1200}
-          height={800}
-          className="h-full w-full object-cover"
-        />
-      </figure>
+        <div className="grid gap-8 md:grid-cols-3">
+          {DIFFERENCE_POINTS.map((point, index) => (
+            <article
+              key={point.title}
+              className="group relative overflow-hidden rounded-3xl border-2 border-slate-100 bg-gradient-to-br from-white to-slate-50/50 p-8 shadow-lg shadow-slate-900/5 transition-all hover:-translate-y-2 hover:border-teal-100 hover:shadow-2xl hover:shadow-teal-500/10"
+            >
+              {/* Decorative corner accent */}
+              <div className="absolute right-0 top-0 h-32 w-32 translate-x-16 -translate-y-16 rounded-full bg-gradient-to-br from-teal-500/10 to-slate-500/5 blur-3xl transition-transform group-hover:scale-150" />
+              
+              {/* Number badge */}
+              <div className="absolute left-6 top-6 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-sm font-bold text-white shadow-lg shadow-teal-500/30">
+                {index + 1}
+              </div>
+
+              <div className="relative pt-14">
+                {/* Icon */}
+                <div className="mb-5 inline-flex items-center justify-center rounded-xl bg-slate-50 p-3 text-teal-600 ring-1 ring-slate-200 transition-all group-hover:bg-teal-50 group-hover:ring-teal-200">
+                  {iconMap[point.title]}
+                </div>
+
+                <h3 className="mb-3 text-xl font-semibold text-slate-900">{point.title}</h3>
+                <p className="text-sm leading-7 text-slate-600">{point.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <figure className="group relative overflow-hidden rounded-3xl ring-4 ring-slate-100 transition-all hover:ring-teal-100">
+          <Image
+            src="/images/tile-installer-2.webp"
+            alt="Tile installer carefully working on a project"
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        </figure>
+      </div>
     </section>
   )
 }
