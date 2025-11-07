@@ -76,7 +76,7 @@ const CHECKPOINTS = [
 
 export default function OutsideProjectsPage() {
   return (
-    <div className="space-y-24 pb-24">
+    <div className="space-y-16 pb-24">
       <HeroSection />
       <IntroSection />
       <OutdoorHighlightsSection />
@@ -234,7 +234,7 @@ function OutdoorHighlightsSection() {
 
 function SeoSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-12">
       {/* Subtle decorative elements */}
       <div className="absolute left-0 top-0 h-64 w-64 -translate-x-32 -translate-y-32 rounded-full bg-gradient-to-br from-teal-500/5 to-transparent blur-3xl" />
       <div className="absolute bottom-0 right-0 h-64 w-64 translate-x-32 translate-y-32 rounded-full bg-gradient-to-br from-slate-500/5 to-transparent blur-3xl" />
