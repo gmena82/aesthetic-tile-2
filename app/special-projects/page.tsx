@@ -278,8 +278,10 @@ function ProjectsAndMaterialsSection() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
-                Groveland \u2022 Clermont \u2022 Orlando
+              <div className="mt-6 flex justify-center">
+                <div className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
+                  Groveland • Clermont • Orlando
+                </div>
               </div>
             </article>
           </div>

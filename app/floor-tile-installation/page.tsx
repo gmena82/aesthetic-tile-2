@@ -282,8 +282,10 @@ function PrepAndBenefitsSection() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
-                Serving Groveland \u2022 Clermont \u2022 Winter Garden
+              <div className="mt-6 flex justify-center">
+                <div className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
+                  Serving Groveland • Clermont • Winter Garden
+                </div>
               </div>
             </article>
           </div>

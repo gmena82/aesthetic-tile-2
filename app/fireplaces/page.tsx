@@ -232,11 +232,13 @@ function SafetyAndMaterialsSection() {
             <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
 
             <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
-                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M12 2L2 12l10 10 10-10L12 2z" />
-                </svg>
-                Design & Materials
+              <div className="mb-6 flex justify-end">
+                <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                  <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                  </svg>
+                  Design & Materials
+                </div>
               </div>
 
               <h3 className="mb-6 text-2xl font-bold text-slate-900">Focal points tailored to your room</h3>
