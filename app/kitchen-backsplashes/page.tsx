@@ -40,9 +40,9 @@ const KITCHEN_FAQS = [
       "Most standard kitchen backsplash installations are completed within 1-2 days. This includes preparation, setting the tile, and grouting. We work efficiently to minimize disruption to your home.",
   },
   {
-    question: "Can you help me choose a design that matches my kitchen?",
+    question: "Will you help choose edge trims (e.g., profiles) and align tile with outlets/windows for a seamless look?",
     answer:
-      "Absolutely. With our extensive experience, we can provide recommendations on tile materials, colors, patterns, and layouts that will best complement your existing countertops, cabinets, and overall kitchen style.",
+      "Yes—we recommend Schluter® profiles or other trim options that fit your style, and we lay out tile to center on focal areas and minimize awkward cuts around outlets, windows, and edges.",
   },
 ]
 
@@ -51,10 +51,8 @@ export default function KitchenBacksplashesPage() {
     <div className="space-y-24 pb-24">
       <HeroSection />
       <MainContentSection />
-      <MaterialsSection />
-      <StylesSection />
+      <PopularAndTrendingSection />
       <ProcessSection />
-      <TestimonialSection />
       <CallToActionSection />
       <FaqSection />
     </div>
@@ -136,69 +134,158 @@ function MainContentSection() {
   )
 }
 
-function MaterialsSection() {
+function PopularAndTrendingSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Popular Backsplash Materials</h2>
-        <div className="mx-auto mt-8 max-w-3xl space-y-6">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900">Ceramic & Porcelain</h3>
-            <p className="mt-2 text-base text-slate-600">
-              Durable, budget-friendly, and easy to maintain—great for busy kitchens. Wide color and size options,
-              including classic 3×6 subway tile.
-            </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-semibold text-slate-900">Explore Backsplash Options</h2>
+          <p className="mt-3 text-lg text-slate-600">Materials and styles that transform your kitchen</p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Popular Materials */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                Popular Materials
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Choose Your Style</h3>
+              
+              <div className="space-y-5">
+                <div className="group/item flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M9 2v2H7v2H5v2H3v2H1v10h22V10h-2V8h-2V6h-2V4h-2V2H9zm0 2h6v2h2v2h2v2h2v8H3v-8h2V8h2V6h2V4z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Ceramic & Porcelain</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      Durable, budget-friendly, and easy to maintain—great for busy kitchens with wide color and size options.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group/item flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-lg shadow-slate-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18zM4 9.64l7 3.5v7.72l-7-3.5V9.64zm16 0v7.72l-7 3.5v-7.72l7-3.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Natural Stone</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      Premium marble and travertine with unique variation. Requires sealing for stain resistance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group/item flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M6 2h12v2H6V2zm0 4h12v2H6V6zm0 4h12v2H6v-2zm0 4h12v2H6v-2zm0 4h12v2H6v-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Glass & Mosaics</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      High visual impact with light play. Perfect for feature walls and accent bands.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group/item flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Large-Format Tile</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      Modern aesthetic with fewer grout joints. Demands precise layout for seamless results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900">Natural Stone (Marble, Travertine)</h3>
-            <p className="mt-2 text-base text-slate-600">
-              Premium look with unique variation. Requires sealing and thoughtful grout selection for stain resistance
-              and long-term performance.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900">Glass & Mosaics</h3>
-            <p className="mt-2 text-base text-slate-600">
-              High visual impact and light play. Excellent for feature walls and accent bands; pairs well with under
-              cabinet lighting.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900">Large-Format & Specialty</h3>
-            <p className="mt-2 text-base text-slate-600">
-              Fewer grout joints and a modern aesthetic. Demands precise layout and surface prep for flat, seamless
-              results.
-            </p>
+
+          {/* Trending Styles */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                Trending Styles
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">What's Popular Now</h3>
+              
+              <div className="space-y-5">
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Subway Tile</h4>
+                    <p className="mt-1 text-sm text-slate-600">
+                      Classic 3×6 or elongated formats in timeless layouts
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-4 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Herringbone & Chevron</h4>
+                    <p className="mt-1 text-sm text-slate-600">
+                      Dynamic diagonal patterns that add movement and sophistication
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Custom Mosaics</h4>
+                    <p className="mt-1 text-sm text-slate-600">
+                      Mixed-material blends and artistic accent patterns
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-4 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Picture-Frame Accents</h4>
+                    <p className="mt-1 text-sm text-slate-600">
+                      Decorative borders and niche features for focal points
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  💡 From timeless to statement-making, we install it all
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
-
-function StylesSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Trending Backsplash Styles in Central Florida
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base text-slate-600">
-          From timeless to statement-making, we install:
-        </p>
-        <ul className="mx-auto mt-6 max-w-3xl space-y-2 text-base text-slate-700">
-          <li>
-            <strong className="font-semibold text-slate-900">Subway Tile</strong> in classic or elongated formats
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Herringbone</strong> and{" "}
-            <strong className="font-semibold text-slate-900">Chevron</strong> patterns
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Custom mosaics</strong> and mixed-material blends
-          </li>
-          <li>Picture-frame accents and niche features</li>
-        </ul>
       </div>
     </section>
   )
@@ -230,26 +317,6 @@ function ProcessSection() {
           >
             Request a Kitchen Backsplash Estimate
           </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TestimonialSection() {
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-1">
-          <article className="mx-auto flex h-full max-w-2xl flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
-            <div className="text-lg" aria-label="5 out of 5 stars">
-              <span className="text-amber-400">★★★★★</span>
-            </div>
-            <p className="mt-4 grow text-base text-slate-700">
-              "Aesthetic Tile handled our complex mosaic backsplash perfectly. Best kitchen installers in Clermont!"
-            </p>
-            <p className="mt-6 text-sm font-semibold text-slate-500">— Melissa R., Clermont, FL</p>
-          </article>
         </div>
       </div>
     </section>

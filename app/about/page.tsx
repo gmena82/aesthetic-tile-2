@@ -51,19 +51,19 @@ const FAQS = [
       "Yes—tidy demo, dust control, and daily cleanup are part of our process.",
   },
   {
-    question: "Can you help with design guidance (patterns, grout color, trims)?",
+    question: "Do you provide tile‑layout mockups or sample boards (including grout colors and trims) before we commit?",
     answer:
-      "Absolutely—bring inspo photos; we'll recommend layouts, trims, and grout that fit your space and traffic.",
+      "Yes—we can create sample boards with your tile, grout, and trim selections so you can visualize the final look before installation begins. This helps ensure you're confident in your choices.",
   },
   {
-    question: "How long will my tile installation take from start to finish?",
+    question: "What factors most affect timeline (prep requirements, cure times, material lead times)?",
     answer:
-      "The timeline depends on the size and complexity of the job. A standard kitchen backsplash might take 1-2 days, while a full bathroom or large outdoor patio could take several days. We always include surface preparation, layout planning, tile setting, grouting and sealing in the schedule to ensure lasting quality.",
+      "Prep work (leveling, waterproofing) can add days; thinset and grout need 24-48 hours to cure between steps; and specialty tile or trim may require 1-2 weeks to order. We map out these factors in your estimate.",
   },
   {
-    question: "Where are you located, and which areas do you serve?",
+    question: "Where is your Groveland shop, and do you provide on‑site estimates in Clermont and Winter Garden?",
     answer:
-      "We're based at 1195 Greenley Ave in Groveland, FL and proudly serve Central Florida communities including Clermont, Minneola, Winter Garden, and Orlando.",
+      "Our shop is at 1195 Greenley Ave in Groveland, FL. We provide free on-site estimates throughout Clermont, Winter Garden, Minneola, and surrounding Lake County communities.",
   },
 ]
 

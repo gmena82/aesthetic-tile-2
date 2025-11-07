@@ -82,8 +82,8 @@ const HOME_FAQS = [
     answer: "Yes; we carry the licensing and insurance homeowners expect for professional tile work.",
   },
   {
-    question: "Do you offer free estimates?",
-    answer: "Yes—submit the form, email office@aesthetictile.com, or call (502) 650-7014. We're available Monday–Friday, 9am–5pm.",
+    question: "Can you give a virtual ballpark from photos and rough dimensions before a site visit?",
+    answer: "Yes—send us photos and approximate measurements via our contact form or email, and we can provide a rough estimate range before scheduling an in-person visit.",
   },
   {
     question: "How long will my tile installation take?",

@@ -51,11 +51,8 @@ export default function FloorTileInstallationPage() {
     <div className="space-y-24 pb-24">
       <HeroSection />
       <MainContentSection />
-      <PrepSection />
-      <WhyTileSection />
-      <StylesSection />
+      <PrepAndBenefitsSection />
       <ProcessSection />
-      <TestimonialSection />
       <CallToActionSection />
       <FaqSection />
     </div>
@@ -135,79 +132,180 @@ function MainContentSection() {
   )
 }
 
-function PrepSection() {
+function PrepAndBenefitsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Built to Last: Preparation and Prevention
-        </h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            A floor installation is only as good as the substrate beneath it. We evaluate flatness, level, and
-            cleanliness before any tile is set, correcting uneven areas as needed with proper floor leveling methods.
-          </p>
-          <p>
-            To prevent cracks from telegraphing into the tile or grout, we specify uncoupling membranes when
-            appropriate (for example, Schluter DITRA). This accommodates normal movement—especially on Florida concrete
-            slabs—and adds a critical layer of protection.
-          </p>
-          <p>
-            We control lippage with careful layout, correct trowel techniques, and professional lippage tuning systems
-            so large-format tile finishes flat and even.
-          </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-semibold text-slate-900">Floor Tile Excellence</h2>
+          <p className="mt-3 text-lg text-slate-600">Precision preparation and proven performance</p>
         </div>
-        <div className="mt-8 text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
-          >
-            Request Your Flooring Estimate
-          </Link>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Preparation & Foundation */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2v20M2 12h20" />
+                </svg>
+                Professional Prep
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Built to Last</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                A floor installation is only as good as the substrate beneath it. We evaluate flatness, level, and cleanliness before any tile is set, correcting uneven areas with proper leveling methods.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Substrate Evaluation</h4>
+                    <p className="mt-1 text-sm text-slate-600">Flatness, level, and cleanliness checked before setting tile</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Uncoupling Membranes</h4>
+                    <p className="mt-1 text-sm text-slate-600">Schluter DITRA for crack prevention on Florida slabs</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-lg shadow-slate-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Lippage Control</h4>
+                    <p className="mt-1 text-sm text-slate-600">Professional tuning systems for flat large-format finishes</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Movement Accommodation</h4>
+                    <p className="mt-1 text-sm text-slate-600">Critical layer of protection for normal substrate shifts</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
+                >
+                  Request Your Flooring Estimate
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits & Styles */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                </svg>
+                Florida-Ready Materials
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Why Tile for Florida Homes?</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                Central Florida's climate demands materials that handle humidity swings and frequent cleaning. Tile flooring performs in kitchens, great rooms, and pool-side areas alike.
+              </p>
+
+              <div className="mb-6 space-y-3 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900">Key Benefits</h4>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Durability for high-traffic spaces
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Resistance to humidity and water
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Cooling underfoot and easy maintenance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Design flexibility for every room
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Wood-Look Plank Tile</h5>
+                    <p className="mt-1 text-xs text-slate-600">Warm aesthetic, low maintenance</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Large Format Tile (LFT)</h5>
+                    <p className="mt-1 text-xs text-slate-600">Fewer grout joints, modern feel</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Porcelain & Ceramic</h5>
+                    <p className="mt-1 text-xs text-slate-600">Everyday performance and durability</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Natural Stone</h5>
+                    <p className="mt-1 text-xs text-slate-600">Travertine and marble for premium spaces</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  🏡 Trusted distributors across Groveland and Clermont
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  )
-}
-
-function WhyTileSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Why Choose Tile Flooring for Your Florida Home?
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base text-slate-600">
-          Central Florida's climate demands materials that can handle swings in humidity and frequent cleaning. Tile
-          flooring performs in kitchens, great rooms, and pool-side cabanas alike, making it the preferred upgrade for
-          busy households.
-        </p>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Durability for high-traffic spaces</li>
-          <li>Resistance to humidity and water</li>
-          <li>Cooling underfoot and easy maintenance</li>
-          <li>Design flexibility for every room</li>
-        </ul>
-      </div>
-    </section>
-  )
-}
-
-function StylesSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Popular Flooring Styles and Materials</h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base text-slate-600">
-          We collaborate with trusted distributors across Groveland and Clermont to source high-performing tile that
-          matches your aesthetic goals.
-        </p>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Wood-look plank tile for a warm, low-maintenance look</li>
-          <li>Large Format Tile (LFT) for fewer grout joints and a modern feel</li>
-          <li>Porcelain and ceramic for everyday performance</li>
-          <li>Natural stone such as travertine and marble for premium spaces</li>
-        </ul>
       </div>
     </section>
   )
@@ -230,27 +328,6 @@ function ProcessSection() {
           <li>Setting and alignment with lippage control methods</li>
           <li>Grout sealing and final detailing</li>
         </ol>
-      </div>
-    </section>
-  )
-}
-
-function TestimonialSection() {
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-1">
-          <article className="mx-auto flex h-full max-w-2xl flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
-            <div className="text-lg" aria-label="5 out of 5 stars">
-              <span className="text-amber-400">★★★★★</span>
-            </div>
-            <p className="mt-4 grow text-base text-slate-700">
-              We replaced all our carpet with wood-look tile. The team ensured the floors were perfectly leveled and
-              the results are stunning.
-            </p>
-            <p className="mt-6 text-sm font-semibold text-slate-500">— Carlos M., Lake County, FL</p>
-          </article>
-        </div>
       </div>
     </section>
   )

@@ -7,9 +7,9 @@ import { CTA_FEATURES } from "../page"
 
 const GALLERY_FAQS = [
   {
-    question: "Are these projects from Clermont and nearby?",
+    question: "Do you have project photos specifically from Clermont and across Lake County that I can browse by room type?",
     answer:
-      "Many are from Clermont, Groveland, Minneola, Winter Garden, and greater Orlando.",
+      "Yes—many of our gallery photos are from Clermont, Groveland, and Lake County. Contact us if you'd like to see more examples filtered by room type (kitchen, bathroom, fireplace, etc.).",
   },
   {
     question: "Can you recreate a look I saw here?",
@@ -32,9 +32,9 @@ const GALLERY_FAQS = [
       "We work on-site and can bring samples to your home during the estimate. Contact us to schedule.",
   },
   {
-    question: "How long does a project like these typically take?",
+    question: "What are the typical milestones for projects like those in the gallery (demo → prep → tile → grout), and how long does each stage run?",
     answer:
-      "It depends on scope and complexity. A backsplash might take 1-2 days, while a full bathroom could take a week or more.",
+      "Demo typically takes 1 day, prep and waterproofing 1-2 days, tile setting 1-3 days (depending on size), then grout and final cleanup. Cure times between stages add 24-48 hours. We outline the full timeline in your estimate.",
   },
 ]
 

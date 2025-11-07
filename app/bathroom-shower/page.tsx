@@ -35,14 +35,14 @@ const BATHROOM_FAQS = [
       "Yes—sloped pans, linear drains, and layout planning make curbless safe and beautiful.",
   },
   {
-    question: "How do you handle demolition and cleanup?",
+    question: "What dust‑control and surface‑protection steps do you use during bathroom demo (barriers, negative air, floor protection)?",
     answer:
-      "We perform tidy demo with dust control and maintain a clean jobsite throughout the project.",
+      "We use plastic barriers to contain dust, protect floors and fixtures with drop cloths, and run HEPA vacuums or negative air machines when needed to keep your home clean during demolition.",
   },
   {
-    question: "Can you match my existing tile or help with design?",
+    question: "Can you plan niche/bench locations and lay out tile around valves and glass for a balanced look?",
     answer:
-      "Yes—we can match existing materials or provide design guidance for patterns, colors, and trims that fit your space.",
+      "Yes—we template niche and bench placement, center tile on focal walls, and plan cuts around valves, drains, and glass enclosures so everything aligns and looks intentional.",
   },
 ]
 
@@ -51,11 +51,8 @@ export default function BathroomShowerPage() {
     <div className="space-y-24 pb-24">
       <HeroSection />
       <MainContentSection />
-      <WaterproofingSection />
-      <ServicesSection />
-      <FeaturesSection />
+      <WaterproofingAndServicesSection />
       <ProcessSection />
-      <TestimonialSection />
       <CallToActionSection />
       <FaqSection />
     </div>
@@ -137,82 +134,167 @@ function MainContentSection() {
   )
 }
 
-function WaterproofingSection() {
+function WaterproofingAndServicesSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          The Foundation: Leak-Proof Installation
-        </h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base text-slate-600">
-          <p>
-            Waterproofing is the most critical step in any shower. We follow applicable TCNA guidelines and specify
-            proven systems such as Schluter® or Wedi® when required. Our process includes substrate preparation,
-            waterproofing membrane installation, and careful detailing at corners and penetrations.
-          </p>
-          <ul className="list-disc space-y-2 pl-6">
-            <li>
-              <strong className="font-semibold text-slate-900">Proper Slope:</strong> Shower pans are pitched correctly
-              to the drain to prevent standing water.
-            </li>
-            <li>
-              <strong className="font-semibold text-slate-900">Flood Test:</strong> We perform a timed flood test of
-              the pan before tile is set.
-            </li>
-            <li>
-              <strong className="font-semibold text-slate-900">Membrane Detailing:</strong> Seams, niches, and benches
-              are waterproofed and reinforced.
-            </li>
-            <li>
-              <strong className="font-semibold text-slate-900">Materials:</strong> High-quality mortars and
-              mold-resistant or stain-resistant grouts; stone is sealed as needed.
-            </li>
-          </ul>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-semibold text-slate-900">Bathroom & Shower Expertise</h2>
+          <p className="mt-3 text-lg text-slate-600">Waterproofing, custom features, and flawless finishes</p>
         </div>
-      </div>
-    </section>
-  )
-}
 
-function ServicesSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">
-          Comprehensive Bathroom Tiling Services
-        </h2>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-7 text-slate-600">
-          <p>
-            From complete bathroom renovation to targeted upgrades, we handle tub surrounds, shower stalls, bathroom
-            flooring, wainscoting, and accent walls with large format tile or mosaics.
-          </p>
-          <p>
-            Whether you are planning a tub-to-shower conversion for a rental property in Minneola or a master bath
-            remodel in Winter Garden, we coordinate demolition, substrate repair, and tile setting with minimal
-            disruption. Our crew maintains a tidy jobsite, protects adjacent rooms, and keeps you informed at every
-            stage.
-          </p>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Waterproofing & Foundation */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                </svg>
+                Leak-Proof Foundation
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Professional Waterproofing</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                Waterproofing is the most critical step. We follow TCNA guidelines and specify proven systems like Schluter® or Wedi® with careful detailing at corners and penetrations.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Proper Slope</h4>
+                    <p className="mt-1 text-sm text-slate-600">Shower pans pitched correctly to drain, preventing standing water</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Flood Test</h4>
+                    <p className="mt-1 text-sm text-slate-600">Timed flood test of pan before tile setting</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-lg shadow-slate-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Membrane Detailing</h4>
+                    <p className="mt-1 text-sm text-slate-600">Seams, niches, and benches waterproofed and reinforced</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30">
+                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM19 19c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Quality Materials</h4>
+                    <p className="mt-1 text-sm text-slate-600">High-quality mortars, mold-resistant grouts, sealed stone</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services & Features */}
+          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
+            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
+            
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                </svg>
+                Full Service
+              </div>
+              
+              <h3 className="mb-6 text-2xl font-bold text-slate-900">Complete Bathroom Solutions</h3>
+              
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                From complete renovations to targeted upgrades—tub surrounds, shower stalls, bathroom flooring, wainscoting, and accent walls with large format tile or mosaics.
+              </p>
+
+              <div className="mb-6 space-y-3 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900">Custom Shower Features</h4>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Built-in niches and shelving
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Built-in benches and seats
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Curbless (zero-entry) showers
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Linear drains and low-profile pans
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Tub-to-Shower Conversions</h5>
+                    <p className="mt-1 text-xs text-slate-600">Perfect for rentals or aging-in-place</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Master Bath Remodels</h5>
+                    <p className="mt-1 text-xs text-slate-600">Spa-quality showers and soaking tubs</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-900">Design Support & Trims</h5>
+                    <p className="mt-1 text-xs text-slate-600">Schluter profiles, bullnose, large format handling</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  🏠 Tidy jobsite, minimal disruption, informed at every stage
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  )
-}
-
-function FeaturesSection() {
-  return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Custom Shower Features and Designs</h2>
-        <ul className="mx-auto mt-6 max-w-3xl list-disc space-y-2 pl-6 text-base text-slate-700">
-          <li>Built-in niches and shelving</li>
-          <li>Built-in benches and seats</li>
-          <li>Curbless (zero-entry) showers</li>
-          <li>Linear drains and low-profile pans</li>
-        </ul>
-        <p className="mx-auto mt-6 max-w-3xl text-base text-slate-600">
-          Our design support covers layout, trims (e.g., Schluter profiles or bullnose), large format tile handling,
-          and custom tile design details.
-        </p>
       </div>
     </section>
   )
@@ -252,27 +334,6 @@ function ProcessSection() {
           >
             Request a Detailed Remodeling Estimate
           </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TestimonialSection() {
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-1">
-          <article className="mx-auto flex h-full max-w-2xl flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
-            <div className="text-lg" aria-label="5 out of 5 stars">
-              <span className="text-amber-400">★★★★★</span>
-            </div>
-            <p className="mt-4 grow text-base text-slate-700">
-              "We trusted Aesthetic Tile with our master bath remodel. The waterproofing process was thorough and gave
-              us total peace of mind. The best contractors in Groveland!"
-            </p>
-            <p className="mt-6 text-sm font-semibold text-slate-500">— Danielle P., Groveland, FL</p>
-          </article>
         </div>
       </div>
     </section>

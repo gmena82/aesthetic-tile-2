@@ -35,20 +35,20 @@ const SERVICES_FAQS = [
     answer: "Backsplashes, showers, floors, fireplaces, specialty work—plus surface prep and selective repairs.",
   },
   {
-    question: "Do you use waterproofing for showers and wet zones?",
-    answer: "Yes—moisture management is mandatory; it protects framing and finishes for the long term.",
+    question: "Which waterproofing systems do you specify for showers (e.g., Schluter®, Wedi®), and when do you recommend each?",
+    answer: "We use Schluter® for most residential showers, Wedi® for complex niches or steam rooms, and other approved membranes based on substrate and budget. We'll recommend the best system during your estimate.",
   },
   {
     question: "Do you offer material guidance or source tile?",
     answer: "We can spec materials and coordinate with your preferred suppliers or designers.",
   },
   {
-    question: "How soon can you start my project?",
-    answer: "After your estimate, we provide a realistic start date and timeline based on scope and materials.",
+    question: "What's your current lead time for Clermont jobs, and how does scheduling work after the estimate?",
+    answer: "Lead times vary by season and project scope, typically 2-4 weeks. After your estimate is approved, we lock in materials and schedule your start date with clear milestones.",
   },
   {
-    question: "Are you licensed and insured in Florida?",
-    answer: "Yes; we carry the licensing and insurance homeowners expect for professional tile work.",
+    question: "What Florida licensing and insurance coverage do you carry for tile installs (license class, liability, and workers' comp)?",
+    answer: "We carry full general liability insurance and workers' compensation coverage. All work is performed by licensed, insured professionals to protect your home and our team.",
   },
 ]
 
