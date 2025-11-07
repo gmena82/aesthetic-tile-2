@@ -134,124 +134,154 @@ function MainContentSection() {
 }
 
 function ProjectsAndMaterialsSection() {
+  const projectShowcase = [
+    {
+      name: "Mosaic medallions",
+      detail: "Hand-cut stone or glass mosaics framed with Schluter trims for grand foyers and wine rooms.",
+    },
+    {
+      name: "Feature walls",
+      detail: "Textured porcelain, Venetian plaster tile, or stone slabs with hidden lighting and niches.",
+    },
+    {
+      name: "Outdoor living",
+      detail: "Screened lanais, pool surrounds, and summer kitchens engineered for sun and storms.",
+    },
+    {
+      name: "Specialty steps & risers",
+      detail: "Inlaid patterns, contrasting nosings, and curved profiles that meet code and design goals.",
+    },
+  ]
+
+  const collaborationSteps = [
+    {
+      label: "Design charrette",
+      text: "We review inspiration, surface transitions, and how the space will be used day-to-day.",
+    },
+    {
+      label: "Digital mockups",
+      text: "You receive scaled elevations with grout, trim, lighting, and slope notes before we order tile.",
+    },
+    {
+      label: "Crafted install",
+      text: "Owner-led crews keep the jobsite immaculate and deliver museum-level detailing.",
+    },
+  ]
+
+  const exteriorSystems = [
+    "Drainage plane mapped before slab or deck installs",
+    "Movement joints hidden within grout patterning",
+    "Slip-resistant tile with UV-stable grout and sealers",
+    "Heated floor or snow-melt prep for northern transplants",
+  ]
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
-      
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900/5 via-teal-50/25 to-slate-100 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(20,184,166,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,rgba(15,23,42,0.1),transparent_55%)]" />
+
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-semibold text-slate-900">Custom & Specialty Work</h2>
-          <p className="mt-3 text-lg text-slate-600">Unique projects and exterior applications</p>
+          <p className="mt-3 text-lg text-slate-600">Signature installations, collaboration rituals, and weather-ready systems</p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* What We Build */}
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
-            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
-            <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
-                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                Custom Projects
-              </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">What We Build</h3>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Custom mosaics and floor medallions</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Accent and feature walls</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Outdoor patios, porches, and walkways</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-teal-500 text-lg">✓</span>
-                  <p className="text-sm text-slate-700">Entryways, stair risers, and niche details</p>
-                </div>
-              </div>
+        <div className="grid gap-10 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+          <article className="relative overflow-hidden rounded-[32px] border border-white/60 bg-white/80 p-10 shadow-2xl shadow-slate-900/10 backdrop-blur">
+            <div className="absolute -right-20 -top-16 h-48 w-48 rounded-full bg-gradient-to-br from-teal-400/30 to-emerald-500/10 blur-3xl" aria-hidden />
+            <div className="absolute -left-14 bottom-0 h-44 w-44 rounded-full bg-gradient-to-tr from-slate-400/25 to-transparent blur-3xl" aria-hidden />
 
-              <div className="rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4 mb-6">
-                <h4 className="font-semibold text-slate-900 mb-2">Materials & Design</h4>
-                <p className="text-sm text-slate-700">
-                  We work with ceramic, porcelain, natural stone, glass, and large-format panels. Patterns include subway, herringbone, chevron, geometric mosaics, and medallion inlays.
-                </p>
-              </div>
-
-              <div className="space-y-2 text-sm text-slate-600">
-                <p>• Mockups and samples for color confirmation</p>
-                <p>• Schluter profiles and heated floor integration</p>
-                <p>• Custom niches and signature details</p>
-              </div>
+            <div className="relative flex flex-wrap items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600">
+              <span className="rounded-full bg-teal-500/10 px-4 py-1 text-[0.7rem] text-teal-700">Signature Installations</span>
+              <span className="rounded-full border border-teal-500/20 px-4 py-1 text-[0.7rem] text-slate-600">Designers welcome on-site</span>
             </div>
-          </div>
 
-          {/* Florida Exterior */}
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
-            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
-            <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
-                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                Exterior Applications
+            <div className="relative mt-6 space-y-4">
+              <h3 className="text-3xl font-semibold text-slate-900">Built like commissioned artwork</h3>
+              <p className="text-sm leading-6 text-slate-600">
+                Specialty tile moments start with intricate layout math, mockups you can touch, and field adjustments guided by natural light. We obsess over reveals, edge profiles, and how your project will patina over time.
+              </p>
+            </div>
+
+            <div className="relative mt-8 grid gap-6 md:grid-cols-2">
+              {projectShowcase.map((project) => (
+                <div key={project.name} className="rounded-2xl border border-slate-100 bg-white/80 p-5 shadow-sm shadow-slate-900/5">
+                  <p className="text-sm font-semibold text-slate-900">{project.name}</p>
+                  <p className="mt-2 text-xs leading-5 text-slate-600">{project.detail}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative mt-10 space-y-6">
+              {collaborationSteps.map((step, index) => (
+                <div key={step.label} className="flex gap-4">
+                  <div className="relative flex flex-col items-center">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15 text-xs font-semibold text-teal-600">{index + 1}</span>
+                    {index < collaborationSteps.length - 1 ? <span className="mt-1 h-full w-px bg-gradient-to-b from-teal-400/40 to-transparent" aria-hidden /> : null}
+                  </div>
+                  <div className="rounded-2xl bg-white/70 p-4 shadow-inner shadow-slate-900/5">
+                    <h4 className="text-sm font-semibold text-slate-900">{step.label}</h4>
+                    <p className="mt-2 text-xs leading-5 text-slate-600">{step.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <div className="relative grid gap-6">
+            <div className="absolute -right-10 top-12 hidden h-28 w-28 rounded-full bg-gradient-to-br from-teal-300/25 to-transparent blur-2xl xl:block" aria-hidden />
+
+            <article className="relative overflow-hidden rounded-[28px] border border-teal-200/60 bg-gradient-to-br from-white via-white/80 to-teal-100/30 p-8 shadow-xl shadow-teal-500/10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-700">
+                Material Lab
               </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">Florida-Specific Solutions</h3>
-              
-              <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                For outdoor and specialty applications, we consider drainage, movement joints, slip resistance, and exposure to heat and humidity. Proper materials help installations perform season after season.
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">Palette explorations & tactile samples</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                We stage sample boards that blend tile, grout, trim, lighting, and hardware finishes so you can approve every detail before fabrication.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Drainage & Surface Prep</h5>
-                    <p className="mt-1 text-xs text-slate-600">Proper slope and substrate preparation</p>
-                  </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-4 text-xs font-medium text-slate-600 shadow-sm shadow-teal-500/5">
+                  <p className="text-sm font-semibold text-slate-900">Mockup lending</p>
+                  <p className="mt-2">
+                    Borrow panels for 48 hours to review against cabinetry, stone slabs, and natural light.
+                  </p>
                 </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Movement Joints</h5>
-                    <p className="mt-1 text-xs text-slate-600">Expansion joints for weather shifts</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Waterproofing</h5>
-                    <p className="mt-1 text-xs text-slate-600">Substrate conditions and moisture barriers</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Heat & Humidity Resistance</h5>
-                    <p className="mt-1 text-xs text-slate-600">Setting materials for Florida climate</p>
-                  </div>
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-4 text-xs font-medium text-slate-600 shadow-sm shadow-teal-500/5">
+                  <p className="text-sm font-semibold text-slate-900">Trim decisions</p>
+                  <p className="mt-2">
+                    Compare mitered corners vs. Schluter\u00ae, radius profiles, or custom metalwork without guesswork.
+                  </p>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
-                <p className="text-center text-sm font-medium text-slate-700">
-                  🌴 From lanais in Clermont to poolside kitchens in Winter Garden
-                </p>
+              <div className="mt-6 flex flex-wrap gap-4">
+                {["#0f766e", "#155e75", "#f59e0b", "#1e293b"].map((hex) => (
+                  <div key={hex} className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm">
+                    <span className="inline-flex size-6 rounded-full border border-white/60 shadow" style={{ backgroundColor: hex }} aria-hidden />
+                    {hex}
+                  </div>
+                ))}
               </div>
-            </div>
+            </article>
+
+            <article className="relative overflow-hidden rounded-[28px] border border-teal-300/40 bg-white/80 p-8 shadow-xl shadow-slate-900/10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-700">
+                Outdoor Systems
+              </div>
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">Engineered for Florida humidity & sun</h3>
+              <ul className="mt-6 space-y-4">
+                {exteriorSystems.map((item) => (
+                  <li key={item} className="flex gap-3 rounded-2xl border border-slate-100 bg-white/70 p-4 text-sm text-slate-700 shadow-sm shadow-slate-900/5">
+                    <span className="mt-1 inline-flex size-2 rounded-full bg-teal-500" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
+                Groveland \u2022 Clermont \u2022 Orlando
+              </div>
+            </article>
           </div>
         </div>
       </div>

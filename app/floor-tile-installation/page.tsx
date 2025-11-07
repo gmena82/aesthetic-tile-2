@@ -133,177 +133,159 @@ function MainContentSection() {
 }
 
 function PrepAndBenefitsSection() {
+  const prepStats = [
+    { label: "Lippage tolerance", value: "<= 1/32\"", helper: "Laser-leveled substrates" },
+    { label: "Membrane coverage", value: "100%", helper: "Flood-tested when required" },
+    { label: "Crew experience", value: "20+ yrs", helper: "Third-generation installers" },
+    { label: "Lead time", value: "2-4 weeks", helper: "Groveland & Clermont projects" },
+  ]
+
+  const prepTimeline = [
+    {
+      title: "Surface obsession",
+      description: "Moisture testing, grinding, and patching before the first layout line is snapped.",
+    },
+    {
+      title: "Layout rehearsal",
+      description: "Dry-fit focal areas, align transitions, and stage trims so day-one install feels choreographed.",
+    },
+    {
+      title: "Florida-proof materials",
+      description: "Premium mortars, Schluter\u00ae uncoupling, and movement joints built for humidity swings.",
+    },
+  ]
+
+  const materialPairings = [
+    {
+      name: "Wood-Look Plank",
+      detail: "Warmth of hardwood with slip-resistant porcelain for great rooms and open concepts.",
+    },
+    {
+      name: "Large Format Tile",
+      detail: "48\u2033 panels with 1/16\u2033 grout lines for gallery-level living spaces.",
+    },
+    {
+      name: "Porcelain & Ceramic",
+      detail: "Budget-friendly combos for rentals, short-term stays, and busy family kitchens.",
+    },
+    {
+      name: "Natural Stone",
+      detail: "Travertine, marble, and ledger stone sealed for breezeways and sunrooms.",
+    },
+  ]
+
+  const floridaChecklist = [
+    "Drainage slope checked before patio or pool surround installs",
+    "Expansion joints sized for Central Florida temperature swings",
+    "Outdoor-rated mortars and grouts with UV-stable sealers",
+    "Curb-less transitions planned for accessibility and cleaning",
+  ]
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
-      
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900/5 via-teal-50/20 to-slate-100 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(20,184,166,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,rgba(15,23,42,0.08),transparent_55%)]" />
+
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-semibold text-slate-900">Floor Tile Excellence</h2>
-          <p className="mt-3 text-lg text-slate-600">Precision preparation and proven performance</p>
+          <p className="mt-3 text-lg text-slate-600">Prep technology, designer pairings, and Florida-tested assemblies</p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Preparation & Foundation */}
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
-            <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
-            <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
-                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M12 2v20M2 12h20" />
-                </svg>
-                Professional Prep
-              </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">Built to Last</h3>
-              
-              <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                A floor installation is only as good as the substrate beneath it. We evaluate flatness, level, and cleanliness before any tile is set, correcting uneven areas with proper leveling methods.
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+          <div className="relative overflow-hidden rounded-[32px] bg-slate-900 p-10 text-slate-100 shadow-2xl shadow-teal-500/10">
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-teal-500/40 to-emerald-500/30 blur-2xl" aria-hidden />
+            <div className="absolute -left-24 bottom-[-40px] h-48 w-48 rounded-full bg-gradient-to-br from-slate-700/40 to-slate-900/0 blur-3xl" aria-hidden />
+
+            <div className="relative flex flex-wrap items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-300">
+              <span className="rounded-full bg-white/10 px-4 py-1 text-[0.7rem] text-teal-200">Installer Playbook</span>
+              <span className="rounded-full border border-white/10 px-4 py-1 text-[0.7rem] text-slate-200">Clermont crews on site weekly</span>
+            </div>
+
+            <div className="relative mt-6 space-y-4">
+              <h3 className="text-3xl font-semibold text-white">Subfloor prep is the foundation of every flawless floor</h3>
+              <p className="text-sm leading-6 text-slate-200">
+                We treat concrete and wood substrates like finish carpentry&mdash;laser-leveled, moisture tested, and protected with uncoupling membranes so your tile looks impeccable for decades.
               </p>
+            </div>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg shadow-teal-500/30">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" />
-                    </svg>
+            <dl className="relative mt-8 grid gap-6 sm:grid-cols-2">
+              {prepStats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-200">{stat.label}</dt>
+                  <dd className="mt-2 text-2xl font-semibold text-white">{stat.value}</dd>
+                  <p className="mt-1 text-xs text-slate-200/80">{stat.helper}</p>
+                </div>
+              ))}
+            </dl>
+
+            <div className="relative mt-10 space-y-6">
+              {prepTimeline.map((step, index) => (
+                <div key={step.title} className="flex gap-4">
+                  <div className="relative flex flex-col items-center">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-teal-400/20 text-xs font-semibold text-teal-200">{index + 1}</span>
+                    {index < prepTimeline.length - 1 ? <span className="mt-1 h-full w-px bg-gradient-to-b from-teal-400/40 to-transparent" aria-hidden /> : null}
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">Substrate Evaluation</h4>
-                    <p className="mt-1 text-sm text-slate-600">Flatness, level, and cleanliness checked before setting tile</p>
+                  <div className="rounded-2xl bg-white/5 p-4 shadow-inner shadow-slate-900/20">
+                    <h4 className="text-sm font-semibold text-white">{step.title}</h4>
+                    <p className="mt-2 text-xs leading-5 text-slate-200/90">{step.description}</p>
                   </div>
                 </div>
+              ))}
+            </div>
 
-                <div className="flex gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">Uncoupling Membranes</h4>
-                    <p className="mt-1 text-sm text-slate-600">Schluter DITRA for crack prevention on Florida slabs</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow-lg shadow-slate-500/30">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">Lippage Control</h4>
-                    <p className="mt-1 text-sm text-slate-600">Professional tuning systems for flat large-format finishes</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">Movement Accommodation</h4>
-                    <p className="mt-1 text-sm text-slate-600">Critical layer of protection for normal substrate shifts</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
-                >
-                  Request Your Flooring Estimate
-                </Link>
-              </div>
+            <div className="relative mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-teal-300/70 bg-white/10 px-6 py-3 text-sm font-semibold text-teal-100 backdrop-blur transition hover:border-teal-200 hover:text-white"
+              >
+                Request your flooring estimate
+                <svg className="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 010-2h11.586l-4.293-4.293a1 1 0 011.414-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
 
-          {/* Benefits & Styles */}
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-white bg-white p-8 shadow-xl shadow-slate-900/5 transition-all hover:shadow-2xl hover:shadow-teal-500/10">
-            <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-slate-400/20 to-slate-600/20 blur-2xl transition-transform group-hover:scale-150" />
-            
-            <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
-                <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M12 2L2 12l10 10 10-10L12 2z" />
-                </svg>
-                Florida-Ready Materials
+          <div className="relative grid gap-6">
+            <div className="absolute -right-8 -top-10 hidden h-24 w-24 rounded-full bg-gradient-to-br from-teal-300/30 to-transparent blur-2xl lg:block" aria-hidden />
+
+            <article className="relative overflow-hidden rounded-[26px] border border-white/60 bg-white/80 p-8 shadow-xl shadow-slate-900/5 backdrop-blur">
+              <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-700">
+                Designer Pairings
               </div>
-              
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">Why Tile for Florida Homes?</h3>
-              
-              <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                Central Florida's climate demands materials that handle humidity swings and frequent cleaning. Tile flooring performs in kitchens, great rooms, and pool-side areas alike.
-              </p>
-
-              <div className="mb-6 space-y-3 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
-                <h4 className="font-semibold text-slate-900">Key Benefits</h4>
-                <ul className="space-y-2 text-sm text-slate-700">
-                  <li className="flex items-center gap-2">
-                    <span className="text-teal-500">✓</span>
-                    Durability for high-traffic spaces
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-teal-500">✓</span>
-                    Resistance to humidity and water
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-teal-500">✓</span>
-                    Cooling underfoot and easy maintenance
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-teal-500">✓</span>
-                    Design flexibility for every room
-                  </li>
-                </ul>
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">Material palettes we install every week</h3>
+              <div className="mt-6 space-y-4">
+                {materialPairings.map((option) => (
+                  <div key={option.name} className="rounded-2xl border border-slate-100 bg-white/70 p-4 shadow-sm shadow-slate-900/5">
+                    <p className="text-sm font-semibold text-slate-900">{option.name}</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-600">{option.detail}</p>
+                  </div>
+                ))}
               </div>
+            </article>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">1</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Wood-Look Plank Tile</h5>
-                    <p className="mt-1 text-xs text-slate-600">Warm aesthetic, low maintenance</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">2</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Large Format Tile (LFT)</h5>
-                    <p className="mt-1 text-xs text-slate-600">Fewer grout joints, modern feel</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-slate-50/50 to-transparent p-3 transition-colors hover:from-slate-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white text-sm font-bold">3</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Porcelain & Ceramic</h5>
-                    <p className="mt-1 text-xs text-slate-600">Everyday performance and durability</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-3 transition-colors hover:from-teal-50">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white text-sm font-bold">4</div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900">Natural Stone</h5>
-                    <p className="mt-1 text-xs text-slate-600">Travertine and marble for premium spaces</p>
-                  </div>
-                </div>
+            <article className="relative overflow-hidden rounded-[26px] border border-teal-200/60 bg-gradient-to-br from-teal-500/15 via-white/70 to-emerald-400/10 p-8 shadow-xl shadow-teal-500/10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
+                Florida Checklist
               </div>
-
-              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
-                <p className="text-center text-sm font-medium text-slate-700">
-                  🏡 Trusted distributors across Groveland and Clermont
-                </p>
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">Outdoor-ready and lake-house approved</h3>
+              <ul className="mt-6 space-y-4">
+                {floridaChecklist.map((item) => (
+                  <li key={item} className="flex gap-3 rounded-xl bg-white/60 p-4 text-sm text-slate-700 shadow-sm">
+                    <span className="mt-1 inline-flex size-2 rounded-full bg-teal-500" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
+                Serving Groveland \u2022 Clermont \u2022 Winter Garden
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
