@@ -303,38 +303,112 @@ function WaterproofingAndServicesSection() {
 }
 
 function ProcessSection() {
+  const steps = [
+    {
+      number: 1,
+      title: "Consultation",
+      description: "Scope, materials, and scheduling for your bathroom renovation or master bath remodel.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+        </svg>
+      ),
+    },
+    {
+      number: 2,
+      title: "Preparation",
+      description: "Surface evaluation, protection of adjacent finishes, and dust control.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+      ),
+    },
+    {
+      number: 3,
+      title: "Waterproofing",
+      description: "Membrane application and inspections; documentation as requested.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
+        </svg>
+      ),
+    },
+    {
+      number: 4,
+      title: "Tile Setting",
+      description: "Layout planning to avoid awkward cuts; precise cuts around valves and outlets.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 9h18M9 3v18" />
+        </svg>
+      ),
+    },
+    {
+      number: 5,
+      title: "Grouting & Sealing",
+      description: "Mold resistant grout and sealers where appropriate.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+      ),
+    },
+  ]
+
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Our Bathroom Installation Process</h2>
-        <ol className="mx-auto mt-6 max-w-3xl list-decimal space-y-2 pl-6 text-base text-slate-700">
-          <li>
-            <strong className="font-semibold text-slate-900">Consultation:</strong> Scope, materials, and scheduling
-            for your bathroom renovation or master bath remodel.
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Preparation:</strong> Surface evaluation, protection of
-            adjacent finishes, and dust control.
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Waterproofing:</strong> Membrane application and
-            inspections; documentation as requested.
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Tile Setting:</strong> Layout planning to avoid awkward
-            cuts; precise cuts around valves and outlets.
-          </li>
-          <li>
-            <strong className="font-semibold text-slate-900">Grouting & Sealing:</strong> Mold resistant grout and
-            sealers where appropriate.
-          </li>
-        </ol>
-        <div className="mt-8 text-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/20 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(20,184,166,0.06),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_85%,rgba(148,163,184,0.04),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-600 ring-1 ring-teal-500/20">
+            Our Process
+          </div>
+          <h2 className="mt-6 text-3xl font-semibold text-slate-900 sm:text-4xl">Our Bathroom Installation Process</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600">
+            From consultation to final walkthrough, we deliver professional bathroom remodels with precision and care.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((step, index) => (
+            <div
+              key={step.number}
+              className="group relative overflow-hidden rounded-2xl border-2 border-white bg-white p-6 shadow-lg shadow-slate-900/5 transition-all hover:-translate-y-1 hover:border-teal-100 hover:shadow-xl hover:shadow-teal-500/10"
+            >
+              {/* Decorative gradient */}
+              <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/10 to-teal-600/10 blur-2xl transition-transform group-hover:scale-150" />
+              
+              <div className="relative">
+                {/* Number badge */}
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 text-lg font-bold text-white shadow-lg shadow-teal-500/30">
+                    {step.number}
+                  </div>
+                  <div className="rounded-xl bg-slate-50 p-2 text-teal-600 ring-1 ring-slate-200 transition-all group-hover:bg-teal-50 group-hover:ring-teal-200">
+                    {step.icon}
+                  </div>
+                </div>
+
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">{step.title}</h3>
+                <p className="text-sm leading-6 text-slate-600">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal-500 to-teal-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-teal-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/40"
           >
             Request a Detailed Remodeling Estimate
+            <svg className="ml-2 size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
           </Link>
         </div>
       </div>
