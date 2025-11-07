@@ -1,18 +1,34 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 import { ContactForm } from "../../_components/ContactForm"
+import { absoluteUrl, buildMetadata, createArticleJsonLd } from "../../_lib/seo"
 
-export const metadata: Metadata = {
+const ARTICLE_PUBLISHED_DATE = "2025-09-30"
+
+export const metadata = buildMetadata({
   title: "Myth Breakers Ep. 1: Are Tile Remodels Too Expensive? | Aesthetic Tile Blog",
   description:
     "Watch Myth Breakers Episode 1 to see why tile remodels don't have to be expensive. Get cost breakdowns, budget strategies, and pro tips filmed at The Tile Shop in Orlando.",
-}
+  path: "/blog/myth-breakers-episode-1",
+  image: "/images/Tile-Shop-Photoshoot.webp",
+  type: "article",
+})
 
 export default function MythBreakersEpisode1() {
+  const articleJsonLd = createArticleJsonLd({
+    url: absoluteUrl("/blog/myth-breakers-episode-1"),
+    headline: "Myth Breakers, Episode 1: Are Tile Remodels Too Expensive?",
+    description:
+      "Myth Breakers Episode 1 breaks down the cost of tile remodels with budget strategies and expert tips filmed at The Tile Shop in Orlando.",
+    image: "/images/Tile-Shop-Photoshoot.webp",
+    datePublished: ARTICLE_PUBLISHED_DATE,
+    authorName: "Aesthetic Tile Team",
+  })
+
   return (
-    <div className="pb-24">
+    <>
+      <div className="pb-24">
       <article className="mx-auto max-w-4xl px-6 pt-24">
         <header className="space-y-4">
           <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
@@ -113,6 +129,8 @@ export default function MythBreakersEpisode1() {
         <CallToActionSection />
       </section>
     </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleJsonLd }} />
+    </>
   )
 }
 

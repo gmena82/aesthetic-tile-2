@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 import { ContactForm } from "../_components/ContactForm"
 import { CheckIcon } from "../_components/CheckIcon"
 import { CTA_FEATURES } from "../page"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 import { GalleryGrid as GalleryGridClient } from "./GalleryGrid"
 
 const GALLERY_FAQS = [
@@ -107,14 +107,13 @@ const GALLERY_ITEMS = [
   },
 ]
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Tile Installation Gallery | Aesthetic Tile Central Florida Projects",
   description:
-    "Browse recent Aesthetic Tile projects across Central Florida—kitchen backsplashes, bathroom remodels, fireplace surrounds, and specialty tile installations.",
-  alternates: {
-    canonical: "https://www.aesthetictile-florida.com/gallery",
-  },
-}
+    "Browse recent Aesthetic Tile projects across Central Florida—backsplashes, bathrooms, fireplaces, patios, and specialty tile installations.",
+  path: "/gallery",
+  image: "/images/gallery/bathroom-remodel-stone-tile.webp",
+})
 
 export default function GalleryPage() {
   return (
@@ -209,22 +208,31 @@ function GalleryFormCta() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/gallery"),
+    name: "Aesthetic Tile Gallery FAQs",
+    faqs: GALLERY_FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {GALLERY_FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {GALLERY_FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 

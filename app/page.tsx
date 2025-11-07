@@ -5,6 +5,7 @@ import { CheckIcon } from "./_components/CheckIcon"
 import { ContactForm } from "./_components/ContactForm"
 import { TestimonialsCarousel } from "./_components/TestimonialsCarousel"
 import { serviceNav } from "./_components/navigation"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "./_lib/seo"
 
 const HERO_FEATURES = [
   "Five-star service",
@@ -105,6 +106,14 @@ const HOME_FAQS = [
     answer: "The timeline depends on size and complexity. A standard kitchen backsplash might take 1-2 days, while a full bathroom or large outdoor patio could take several days.",
   },
 ]
+
+export const metadata = buildMetadata({
+  title: "Aesthetic Tile | Custom Tile Installers in Groveland & Clermont, FL",
+  description:
+    "Owner-led tile installers serving Groveland, Clermont, Minneola, and Central Florida. Bathrooms, backsplashes, flooring, and outdoor tile with meticulous prep and clean finishes.",
+  path: "/",
+  image: "/images/img/hero-backsplash.png",
+})
 
 export default function Home() {
   return (
@@ -375,22 +384,31 @@ function CallToActionSection() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/"),
+    name: "Aesthetic Tile Home Page FAQs",
+    faqs: HOME_FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {HOME_FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {HOME_FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 

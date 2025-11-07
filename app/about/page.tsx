@@ -1,8 +1,8 @@
 import Image from "next/image"
-import type { Metadata } from "next"
 
 import { ContactForm } from "../_components/ContactForm"
 import { CheckIcon } from "../_components/CheckIcon"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 import { CTA_FEATURES } from "../page"
 
 const STORY_PARAGRAPHS = [
@@ -84,14 +84,13 @@ const FAQS = [
   },
 ]
 
-export const metadata: Metadata = {
-  title: "About Aesthetic Tile: Family-Owned Tile Contractors in Groveland, FL",
+export const metadata = buildMetadata({
+  title: "About Aesthetic Tile | Three Generations of Tile Craftsmanship",
   description:
-    "Family-owned tile experts serving Central Florida. Discover our three-generation legacy of bathroom remodels, kitchen backsplashes, and precision tile installations.",
-  alternates: {
-    canonical: "https://www.aesthetictile-florida.com/about",
-  },
-}
+    "Learn how Aesthetic Tile combines three generations of expertise with owner-led service for bathroom, kitchen, and outdoor tile projects across Central Florida.",
+  path: "/about",
+  image: "/images/AboutUs-NoText.png",
+})
 
 export default function AboutPage() {
   return (
@@ -371,22 +370,31 @@ function CraftsmanshipShowcase() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/about"),
+    name: "Aesthetic Tile About Page FAQs",
+    faqs: FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-5xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-5xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 

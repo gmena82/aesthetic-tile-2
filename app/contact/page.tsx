@@ -1,8 +1,8 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
 import { ContactForm } from "../_components/ContactForm"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 
 const CONTACT_FAQS = [
   {
@@ -76,14 +76,13 @@ const CONTACT_POINTS = [
   },
 ]
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Contact Aesthetic Tile | Free Quote | Groveland, FL",
   description:
     "Reach out to Aesthetic Tile for Central Florida tile projects. Call, email, or submit our contact form for a free estimate on your next installation.",
-  alternates: {
-    canonical: "https://www.aesthetictile-florida.com/contact",
-  },
-}
+  path: "/contact",
+  image: "/images/contact-bg.webp",
+})
 
 export default function ContactPage() {
   return (
@@ -208,22 +207,31 @@ function MapSection() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/contact"),
+    name: "Contact Aesthetic Tile FAQs",
+    faqs: CONTACT_FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {CONTACT_FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {CONTACT_FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 

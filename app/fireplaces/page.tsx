@@ -1,15 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Fireplace Tile Installation & Surrounds | Groveland & Clermont, FL | Aesthetic Tile",
   description:
-    "Transform your living space with custom fireplace tile installation by Aesthetic Tile. Serving Groveland, Clermont, and Orlando. Experts in surrounds, hearths, and feature walls. Get a quote.",
-}
+    "Transform your living space with custom fireplace tile installation by Aesthetic Tile. Serving Groveland, Clermont, and Orlando with statement surrounds, hearths, and feature walls.",
+  path: "/fireplaces",
+  image: "/images/img/fireplace.png",
+})
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
@@ -297,22 +299,31 @@ function SafetyAndMaterialsSection() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/fireplaces"),
+    name: "Aesthetic Tile Fireplace FAQs",
+    faqs: FIREPLACE_FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {FIREPLACE_FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {FIREPLACE_FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 

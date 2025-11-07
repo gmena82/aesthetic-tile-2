@@ -1,18 +1,34 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 import { ContactForm } from "../../_components/ContactForm"
+import { absoluteUrl, buildMetadata, createArticleJsonLd } from "../../_lib/seo"
 
-export const metadata: Metadata = {
+const ARTICLE_PUBLISHED_DATE = "2025-09-20"
+
+export const metadata = buildMetadata({
   title: "Tile Tips Ep. 1 — Why Pre Mixed Grout Is a Smart Upgrade | Aesthetic Tile Blog",
   description:
     "Learn when pre mixed grout outperforms cement grout, where to be cautious, and how to get flawless results with pro-tested installation tips.",
-}
+  path: "/blog/pre-mixed-grout",
+  image: "/images/Premixed-grout.webp",
+  type: "article",
+})
 
 export default function PreMixedGroutPage() {
+  const articleJsonLd = createArticleJsonLd({
+    url: absoluteUrl("/blog/pre-mixed-grout"),
+    headline: "Tile Tips Ep. 1 — Why Pre Mixed Grout Is a Smart Upgrade",
+    description:
+      "Understand the pros, cons, and best practices for pre mixed grout, including where it outperforms traditional cement grouts.",
+    image: "/images/Premixed-grout.webp",
+    datePublished: ARTICLE_PUBLISHED_DATE,
+    authorName: "Aesthetic Tile Team",
+  })
+
   return (
-    <div className="pb-24">
+    <>
+      <div className="pb-24">
       <article className="mx-auto max-w-4xl px-6 pt-24">
         <header className="space-y-4">
           <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
@@ -112,6 +128,8 @@ export default function PreMixedGroutPage() {
         <CallToActionSection />
       </section>
     </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleJsonLd }} />
+    </>
   )
 }
 

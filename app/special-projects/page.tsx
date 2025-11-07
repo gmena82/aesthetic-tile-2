@@ -1,15 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
+import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Custom & Special Tile Projects | Groveland & Clermont, FL | Aesthetic Tile",
   description:
-    "From custom mosaics and floor medallions to outdoor patios and feature walls, Aesthetic Tile delivers special projects across Groveland, Clermont, Winter Garden, and Orlando. Get a custom quote.",
-}
+    "From custom mosaics and medallions to patios, feature walls, and specialty tile work, Aesthetic Tile delivers standout projects across Groveland, Clermont, Winter Garden, and Orlando.",
+  path: "/special-projects",
+  image: "/images/img/special-projects.png",
+})
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
@@ -404,22 +406,31 @@ function ProcessSection() {
 }
 
 function FaqSection() {
+  const faqJsonLd = createFaqJsonLd({
+    url: absoluteUrl("/special-projects"),
+    name: "Aesthetic Tile Special Projects FAQs",
+    faqs: SPECIAL_PROJECTS_FAQS,
+  })
+
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl space-y-10 px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+    <>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl space-y-10 px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {SPECIAL_PROJECTS_FAQS.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+                <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {SPECIAL_PROJECTS_FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
-              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+    </>
   )
 }
 
