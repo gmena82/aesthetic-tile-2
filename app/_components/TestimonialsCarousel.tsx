@@ -16,7 +16,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
   const totalSlides = testimonials.length
   const baseIndex = totalSlides
   const visibleCards = 3
-  const cardGapRem = 0.5 // tuned to match px-3 spacing without drift
+  const cardGapRem = 0
 
   const [currentIndex, setCurrentIndex] = useState(baseIndex)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
