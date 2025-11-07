@@ -99,6 +99,7 @@ export default function AboutPage() {
       <DifferenceSection />
       <AboutStory />
       <WhatWeDoSection />
+      <CraftsmanshipShowcase />
       <AboutCta />
       <FaqSection />
     </div>
@@ -267,17 +268,6 @@ function DifferenceSection() {
             </article>
           ))}
         </div>
-
-        <figure className="group relative overflow-hidden rounded-3xl ring-4 ring-slate-100 transition-all hover:ring-teal-100">
-          <Image
-            src="/images/tile-installer-2.webp"
-            alt="Tile installer carefully working on a project"
-            width={1200}
-            height={800}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-        </figure>
       </div>
     </section>
   )
@@ -347,6 +337,33 @@ function WhatWeDoSection() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function CraftsmanshipShowcase() {
+  return (
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <figure className="group relative overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10 ring-4 ring-slate-100 transition-all hover:ring-teal-200">
+          <Image
+            src="/images/tile-installer-2.webp"
+            alt="Tile installer carefully working on a project"
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent transition-opacity group-hover:from-slate-900/70" />
+          
+          {/* Floating badge */}
+          <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between">
+            <div className="rounded-2xl border-2 border-white/30 bg-white/10 px-6 py-4 backdrop-blur-md">
+              <p className="text-sm font-semibold uppercase tracking-wider text-white/90">Professional Craftsmanship</p>
+              <p className="mt-1 text-2xl font-bold text-white">Every Project, Every Time</p>
+            </div>
+          </div>
+        </figure>
       </div>
     </section>
   )
