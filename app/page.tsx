@@ -52,6 +52,7 @@ export const SERVICE_CARDS = [
       "/bathroom-shower": "/images/img/bathroom-shower.png",
       "/floor-tile-installation": "/images/img/floor-tile.png",
       "/fireplaces": "/images/img/fireplace.png",
+      "/outside-projects": "/images/services/outside-projects.webp",
       "/special-projects": "/images/img/special-projects.png",
     }
 
@@ -60,6 +61,7 @@ export const SERVICE_CARDS = [
       "/bathroom-shower": "Explore Bathroom Tile Solutions",
       "/floor-tile-installation": "See Flooring Installation Services",
       "/fireplaces": "See Custom Fireplace Tile Surrounds",
+      "/outside-projects": "Explore Outdoor Tile Options",
       "/special-projects": "Discover Special Tile Projects in Central Florida",
     }
 
@@ -69,12 +71,6 @@ export const SERVICE_CARDS = [
       cta: ctaMap[service.href] ?? "Learn more",
     }
   }),
-  {
-    label: "Outside Projects",
-    href: "/outside-projects" as const,
-    image: "/images/services/outside-projects.webp",
-    cta: "Explore Outdoor Tile Options",
-  }
 ]
 
 export const CTA_FEATURES = [

@@ -8,13 +8,15 @@ import { CTA_FEATURES, SERVICE_CARDS } from "../page"
 const SERVICE_SECTIONS = SERVICE_CARDS.map((service) => {
   const details: Record<string, string> = {
     "/kitchen-backsplashes":
-      "A new backsplash can transform your kitchen. We install durable, easy-to-clean surfaces that protect your walls and elevate your home’s design.",
+      "A new backsplash can transform your kitchen. We install durable, easy-to-clean surfaces that protect your walls and elevate your home's design.",
     "/bathroom-shower":
       "From spa-like showers to elegant bathroom floors, we create tile installations that combine beauty and functionality for years of enjoyment.",
     "/floor-tile-installation":
       "Meticulous floor tile installation for any room in your home. Expect a level, durable surface that stands up to daily life while enhancing value.",
     "/fireplaces":
       "Turn your fireplace into a statement piece with custom tilework. We handle contemporary, traditional, and statement surrounds with ease.",
+    "/outside-projects":
+      "Extend your living space outdoors with durable tile for patios, lanais, pool decks, and outdoor kitchens. Built to withstand Florida's climate.",
     "/special-projects":
       "From custom mosaics to outdoor patios, we bring creativity and precision to unique tile applications tailored to your vision.",
   }
