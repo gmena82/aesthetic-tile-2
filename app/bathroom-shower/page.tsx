@@ -225,12 +225,12 @@ function WaterproofingAndServicesSection() {
             <div className="absolute left-0 top-0 h-32 w-32 -translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-2xl transition-transform group-hover:scale-150" />
             
             <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-slate-500/10 px-4 py-2 text-sm font-semibold text-slate-700">
+                <span>Full Service</span>
                 <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
                 </svg>
-                Full Service
               </div>
               
               <h3 className="mb-6 text-2xl font-bold text-slate-900">Complete Bathroom Solutions</h3>
