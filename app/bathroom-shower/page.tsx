@@ -48,7 +48,7 @@ const BATHROOM_FAQS = [
 
 export default function BathroomShowerPage() {
   return (
-    <div className="space-y-24 pb-24">
+    <div className="space-y-16 pb-24">
       <HeroSection />
       <MainContentSection />
       <WaterproofingAndServicesSection />
@@ -136,7 +136,7 @@ function MainContentSection() {
 
 function WaterproofingAndServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-50 py-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(148,163,184,0.05),transparent_50%)]" />
       
@@ -396,7 +396,7 @@ function ProcessSection() {
   ]
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/20 to-slate-50 py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/20 to-slate-50 py-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(20,184,166,0.06),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_85%,rgba(148,163,184,0.04),transparent_50%)]" />
       
