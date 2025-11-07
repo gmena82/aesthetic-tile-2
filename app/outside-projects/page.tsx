@@ -234,11 +234,40 @@ function OutdoorHighlightsSection() {
 
 function SeoSection() {
   return (
-    <section className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-      <h3 className="text-3xl font-semibold text-slate-900">Outdoor Tile Pros Serving Lake & West Orange Counties</h3>
-      <p className="text-base leading-7 text-slate-600">
-        Aesthetic Tile installs patios, porches, pool decks, and outdoor kitchens throughout Groveland, Clermont, Winter Garden, Minneola, and the wider Lake County area. We coordinate with builders, screen companies, and designers so your outside projects stay on schedule and on budget. Whether you need porcelain tile that matches your interior floors or a textured surface for a breezy lanai, our owner-led crew delivers the waterproofing, drainage, and detailing Central Florida homes demand.
-      </p>
+    <section className="relative overflow-hidden bg-white py-20">
+      {/* Subtle decorative elements */}
+      <div className="absolute left-0 top-0 h-64 w-64 -translate-x-32 -translate-y-32 rounded-full bg-gradient-to-br from-teal-500/5 to-transparent blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-64 w-64 translate-x-32 translate-y-32 rounded-full bg-gradient-to-br from-slate-500/5 to-transparent blur-3xl" />
+      
+      <div className="relative mx-auto max-w-5xl px-6">
+        <div className="rounded-3xl border-2 border-slate-100 bg-gradient-to-br from-white via-slate-50/30 to-white p-10 shadow-xl shadow-slate-900/5 md:p-12">
+          <div className="mb-6 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-600 ring-1 ring-teal-500/20">
+              Service Area
+            </div>
+          </div>
+          
+          <h3 className="mb-6 text-center text-3xl font-semibold text-slate-900 sm:text-4xl">
+            Outdoor Tile Pros Serving Lake & West Orange Counties
+          </h3>
+          
+          <p className="mx-auto max-w-3xl text-center text-base leading-8 text-slate-600">
+            Aesthetic Tile installs patios, porches, pool decks, and outdoor kitchens throughout Groveland, Clermont, Winter Garden, Minneola, and the wider Lake County area. We coordinate with builders, screen companies, and designers so your outside projects stay on schedule and on budget. Whether you need porcelain tile that matches your interior floors or a textured surface for a breezy lanai, our owner-led crew delivers the waterproofing, drainage, and detailing Central Florida homes demand.
+          </p>
+
+          {/* Location highlights */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {["Groveland", "Clermont", "Winter Garden", "Minneola", "Lake County"].map((location) => (
+              <div
+                key={location}
+                className="rounded-full border border-teal-200 bg-teal-50/50 px-4 py-2 text-sm font-medium text-teal-700 shadow-sm transition-all hover:border-teal-300 hover:bg-teal-100/50 hover:shadow-md"
+              >
+                {location}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
