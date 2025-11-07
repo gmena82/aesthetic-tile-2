@@ -28,10 +28,26 @@ const DIFFERENCE_POINTS = [
 ]
 
 const WHAT_WE_DO = [
-  "Bathroom tile installation—from classic layouts to spa-level showers and statement features.",
-  "Kitchen backsplashes designed for everyday durability and elevated style.",
-  "Tile repairs & rework—crack fixes, grout issues, and water damage remediation.",
-  "Demolition & surface prep—tidy removal and prep that protect your home and set the stage for a flawless install.",
+  {
+    title: "Bathroom Tile Installation",
+    description: "From classic layouts to spa-level showers and statement features.",
+    icon: "bathroom",
+  },
+  {
+    title: "Kitchen Backsplashes",
+    description: "Designed for everyday durability and elevated style.",
+    icon: "kitchen",
+  },
+  {
+    title: "Tile Repairs & Rework",
+    description: "Crack fixes, grout issues, and water damage remediation.",
+    icon: "repair",
+  },
+  {
+    title: "Demolition & Surface Prep",
+    description: "Tidy removal and prep that protect your home and set the stage for a flawless install.",
+    icon: "prep",
+  },
 ]
 
 const FAQS = [
@@ -174,22 +190,70 @@ function DifferenceSection() {
 }
 
 function WhatWeDoSection() {
-  return (
-    <section className="mx-auto max-w-5xl space-y-6 px-6">
-      <div className="space-y-4 text-center">
-        <h2 className="text-3xl font-semibold text-slate-900">What We Do</h2>
-        <p className="mx-auto max-w-3xl text-base leading-7 text-slate-600">
-          We deliver custom tile installation with clean execution and lasting results. Every project receives uncompromising attention to detail—because great tile work is never an accident.
-        </p>
-      </div>
+  const iconMap: Record<string, JSX.Element> = {
+    bathroom: (
+      <svg className="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <rect x="2" y="13" width="20" height="9" rx="2" />
+        <path d="M12 13V7M12 7C10.3431 7 9 5.65685 9 4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4C15 5.65685 13.6569 7 12 7Z" />
+        <path d="M6 22V17M18 22V17" />
+      </svg>
+    ),
+    kitchen: (
+      <svg className="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18M9 3v18" />
+      </svg>
+    ),
+    repair: (
+      <svg className="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
+    prep: (
+      <svg className="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path d="M20 7h-9M14 17H5M17 3v18M10 3v18" />
+        <circle cx="17" cy="7" r="3" />
+        <circle cx="10" cy="17" r="3" />
+      </svg>
+    ),
+  }
 
-      <ul className="grid gap-4 text-left text-sm text-slate-600 sm:grid-cols-2">
-        {WHAT_WE_DO.map((item) => (
-          <li key={item} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            {item}
-          </li>
-        ))}
-      </ul>
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/20 to-slate-50 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(20,184,166,0.06),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_85%,rgba(148,163,184,0.04),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-5xl space-y-10 px-6">
+        <div className="space-y-4 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal-600">
+            Our Services
+          </div>
+          <h2 className="text-3xl font-semibold text-slate-900">What We Do</h2>
+          <p className="mx-auto max-w-3xl text-base leading-7 text-slate-600">
+            We deliver custom tile installation with clean execution and lasting results. Every project receives uncompromising attention to detail—because great tile work is never an accident.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          {WHAT_WE_DO.map((item) => (
+            <article
+              key={item.title}
+              className="group relative overflow-hidden rounded-2xl border-2 border-white bg-white p-6 shadow-lg shadow-slate-900/5 transition-all hover:shadow-xl hover:shadow-teal-500/10"
+            >
+              <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/10 to-teal-600/10 blur-2xl transition-transform group-hover:scale-150" />
+              <div className="relative flex items-start gap-4">
+                <div className="shrink-0 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 p-3 text-white shadow-lg shadow-teal-500/30 transition-transform group-hover:scale-110">
+                  {iconMap[item.icon]}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="text-sm leading-6 text-slate-600">{item.description}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
