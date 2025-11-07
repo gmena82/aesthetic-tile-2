@@ -153,6 +153,10 @@ function PrepAndBenefitsSection() {
       title: "Florida-proof materials",
       description: "Premium mortars, Schluter\u00ae uncoupling, and movement joints built for humidity swings.",
     },
+    {
+      title: "Precision execution",
+      description: "Lippage control systems and laser alignment ensure perfectly level surfaces across large open spaces.",
+    },
   ]
 
   const materialPairings = [
@@ -370,7 +374,7 @@ function ProcessSection() {
           <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-600 ring-1 ring-teal-500/20">
             Our Process
           </div>
-          <h2 className="mt-6 text-3xl font-semibold text-slate-900 sm:text-4xl">Our Installation Process</h2>
+          <h2 className="mt-6 text-3xl font-semibold text-slate-900 sm:text-4xl">Our Floor Installation Process</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600">
             Every flooring project begins with a site visit to measure, inspect existing conditions, and discuss design preferences.
           </p>
