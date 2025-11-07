@@ -188,7 +188,7 @@ const TABS: TabDefinition[] = [
         title: "Dimensional Relief Tile",
         description: "Hand-pressed ceramics with sculpted faces for artisanal depth and soft shadow play.",
         icon: "sparkle",
-        accent: "from-fuchsia-400 to-rose-500",
+        accent: "from-teal-400 to-emerald-500",
       },
       {
         id: "mixed-metal",
@@ -262,7 +262,7 @@ export function PopularAndTrendingSection() {
         const nextIndex = (currentIndex + 1) % TABS.length
         return TABS[nextIndex]!.id
       })
-    }, 8000)
+    }, 6000)
 
     return () => {
       window.clearInterval(timer)
