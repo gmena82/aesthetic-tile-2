@@ -186,7 +186,7 @@ function ProjectsAndMaterialsSection() {
           <p className="mt-3 text-lg text-slate-600">Signature installations, collaboration rituals, and weather-ready systems</p>
         </div>
 
-        <div className="grid gap-10 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+        <div className="grid gap-8 lg:grid-cols-2">
           <article className="relative overflow-hidden rounded-[32px] border border-white/60 bg-white/80 p-10 shadow-2xl shadow-slate-900/10 backdrop-blur">
             <div className="absolute -right-20 -top-16 h-48 w-48 rounded-full bg-gradient-to-br from-teal-400/30 to-emerald-500/10 blur-3xl" aria-hidden />
             <div className="absolute -left-14 bottom-0 h-44 w-44 rounded-full bg-gradient-to-tr from-slate-400/25 to-transparent blur-3xl" aria-hidden />
@@ -228,10 +228,10 @@ function ProjectsAndMaterialsSection() {
             </div>
           </article>
 
-          <div className="relative grid gap-6">
-            <div className="absolute -right-10 top-12 hidden h-28 w-28 rounded-full bg-gradient-to-br from-teal-300/25 to-transparent blur-2xl xl:block" aria-hidden />
+          <div className="relative space-y-6">
+            <div className="absolute -right-10 top-12 hidden h-28 w-28 rounded-full bg-gradient-to-br from-teal-300/25 to-transparent blur-2xl lg:block" aria-hidden />
 
-            <article className="relative overflow-hidden rounded-[28px] border border-teal-200/60 bg-gradient-to-br from-white via-white/80 to-teal-100/30 p-8 shadow-xl shadow-teal-500/10">
+            <article className="relative overflow-hidden rounded-[28px] border-2 border-teal-200/60 bg-gradient-to-br from-white via-white/80 to-teal-100/30 p-8 shadow-xl shadow-teal-500/10">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-700">
                 Material Lab
               </div>
@@ -265,22 +265,30 @@ function ProjectsAndMaterialsSection() {
               </div>
             </article>
 
-            <article className="relative overflow-hidden rounded-[28px] border border-teal-300/40 bg-white/80 p-8 shadow-xl shadow-slate-900/10">
-              <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-700">
-                Outdoor Systems
-              </div>
-              <h3 className="mt-4 text-2xl font-semibold text-slate-900">Engineered for Florida humidity & sun</h3>
-              <ul className="mt-6 space-y-4">
-                {exteriorSystems.map((item) => (
-                  <li key={item} className="flex gap-3 rounded-2xl border border-slate-100 bg-white/70 p-4 text-sm text-slate-700 shadow-sm shadow-slate-900/5">
-                    <span className="mt-1 inline-flex size-2 rounded-full bg-teal-500" aria-hidden />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 flex justify-center">
-                <div className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-600/90">
-                  Groveland • Clermont • Orlando
+            <article className="group relative overflow-hidden rounded-[28px] border-2 border-teal-300/40 bg-gradient-to-br from-slate-900 to-slate-800 p-8 shadow-2xl shadow-teal-500/20">
+              {/* Decorative elements */}
+              <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-teal-500/30 to-transparent blur-2xl" aria-hidden />
+              <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-tl from-teal-400/20 to-transparent blur-2xl" aria-hidden />
+              
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-teal-300 backdrop-blur-sm">
+                  Outdoor Systems
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold text-white">Engineered for Florida humidity & sun</h3>
+                <ul className="mt-6 space-y-4">
+                  {exteriorSystems.map((item, index) => (
+                    <li key={item} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all hover:border-teal-400/30 hover:bg-white/10">
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-sm font-bold text-white shadow-lg shadow-teal-500/30">
+                        {index + 1}
+                      </span>
+                      <span className="text-sm text-slate-200">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 flex justify-center">
+                  <div className="inline-flex items-center gap-3 rounded-full border border-teal-400/30 bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-teal-300">
+                    Groveland • Clermont • Orlando
+                  </div>
                 </div>
               </div>
             </article>
