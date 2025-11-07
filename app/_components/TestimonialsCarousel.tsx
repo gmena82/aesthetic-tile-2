@@ -16,6 +16,13 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
+  // Truncate long testimonials to match Ben Fabish's length (approx 280 characters)
+  const MAX_QUOTE_LENGTH = 280
+  const truncateQuote = (quote: string) => {
+    if (quote.length <= MAX_QUOTE_LENGTH) return quote
+    return quote.slice(0, MAX_QUOTE_LENGTH).trim() + "..."
+  }
+
   // Create a continuous loop by duplicating testimonials
   const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials]
 
@@ -63,7 +70,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
                 <div className="text-lg" aria-label="5 out of 5 stars">
                   <span className="text-amber-400">★★★★★</span>
                 </div>
-                <p className="mt-4 grow text-sm leading-6 text-slate-700">"{testimonial.quote}"</p>
+                <p className="mt-4 grow text-sm leading-6 text-slate-700">"{truncateQuote(testimonial.quote)}"</p>
                 <div className="mt-6">
                   <p className="text-sm font-semibold text-slate-900">{testimonial.author}</p>
                   {testimonial.title && (
