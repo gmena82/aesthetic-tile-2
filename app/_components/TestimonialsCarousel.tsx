@@ -15,7 +15,7 @@ interface TestimonialsCarouselProps {
 export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
   const totalSlides = testimonials.length
   const baseIndex = totalSlides
-  const visibleCards = 3
+  const [visibleCards, setVisibleCards] = useState(3)
   const cardGapRem = 0
 
   const [currentIndex, setCurrentIndex] = useState(baseIndex)
@@ -39,7 +39,26 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
   // Reset base index if testimonial count changes
   useEffect(() => {
     setCurrentIndex(baseIndex)
-  }, [baseIndex])
+  }, [baseIndex, visibleCards])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const updateVisibleCards = () => {
+      const width = window.innerWidth
+      if (width < 768) {
+        setVisibleCards(1)
+      } else if (width < 1280) {
+        setVisibleCards(2)
+      } else {
+        setVisibleCards(3)
+      }
+    }
+
+    updateVisibleCards()
+    window.addEventListener("resize", updateVisibleCards)
+    return () => window.removeEventListener("resize", updateVisibleCards)
+  }, [])
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -88,6 +107,8 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
 
   const translatePercentage = (100 / visibleCards) * currentIndex
   const translateGap = cardGapRem * currentIndex
+  const widthClass =
+    visibleCards === 1 ? "w-full" : visibleCards === 2 ? "w-1/2" : "w-1/3"
 
   return (
     <div className="relative">
@@ -99,7 +120,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
           style={{ transform: `translateX(calc(-${translatePercentage}% - ${translateGap}rem))` }}
         >
           {extendedTestimonials.map((testimonial, index) => (
-            <div key={index} className="w-1/3 flex-shrink-0 px-3">
+            <div key={index} className={`${widthClass} flex-shrink-0 px-3`}>
               <article className="flex h-full flex-col rounded-3xl border border-white bg-white p-6 shadow-lg shadow-slate-900/5">
                 <div className="text-lg" aria-label="5 out of 5 stars">
                   <span className="text-amber-400">★★★★★</span>
