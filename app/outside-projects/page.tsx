@@ -103,7 +103,7 @@ function HeroSection() {
       </div>
 
       <div className="relative mx-auto flex min-h-[55vh] max-w-5xl flex-col justify-center gap-6 px-6 py-24 text-center text-white">
-        <h1 className="text-4xl font-semibold sm:text-5xl">Outdoor Tile Projects Built for Florida Living</h1>
+        <h1 className="text-4xl font-semibold sm:text-5xl">Outdoor Tile Projects Built <br />for Florida Living</h1>
         <p className="text-lg text-white/80">
           Patios, lanais, and pool decks installed across Groveland, Clermont, Winter Garden, and surrounding Central Florida communities.
         </p>
