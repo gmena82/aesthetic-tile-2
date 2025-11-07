@@ -1,6 +1,12 @@
-export function CheckIcon() {
+interface CheckIconProps {
+  className?: string
+}
+
+export function CheckIcon({ className = "" }: CheckIconProps) {
   return (
-    <span className="flex size-8 items-center justify-center rounded-full bg-teal-500/20 text-teal-300">
+    <span
+      className={`flex size-8 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 animate-pulse-3s ${className}`}
+    >
       <svg className="size-4" viewBox="0 0 24 24" aria-hidden>
         <path
           fill="currentColor"
