@@ -3,7 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
 
 import { primaryNav, serviceNav, socialLinks } from "./navigation"
 import { SOCIAL_ICON_MAP } from "./social-icons"
@@ -48,7 +47,6 @@ export function Header() {
   const { isOpen: mobileOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useMobileMenu()
   const hasShadow = useScrollShadow()
   const pathname = usePathname()
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(true)
 
   const servicePaths = serviceNav.map((service) => service.href)
   const isLinkActive = (href: string) => {
@@ -64,11 +62,6 @@ export function Header() {
   const dropdownLinkBase =
     "block rounded-md border border-slate-700/30 px-3 py-2 text-slate-600 transition-all hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700 hover:shadow-[0_0_10px_rgba(20,184,166,0.25)]"
   const dropdownLinkActive = "border-teal-400 bg-teal-50 text-teal-700"
-
-  const handleServiceLinkClick = () => {
-    // Dropdown will close automatically when mouse leaves due to CSS hover rules
-    // No need to manipulate state here
-  }
 
   return (
     <header className={`sticky top-0 z-50 bg-white transition-shadow ${hasShadow ? "shadow-md" : "shadow-sm"}`}>
@@ -171,15 +164,12 @@ export function Header() {
                       </svg>
                     </Link>
                     <span aria-hidden className="absolute left-0 right-0 top-full h-3" />
-                    <div
-                      className={`pointer-events-none absolute left-1/2 top-full min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 ${servicesDropdownOpen ? "group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto" : "hidden"}`}
-                    >
+                    <div className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
                       <ul className="space-y-1 text-sm">
                         {serviceNav.map((service) => (
                           <li key={service.href}>
                             <Link
                               href={service.href}
-                              onClick={handleServiceLinkClick}
                               className={`${dropdownLinkBase} ${
                                 pathname && pathname.startsWith(service.href) ? dropdownLinkActive : ""
                               }`}
