@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const SPECIAL_PROJECTS_FAQS = [
+  {
+    question: "Can you take on unique designs in Clermont (mosaics, medallions, patio inlays)?",
+    answer:
+      "Yes—Clermont specialty work is common; we template and dry‑fit complex layouts first.",
+  },
+  {
+    question: "Can you install exterior tile in Florida?",
+    answer:
+      "With the right tile, mortar, and movement joints—yes; we account for sun and thermal swing.",
+  },
+  {
+    question: "Can you integrate mixed materials (metal, wood, glass)?",
+    answer:
+      "We choose compatible adhesives/grouts and plan joints to manage movement.",
+  },
+  {
+    question: "Will you sign off on slope/drainage for outdoor spaces?",
+    answer:
+      "We check slope and recommend drainage details to protect the assembly.",
+  },
+  {
+    question: "How do you price custom or complex projects?",
+    answer:
+      "We assess scope, materials, and labor during the estimate. Custom work requires extra planning, and we provide transparent pricing upfront.",
+  },
+  {
+    question: "Can you replicate a design I saw online or in a magazine?",
+    answer:
+      "Absolutely. Bring photos or links, and we'll help source materials and recreate the look with our craftsmanship.",
+  },
+]
+
 export default function SpecialProjectsPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -23,8 +56,8 @@ export default function SpecialProjectsPage() {
       <FloridaSection />
       <ProcessSection />
       <TestimonialSection />
-      <FaqSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -214,37 +247,20 @@ function TestimonialSection() {
 }
 
 function FaqSection() {
-  const faqs = [
-    {
-      question: "What kind of special projects do you handle?",
-      answer:
-        "We handle a wide range of custom projects, including outdoor tile for patios and walkways, decorative mosaics, custom-patterned floors, tile accent walls, and any other unique tile application you can envision.",
-    },
-    {
-      question: "Can you work with materials I provide?",
-      answer:
-        "Yes, we are happy to work with tile you have already purchased. We can also provide expert recommendations on the best materials for your specific project to ensure both beauty and long-term durability.",
-    },
-    {
-      question: "How do we start the design process for a custom project?",
-      answer:
-        "It starts with a conversation. Contact us to discuss your ideas, and we will work with you to refine the design, select the right materials, and create a plan to turn your vision into a stunning reality.",
-    },
-  ]
-
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <h2 className="text-center text-3xl font-semibold text-slate-900">Your Special Project Questions Answered</h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-1">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-3 text-base text-slate-600">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {SPECIAL_PROJECTS_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

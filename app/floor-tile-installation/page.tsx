@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const FLOOR_FAQS = [
+  {
+    question: "Do you handle whole‑home flooring in Clermont?",
+    answer:
+      "Yes—Clermont homes get large‑format floors with attention to lippage control and clean transitions.",
+  },
+  {
+    question: "How do you prep slabs or subfloors in Florida?",
+    answer:
+      "Moisture testing, leveling, crack isolation, and movement joints where needed.",
+  },
+  {
+    question: "What's the best grout for high‑traffic areas?",
+    answer:
+      "We recommend premium grout with stain resistance for easier upkeep.",
+  },
+  {
+    question: "Can you tie new tile into existing flooring?",
+    answer:
+      "Yes—we plan transitions so rooms flow and heights match at thresholds.",
+  },
+  {
+    question: "How long does floor tile installation take?",
+    answer:
+      "It depends on square footage and complexity. A standard room might take 2-3 days, while whole-home installations can take a week or more.",
+  },
+  {
+    question: "What types of floor tile do you recommend for Florida homes?",
+    answer:
+      "Porcelain and ceramic are popular for durability and moisture resistance. Large-format and wood-look planks are trending for modern aesthetics.",
+  },
+]
+
 export default function FloorTileInstallationPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -23,8 +56,8 @@ export default function FloorTileInstallationPage() {
       <StylesSection />
       <ProcessSection />
       <TestimonialSection />
-      <FaqSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -224,37 +257,20 @@ function TestimonialSection() {
 }
 
 function FaqSection() {
-  const faqs = [
-    {
-      question: "What type of tile is best for high-traffic areas?",
-      answer:
-        "Porcelain tile is an excellent choice for high-traffic areas like kitchens and entryways. It's incredibly dense, durable, and resistant to scratches, stains, and moisture.",
-    },
-    {
-      question: "How long does it take to install new tile flooring?",
-      answer:
-        "The timeline depends on the size and complexity of the area. An average-sized room (e.g., a kitchen or bathroom) typically takes 2-4 days, which includes demolition of old flooring, surface preparation, and installation.",
-    },
-    {
-      question: "Can you install tile over my existing floor?",
-      answer:
-        "It depends on the existing flooring. Tile can sometimes be installed over a single, well-adhered layer of vinyl or linoleum. However, for the most durable and long-lasting result, we almost always recommend removing the old flooring to prepare a proper, stable subfloor.",
-    },
-  ]
-
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <h2 className="text-center text-3xl font-semibold text-slate-900">Your Flooring Questions Answered</h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-1">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-3 text-base text-slate-600">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {FLOOR_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

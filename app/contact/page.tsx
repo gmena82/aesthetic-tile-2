@@ -4,6 +4,39 @@ import Link from "next/link"
 
 import { ContactForm } from "../_components/ContactForm"
 
+const CONTACT_FAQS = [
+  {
+    question: "Do you offer free estimates in Clermont (\"Claremont\")?",
+    answer:
+      "Yes—submit the form with photos; we'll confirm scope and schedule a site visit.",
+  },
+  {
+    question: "What info should I include to get an accurate quote?",
+    answer:
+      "Room photos, rough dimensions, tile type/size, patterns, and special features.",
+  },
+  {
+    question: "How far out are you booking?",
+    answer:
+      "It varies by scope and material lead times; we'll share the next available start date.",
+  },
+  {
+    question: "Can you work with my designer or builder?",
+    answer:
+      "Yes—coordinating with your team early helps lock layouts and trims before ordering.",
+  },
+  {
+    question: "What's the best way to reach you for urgent questions?",
+    answer:
+      "Call (502) 650-7014 during business hours (Monday–Friday, 9am–5pm) for the fastest response.",
+  },
+  {
+    question: "Do you provide written estimates?",
+    answer:
+      "Yes—after the site visit, we provide a detailed written estimate with scope, materials, and timeline.",
+  },
+]
+
 const CONTACT_POINTS = [
   {
     label: "(502) 650-7014",
@@ -59,6 +92,7 @@ export default function ContactPage() {
       <ContactSection />
       <QualitySection />
       <MapSection />
+      <FaqSection />
     </div>
   )
 }
@@ -168,6 +202,26 @@ function MapSection() {
           referrerPolicy="no-referrer-when-downgrade"
           className="h-[450px] w-full"
         />
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {CONTACT_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

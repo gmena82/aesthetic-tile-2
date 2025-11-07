@@ -64,6 +64,33 @@ export const CTA_FEATURES = [
   "Quality Guarantee",
 ]
 
+const HOME_FAQS = [
+  {
+    question: "What areas do you mainly serve?",
+    answer: "Our team serves Clermont, Groveland, Minneola, Winter Garden, Orlando and nearby communities.",
+  },
+  {
+    question: "What makes your tile installs last in Florida's climate?",
+    answer: "We prioritize prep and waterproofing, then set tile with pro‑grade materials for durability in heat and humidity.",
+  },
+  {
+    question: "How soon can you start my project?",
+    answer: "After your estimate, we provide a realistic start date and timeline based on scope and materials. We aim to do the job right the first time and pride ourselves on quality work.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: "Yes; we carry the licensing and insurance homeowners expect for professional tile work.",
+  },
+  {
+    question: "Do you offer free estimates?",
+    answer: "Yes—submit the form, email office@aesthetictile.com, or call (502) 650-7014. We're available Monday–Friday, 9am–5pm.",
+  },
+  {
+    question: "How long will my tile installation take?",
+    answer: "The timeline depends on size and complexity. A standard kitchen backsplash might take 1-2 days, while a full bathroom or large outdoor patio could take several days.",
+  },
+]
+
 export default function Home() {
   return (
     <div className="space-y-12 pb-16">
@@ -73,6 +100,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -333,6 +361,26 @@ function CallToActionSection() {
           </div>
 
           <ContactForm subject="Aesthetic Tile — New CTA Form Submission" className="backdrop-blur-sm" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {HOME_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

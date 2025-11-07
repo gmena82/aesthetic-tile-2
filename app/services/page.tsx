@@ -25,6 +25,33 @@ const SERVICE_SECTIONS = SERVICE_CARDS.map((service) => {
   }
 })
 
+const SERVICES_FAQS = [
+  {
+    question: "Can I book you specifically for a Clermont home?",
+    answer: "Yes—Clermont is a key service area; we'll confirm access, parking, and HOA rules if relevant.",
+  },
+  {
+    question: "What services do you provide beyond installation?",
+    answer: "Backsplashes, showers, floors, fireplaces, specialty work—plus surface prep and selective repairs.",
+  },
+  {
+    question: "Do you use waterproofing for showers and wet zones?",
+    answer: "Yes—moisture management is mandatory; it protects framing and finishes for the long term.",
+  },
+  {
+    question: "Do you offer material guidance or source tile?",
+    answer: "We can spec materials and coordinate with your preferred suppliers or designers.",
+  },
+  {
+    question: "How soon can you start my project?",
+    answer: "After your estimate, we provide a realistic start date and timeline based on scope and materials.",
+  },
+  {
+    question: "Are you licensed and insured in Florida?",
+    answer: "Yes; we carry the licensing and insurance homeowners expect for professional tile work.",
+  },
+]
+
 export const metadata: Metadata = {
   title: "Tile Installation Services in Central Florida | Aesthetic Tile",
   description:
@@ -36,13 +63,13 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="space-y-24 pb-24">
+    <div className="space-y-16 pb-24">
       <ServicesHero />
       <IntroSection />
-      <StandardsSection />
-      <MaterialsSection />
+      <StandardsAndMaterialsSection />
       <ServicesDetailSection />
       <ServicesCta />
+      <FaqSection />
     </div>
   )
 }
@@ -88,24 +115,23 @@ function IntroSection() {
   )
 }
 
-function StandardsSection() {
+function StandardsAndMaterialsSection() {
   return (
-    <section className="mx-auto max-w-5xl space-y-4 px-6 text-center">
-      <h2 className="text-3xl font-semibold text-slate-900">Our Installation Standards</h2>
-      <p className="text-base leading-7 text-slate-600">
-        We build for longevity by following industry best practices, including applicable TCNA guidelines. We use high-quality mortars, membranes, and grouts, and prioritize critical steps like substrate preparation and waterproofing (Schluter®, Wedi®, and similar systems when specified) to deliver a durable, beautiful finish.
-      </p>
-    </section>
-  )
-}
-
-function MaterialsSection() {
-  return (
-    <section className="mx-auto max-w-5xl space-y-4 px-6 text-center">
-      <h2 className="text-3xl font-semibold text-slate-900">Materials We Work With</h2>
-      <p className="text-base leading-7 text-slate-600">
-        Ceramic, porcelain, natural stone, glass, and large-format tile—we help you choose the right material for each space, balancing aesthetics, performance, and long-term maintenance.
-      </p>
+    <section className="mx-auto max-w-6xl px-6">
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-8 text-left shadow-lg shadow-slate-900/5">
+          <h2 className="text-3xl font-semibold text-slate-900">Our Installation Standards</h2>
+          <p className="text-base leading-7 text-slate-600">
+            We build for longevity by following industry best practices, including applicable TCNA guidelines. We use high-quality mortars, membranes, and grouts, and prioritize critical steps like substrate preparation and waterproofing (Schluter®, Wedi®, and similar systems when specified) to deliver a durable, beautiful finish.
+          </p>
+        </div>
+        <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-8 text-left shadow-lg shadow-slate-900/5">
+          <h2 className="text-3xl font-semibold text-slate-900">Materials We Work With</h2>
+          <p className="text-base leading-7 text-slate-600">
+            Ceramic, porcelain, natural stone, glass, and large-format tile—we help you choose the right material for each space, balancing aesthetics, performance, and long-term maintenance.
+          </p>
+        </div>
+      </div>
     </section>
   )
 }
@@ -192,6 +218,26 @@ function ServicesCta() {
           </div>
 
           <ContactForm subject="Aesthetic Tile — Services Page Inquiry" className="backdrop-blur-sm" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {SERVICES_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const BATHROOM_FAQS = [
+  {
+    question: "Do you remodel bathrooms in Clermont, FL?",
+    answer:
+      "Yes—Clermont baths and showers are a big part of our weekly schedule.",
+  },
+  {
+    question: "Is professional waterproofing really necessary?",
+    answer:
+      "Absolutely—proper membranes and flood‑testing prevent hidden leaks and mold.",
+  },
+  {
+    question: "What's a typical shower timeline?",
+    answer:
+      "Demo to grout typically ranges a few days to a week+ depending on scope and cure times.",
+  },
+  {
+    question: "Can you build curbless or \"wet‑room\" showers?",
+    answer:
+      "Yes—sloped pans, linear drains, and layout planning make curbless safe and beautiful.",
+  },
+  {
+    question: "How do you handle demolition and cleanup?",
+    answer:
+      "We perform tidy demo with dust control and maintain a clean jobsite throughout the project.",
+  },
+  {
+    question: "Can you match my existing tile or help with design?",
+    answer:
+      "Yes—we can match existing materials or provide design guidance for patterns, colors, and trims that fit your space.",
+  },
+]
+
 export default function BathroomShowerPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -23,8 +56,8 @@ export default function BathroomShowerPage() {
       <FeaturesSection />
       <ProcessSection />
       <TestimonialSection />
-      <FaqSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -247,37 +280,20 @@ function TestimonialSection() {
 }
 
 function FaqSection() {
-  const faqs = [
-    {
-      question: "How long does a complete shower retile take?",
-      answer:
-        "A standard walk-in shower retile usually takes 3-5 days. This includes demolition, proper waterproofing, tile setting, and grouting to ensure a long-lasting, high-quality finish.",
-    },
-    {
-      question: "What is the best tile for shower floors?",
-      answer:
-        "For shower floors, we recommend smaller, textured porcelain or ceramic tiles. They provide better slip resistance and allow for the proper slope to the drain. Mosaics are a popular and safe choice.",
-    },
-    {
-      question: "Is professional waterproofing really necessary?",
-      answer:
-        "Yes, it's critical. Proper waterproofing is the most important step in a shower installation. It prevents leaks, water damage, and mold growth behind the tiles, protecting the structure of your home.",
-    },
-  ]
-
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <h2 className="text-center text-3xl font-semibold text-slate-900">Your Questions Answered</h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-1">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-3 text-base text-slate-600">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {BATHROOM_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

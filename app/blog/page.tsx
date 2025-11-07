@@ -56,6 +56,39 @@ const BLOG_POSTS = [
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const BLOG_FAQS = [
+  {
+    question: "Do your tips apply to Clermont homes?",
+    answer:
+      "Yes—our advice accounts for Central Florida humidity, substrates, and local suppliers.",
+  },
+  {
+    question: "How often do you post new articles?",
+    answer:
+      "Periodically—project highlights, maintenance guides, and material myth‑busting.",
+  },
+  {
+    question: "Can I request a topic?",
+    answer:
+      "Absolutely—send questions and we'll consider them for a post.",
+  },
+  {
+    question: "Where can I see projects mentioned in articles?",
+    answer:
+      "We link to our Gallery and include before/after photos when possible.",
+  },
+  {
+    question: "Can I share your blog posts with my contractor or designer?",
+    answer:
+      "Yes! Feel free to share any content that helps with your project planning or decision-making.",
+  },
+  {
+    question: "Do you offer video content in addition to blog posts?",
+    answer:
+      "Yes—check out our Myth Breakers and Tile Tips series for video guides on installation and design.",
+  },
+]
+
 export default function BlogPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -63,6 +96,7 @@ export default function BlogPage() {
       <IntroSection />
       <BlogGridSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -172,6 +206,26 @@ function CallToActionSection() {
           </div>
 
           <ContactForm subject="Aesthetic Tile — New CTA Form Submission" className="backdrop-blur-sm" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {BLOG_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

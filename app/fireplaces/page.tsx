@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const FIREPLACE_FAQS = [
+  {
+    question: "Do you tile fireplaces in Clermont homes?",
+    answer:
+      "Yes—surrounds, hearths, and feature walls for gas/electric units or decorative installs.",
+  },
+  {
+    question: "Are there heat or code considerations?",
+    answer:
+      "We follow manufacturer clearances and use heat‑appropriate setting materials.",
+  },
+  {
+    question: "Can you match my home's style (modern, rustic, Spanish)?",
+    answer:
+      "We propose patterns and trims that complement architecture and furnishings.",
+  },
+  {
+    question: "Do you work with stone slabs or large‑format panels?",
+    answer:
+      "Yes—layout planning and specialized handling ensure crisp seams and alignment.",
+  },
+  {
+    question: "Can you install tile around an existing fireplace insert?",
+    answer:
+      "Absolutely. We measure precisely and work around gas or electric inserts, ensuring proper clearances and a seamless finish.",
+  },
+  {
+    question: "What materials work best for fireplace surrounds?",
+    answer:
+      "Natural stone, porcelain, and ceramic are popular. For heat-exposed areas, we use materials rated for high temperatures.",
+  },
+]
+
 export default function FireplacesPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -23,8 +56,8 @@ export default function FireplacesPage() {
       <MaterialsSection />
       <CustomizationSection />
       <TestimonialSection />
-      <FaqSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -228,37 +261,20 @@ function TestimonialSection() {
 }
 
 function FaqSection() {
-  const faqs = [
-    {
-      question: "What kind of tile can be used on a fireplace?",
-      answer:
-        "Most porcelain, ceramic, natural stone, and glass tiles are suitable for fireplace surrounds as they are heat-resistant. We will help you select a tile that is not only beautiful but also rated for the heat your fireplace will generate.",
-    },
-    {
-      question: "How long does it take to tile a fireplace?",
-      answer:
-        "A typical fireplace tile project takes about 1-3 days to complete. This includes surface preparation, tile installation, and grouting, ensuring a meticulous and professional finish.",
-    },
-    {
-      question: "Do I need to do any prep work before you arrive?",
-      answer:
-        "We recommend clearing furniture and decorations from the area around the fireplace before we begin. Our team will handle all necessary surface preparation, including cleaning and creating a proper bonding surface for the new tile.",
-    },
-  ]
-
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <h2 className="text-center text-3xl font-semibold text-slate-900">Your Fireplace Questions Answered</h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-1">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-3 text-base text-slate-600">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {FIREPLACE_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

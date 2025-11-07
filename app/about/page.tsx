@@ -36,34 +36,34 @@ const WHAT_WE_DO = [
 
 const FAQS = [
   {
-    question: "Do you offer free estimates? How do I get started?",
+    question: "Do you have a team that regularly works in Clermont, FL?",
     answer:
-      "Yes. Submit the Request a Quote form, email office@aesthetictile.com, or call (502) 650-7014. We're available Monday–Friday, 9am–5pm.",
+      "We're in Clermont weekly and our shop borders Clermont and Groveland. Use the About page form or Contact page to schedule an estimate.",
   },
   {
-    question: "What services do you specialize in?",
+    question: "What does three generations of experience change for my project?",
     answer:
-      "Custom tile installation (bathrooms, showers, backsplashes), tile repairs, and demolition/surface prep with a clean, precise process.",
+      "Better prep, tighter layouts, cleaner grout lines, and fewer callbacks—craftsmanship passed down and refined.",
   },
   {
-    question: "Where are you located, and which areas do you serve?",
+    question: "Do you handle demolition and clean job sites?",
     answer:
-      "We’re based at 1195 Greenley Ave in Groveland, FL and proudly serve Central Florida communities including Clermont, Minneola, Winter Garden, and Orlando.",
+      "Yes—tidy demo, dust control, and daily cleanup are part of our process.",
   },
   {
-    question: "How experienced is your team?",
+    question: "Can you help with design guidance (patterns, grout color, trims)?",
     answer:
-      "We’re a third-generation tile family. The craft has been passed down—grandfather to father to two brothers—with more than a decade of hands-on experience.",
-  },
-  {
-    question: "How do you handle demolition, dust control, and cleanup?",
-    answer:
-      "Demolition is part of our service. We perform clean, precise demo and maintain a tidy jobsite so your home stays protected and ready for installation.",
+      "Absolutely—bring inspo photos; we'll recommend layouts, trims, and grout that fit your space and traffic.",
   },
   {
     question: "How long will my tile installation take from start to finish?",
     answer:
       "The timeline depends on the size and complexity of the job. A standard kitchen backsplash might take 1-2 days, while a full bathroom or large outdoor patio could take several days. We always include surface preparation, layout planning, tile setting, grouting and sealing in the schedule to ensure lasting quality.",
+  },
+  {
+    question: "Where are you located, and which areas do you serve?",
+    answer:
+      "We're based at 1195 Greenley Ave in Groveland, FL and proudly serve Central Florida communities including Clermont, Minneola, Winter Garden, and Orlando.",
   },
 ]
 
@@ -83,8 +83,8 @@ export default function AboutPage() {
       <AboutStory />
       <DifferenceSection />
       <WhatWeDoSection />
-      <FaqSection />
       <AboutCta />
+      <FaqSection />
     </div>
   )
 }

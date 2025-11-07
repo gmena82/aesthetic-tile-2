@@ -5,6 +5,39 @@ import type { Metadata } from "next"
 import { ContactForm } from "../_components/ContactForm"
 import { CTA_FEATURES } from "../page"
 
+const GALLERY_FAQS = [
+  {
+    question: "Are these projects from Clermont and nearby?",
+    answer:
+      "Many are from Clermont, Groveland, Minneola, Winter Garden, and greater Orlando.",
+  },
+  {
+    question: "Can you recreate a look I saw here?",
+    answer:
+      "Yes—share the photo; we'll spec tile, grout, trims, and layout to match.",
+  },
+  {
+    question: "How do I get pricing for a style I like?",
+    answer:
+      "Send a photo with rough dimensions; we'll give a ballpark before a formal estimate.",
+  },
+  {
+    question: "Do you photograph completed projects?",
+    answer:
+      "With permission—photos help future clients visualize results and set expectations.",
+  },
+  {
+    question: "Can I visit your showroom or see samples?",
+    answer:
+      "We work on-site and can bring samples to your home during the estimate. Contact us to schedule.",
+  },
+  {
+    question: "How long does a project like these typically take?",
+    answer:
+      "It depends on scope and complexity. A backsplash might take 1-2 days, while a full bathroom could take a week or more.",
+  },
+]
+
 const GALLERY_ITEMS = [
   {
     src: "/images/gallery/bathroom-floor-tile-checkered.webp",
@@ -88,6 +121,7 @@ export default function GalleryPage() {
       <GalleryIntro />
       <GalleryGrid />
       <GalleryFormCta />
+      <FaqSection />
     </div>
   )
 }
@@ -180,7 +214,7 @@ function GalleryFormCta() {
           <div className="space-y-6 text-white">
             <h2 className="text-3xl font-semibold">Inspired by What You See?</h2>
             <p className="text-base leading-7 text-white/80">
-              Let’s bring this level of quality and craftsmanship to your home. Share your project ideas and we’ll build a tailored estimate.
+              Let's bring this level of quality and craftsmanship to your home. Share your project ideas and we'll build a tailored estimate.
             </p>
             <div className="space-y-3">
               {CTA_FEATURES.map((feature) => (
@@ -197,6 +231,26 @@ function GalleryFormCta() {
           </div>
 
           <ContactForm subject="Aesthetic Tile — Gallery Page Inquiry" className="backdrop-blur-sm" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {GALLERY_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

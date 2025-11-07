@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 
 const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee"]
 
+const KITCHEN_FAQS = [
+  {
+    question: "Do you install kitchen backsplashes in Clermont/\"Claremont\"?",
+    answer:
+      "Yes—Clermont homeowners often schedule 1–2‑day backsplash projects with minimal disruption.",
+  },
+  {
+    question: "What tile and grout combos are easiest to clean?",
+    answer:
+      "Porcelain/ceramic with stain‑resistant grout keeps maintenance simple for busy kitchens.",
+  },
+  {
+    question: "Can you work around outlets, windows, and open shelves?",
+    answer:
+      "We template and cut precisely for outlets, returns, and shelves so finishes look seamless.",
+  },
+  {
+    question: "Do I need to remove my range or hood?",
+    answer:
+      "Not always. We protect appliances and coordinate temporary removal only when necessary.",
+  },
+  {
+    question: "How long does a backsplash installation typically take?",
+    answer:
+      "Most standard kitchen backsplash installations are completed within 1-2 days. This includes preparation, setting the tile, and grouting. We work efficiently to minimize disruption to your home.",
+  },
+  {
+    question: "Can you help me choose a design that matches my kitchen?",
+    answer:
+      "Absolutely. With our extensive experience, we can provide recommendations on tile materials, colors, patterns, and layouts that will best complement your existing countertops, cabinets, and overall kitchen style.",
+  },
+]
+
 export default function KitchenBacksplashesPage() {
   return (
     <div className="space-y-24 pb-24">
@@ -22,8 +55,8 @@ export default function KitchenBacksplashesPage() {
       <StylesSection />
       <ProcessSection />
       <TestimonialSection />
-      <FaqSection />
       <CallToActionSection />
+      <FaqSection />
     </div>
   )
 }
@@ -224,37 +257,20 @@ function TestimonialSection() {
 }
 
 function FaqSection() {
-  const faqs = [
-    {
-      question: "How long does a backsplash installation typically take?",
-      answer:
-        "Most standard kitchen backsplash installations are completed within 1-2 days. This includes preparation, setting the tile, and grouting. We work efficiently to minimize disruption to your home.",
-    },
-    {
-      question: "What are the most popular materials for kitchen backsplashes?",
-      answer:
-        "Ceramic and porcelain tiles are classic, durable, and versatile choices. Natural stone like marble or travertine offers a luxurious look, while glass and mosaic tiles can create a unique, modern statement.",
-    },
-    {
-      question: "Can you help me choose a design that matches my kitchen?",
-      answer:
-        "Absolutely. With our extensive experience, we can provide recommendations on tile materials, colors, patterns, and layouts that will best complement your existing countertops, cabinets, and overall kitchen style.",
-    },
-  ]
-
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <h2 className="text-center text-3xl font-semibold text-slate-900">Your Questions Answered</h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-1">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">{faq.question}</h3>
-            <p className="mt-3 text-base text-slate-600">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-slate-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {KITCHEN_FAQS.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-white bg-white p-6 shadow-md shadow-slate-900/5">
+              <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
