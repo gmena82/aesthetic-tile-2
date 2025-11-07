@@ -15,3 +15,18 @@
 .animate-pulse-3s {
   animation: pulse-3s 3s ease-in-out infinite;
 }
+
+@keyframes quote-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(20, 184, 166, 0.2);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(20, 184, 166, 0.45);
+  }
+}
+
+.animate-quote-pulse {
+  animation: quote-pulse 2s ease-in-out infinite;
+}

@@ -302,7 +302,7 @@ function ServicesSection() {
       <div className="mt-8 text-center">
         <Link
           href="/contact"
-          className="relative inline-flex items-center justify-center rounded-full border-2 border-teal-400/60 bg-gradient-to-b from-white/90 via-white/80 to-white/60 px-7 py-3.5 text-base font-semibold text-teal-600 shadow-lg shadow-teal-400/20 backdrop-blur-sm transition-all before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/40 before:to-transparent before:opacity-50 hover:scale-105 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(20,184,166,0.5)] hover:shadow-lg"
+          className="animate-quote-pulse relative inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal-400/70 bg-gradient-to-b from-white/95 via-white/85 to-white/65 px-10 py-4 text-lg font-semibold text-teal-600 shadow-xl shadow-teal-400/30 backdrop-blur-sm transition-transform duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-white/40 before:to-transparent before:opacity-60 hover:scale-110 hover:border-teal-300"
         >
           <span className="relative z-10">Request a Quote</span>
         </Link>
