@@ -72,19 +72,19 @@ function HeroSection() {
         />
         <div className="absolute inset-0 bg-slate-950/70" />
       </div>
-      <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-white">
+      <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
           Professional Tile Flooring Installation in Central Florida
         </h1>
-        <p className="mt-4 max-w-3xl text-lg leading-7 text-white/90">
+        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
           Aesthetic Tile provides comprehensive floor tile installation services across Central Florida, serving
           homeowners in Groveland, Clermont, Winter Garden, Minneola, and the greater Orlando area.
         </p>
-        <p className="mt-3 max-w-3xl text-lg leading-7 text-white/90">
+        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
           We deliver durable, long-lasting floors with precise layouts, clean grout joints, and careful transitions
           from one room to the next.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex justify-center">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-600"
