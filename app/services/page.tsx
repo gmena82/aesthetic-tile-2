@@ -3,6 +3,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 import { ContactForm } from "../_components/ContactForm"
+import { CheckIcon } from "../_components/CheckIcon"
 import { CTA_FEATURES, SERVICE_CARDS } from "../page"
 
 const SERVICE_SECTIONS = SERVICE_CARDS.map((service) => {
@@ -208,11 +209,7 @@ function ServicesCta() {
             <div className="space-y-3">
               {CTA_FEATURES.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
-                  <span className="flex size-8 items-center justify-center rounded-full bg-teal-500/20 text-teal-300">
-                    <svg className="size-4" viewBox="0 0 24 24" aria-hidden>
-                      <path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </span>
+                  <CheckIcon />
                   <span className="text-sm font-semibold text-white/90">{feature}</span>
                 </div>
               ))}
