@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 import { PopularAndTrendingSection } from "./PopularAndTrendingSection"
 
 export const metadata = buildMetadata({
@@ -50,15 +50,27 @@ const KITCHEN_FAQS = [
 ]
 
 export default function KitchenBacksplashesPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/kitchen-backsplashes"),
+    name: "Kitchen Backsplash Installation",
+    description:
+      "Custom kitchen backsplash installation featuring subway tile, mosaics, and designer materials tailored to Central Florida homes.",
+    serviceType: "Kitchen Backsplash Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-24 pb-24">
-      <HeroSection />
-      <MainContentSection />
-      <PopularAndTrendingSection />
-      <ProcessSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-24 pb-24">
+        <HeroSection />
+        <MainContentSection />
+        <PopularAndTrendingSection />
+        <ProcessSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

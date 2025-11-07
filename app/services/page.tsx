@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { ContactForm } from "../_components/ContactForm"
 import { CheckIcon } from "../_components/CheckIcon"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 import { CTA_FEATURES, SERVICE_CARDS } from "../page"
 
 const SERVICE_SECTIONS = SERVICE_CARDS.map((service) => {
@@ -64,15 +64,27 @@ export const metadata = buildMetadata({
 })
 
 export default function ServicesPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/services"),
+    name: "Central Florida Tile Installation Services",
+    description:
+      "Professional tile installation for kitchens, bathrooms, floors, fireplaces, outdoor spaces, and specialty projects throughout Central Florida.",
+    serviceType: "Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-16 pb-24">
-      <ServicesHero />
-      <IntroSection />
-      <StandardsAndMaterialsSection />
-      <ServicesDetailSection />
-      <ServicesCta />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-16 pb-24">
+        <ServicesHero />
+        <IntroSection />
+        <StandardsAndMaterialsSection />
+        <ServicesDetailSection />
+        <ServicesCta />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

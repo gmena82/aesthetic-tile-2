@@ -138,3 +138,130 @@ export function createArticleJsonLd({
   )
 }
 
+interface LocalBusinessJsonLdOptions {
+  name: string
+  description: string
+  url: string
+  telephone: string
+  email: string
+  logo?: string
+  address: {
+    streetAddress: string
+    addressLocality: string
+    addressRegion: string
+    postalCode: string
+    addressCountry: string
+  }
+  sameAs?: string[]
+  serviceArea?: string[]
+}
+
+export function createLocalBusinessJsonLd({
+  name,
+  description,
+  url,
+  telephone,
+  email,
+  logo = "/images/aesthetic-tile-logo.png",
+  address,
+  sameAs = [],
+  serviceArea = [],
+}: LocalBusinessJsonLdOptions) {
+  const base: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": `${url}#home-and-construction-business`,
+    name,
+    description,
+    url,
+    image: absoluteUrl(logo),
+    logo: absoluteUrl(logo),
+    telephone,
+    email,
+    address: {
+      "@type": "PostalAddress",
+      ...address,
+    },
+  }
+
+  if (sameAs.length > 0) {
+    base.sameAs = sameAs
+  }
+
+  if (serviceArea.length > 0) {
+    base.areaServed = serviceArea.map((area) => ({
+      "@type": "City",
+      name: area,
+    }))
+  }
+
+  return JSON.stringify(base, null, 2)
+}
+
+interface WebsiteJsonLdOptions {
+  url: string
+  name: string
+  searchActionUrl?: string
+}
+
+export function createWebsiteJsonLd({ url, name, searchActionUrl }: WebsiteJsonLdOptions) {
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url,
+    name,
+  }
+
+  if (searchActionUrl) {
+    data.potentialAction = {
+      "@type": "SearchAction",
+      target: `${searchActionUrl}{search_term}`,
+      "query-input": "required name=search_term",
+    }
+  }
+
+  return JSON.stringify(data, null, 2)
+}
+
+interface ServiceJsonLdOptions {
+  url: string
+  name: string
+  description: string
+  serviceType: string
+  areaServed?: string[]
+  providerName?: string
+  providerUrl?: string
+}
+
+export function createServiceJsonLd({
+  url,
+  name,
+  description,
+  serviceType,
+  areaServed = [],
+  providerName = SITE_NAME,
+  providerUrl = BASE_URL,
+}: ServiceJsonLdOptions) {
+  return JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name,
+      description,
+      serviceType,
+      url,
+      provider: {
+        "@type": "HomeAndConstructionBusiness",
+        name: providerName,
+        url: providerUrl,
+      },
+      areaServed: areaServed.map((area) => ({
+        "@type": "AdministrativeArea",
+        name: area,
+      })),
+    },
+    null,
+    2,
+  )
+}
+

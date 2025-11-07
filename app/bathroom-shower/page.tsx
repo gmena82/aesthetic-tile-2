@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 
 export const metadata = buildMetadata({
   title: "Bathroom & Shower Tile Installation | Groveland & Clermont, FL | Aesthetic Tile",
@@ -49,15 +49,27 @@ const BATHROOM_FAQS = [
 ]
 
 export default function BathroomShowerPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/bathroom-shower"),
+    name: "Bathroom & Shower Tile Installation",
+    description:
+      "Spa-level bathroom remodels and custom shower tile installations featuring waterproofing systems, niches, and owner-led craftsmanship.",
+    serviceType: "Bathroom Remodeling and Shower Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-16 pb-24">
-      <HeroSection />
-      <MainContentSection />
-      <WaterproofingAndServicesSection />
-      <ProcessSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-16 pb-24">
+        <HeroSection />
+        <MainContentSection />
+        <WaterproofingAndServicesSection />
+        <ProcessSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

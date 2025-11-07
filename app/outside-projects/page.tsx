@@ -2,7 +2,7 @@ import Image from "next/image"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 import { CTA_FEATURES } from "../page"
 
 export const metadata = buildMetadata({
@@ -77,15 +77,27 @@ const CHECKPOINTS = [
 ]
 
 export default function OutsideProjectsPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/outside-projects"),
+    name: "Outdoor Tile Projects",
+    description:
+      "Outdoor tile installation for patios, lanais, pool decks, and outdoor kitchens designed for Florida weather.",
+    serviceType: "Outdoor Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-12 pb-24">
-      <HeroSection />
-      <IntroSection />
-      <OutdoorHighlightsSection />
-      <SeoSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-12 pb-24">
+        <HeroSection />
+        <IntroSection />
+        <OutdoorHighlightsSection />
+        <SeoSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

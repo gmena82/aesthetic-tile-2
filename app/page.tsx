@@ -5,7 +5,7 @@ import { CheckIcon } from "./_components/CheckIcon"
 import { ContactForm } from "./_components/ContactForm"
 import { TestimonialsCarousel } from "./_components/TestimonialsCarousel"
 import { serviceNav } from "./_components/navigation"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "./_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "./_lib/seo"
 
 const HERO_FEATURES = [
   "Five-star service",
@@ -116,16 +116,28 @@ export const metadata = buildMetadata({
 })
 
 export default function Home() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/"),
+    name: "Central Florida Tile Installation",
+    description:
+      "Owner-led tile installation company providing kitchens, bathrooms, flooring, fireplaces, and outdoor tile services across Central Florida.",
+    serviceType: "Residential and Commercial Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-12 pb-16">
-      <HeroSection />
-      <VideoSection />
-      <ExpertiseSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-12 pb-16">
+        <HeroSection />
+        <VideoSection />
+        <ExpertiseSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

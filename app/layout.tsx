@@ -5,6 +5,13 @@ import "./globals.css"
 
 import { Footer } from "./_components/Footer"
 import { Header } from "./_components/Header"
+import { socialLinks } from "./_components/navigation"
+import {
+  BASE_URL,
+  absoluteUrl,
+  createLocalBusinessJsonLd,
+  createWebsiteJsonLd,
+} from "./_lib/seo"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +40,30 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const sameAsLinks = socialLinks.map((link) => link.href)
+  const localBusinessJsonLd = createLocalBusinessJsonLd({
+    name: "Aesthetic Tile",
+    description:
+      "Aesthetic Tile is a third-generation, owner-led tile installation company serving Groveland, Clermont, Minneola, Winter Garden, Orlando, and Central Florida.",
+    url: BASE_URL,
+    telephone: "+1-502-650-7014",
+    email: "office@aesthetictile.com",
+    address: {
+      streetAddress: "1195 Greenley Ave",
+      addressLocality: "Groveland",
+      addressRegion: "FL",
+      postalCode: "34736",
+      addressCountry: "US",
+    },
+    sameAs: sameAsLinks,
+    serviceArea: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
+  const websiteJsonLd = createWebsiteJsonLd({
+    url: BASE_URL,
+    name: "Aesthetic Tile",
+  })
+
   return (
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col bg-white text-slate-800 antialiased`}>
@@ -47,6 +78,8 @@ export default function RootLayout({
             }
           `}
         </Script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
         <Header />
         <main className="grow">{children}</main>
         <Footer />

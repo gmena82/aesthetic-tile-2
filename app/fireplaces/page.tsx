@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 
 export const metadata = buildMetadata({
   title: "Fireplace Tile Installation & Surrounds | Groveland & Clermont, FL | Aesthetic Tile",
@@ -49,14 +49,26 @@ const FIREPLACE_FAQS = [
 ]
 
 export default function FireplacesPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/fireplaces"),
+    name: "Fireplace Tile Installation & Surrounds",
+    description:
+      "Custom fireplace surrounds, hearths, and feature walls featuring tile, stone, and large-format panels installed across Central Florida.",
+    serviceType: "Fireplace Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-24 pb-24">
-      <HeroSection />
-      <MainContentSection />
-      <SafetyAndMaterialsSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-24 pb-24">
+        <HeroSection />
+        <MainContentSection />
+        <SafetyAndMaterialsSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { CheckIcon } from "../_components/CheckIcon"
 import { ContactForm } from "../_components/ContactForm"
-import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
+import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "../_lib/seo"
 
 export const metadata = buildMetadata({
   title: "Custom & Special Tile Projects | Groveland & Clermont, FL | Aesthetic Tile",
@@ -49,15 +49,27 @@ const SPECIAL_PROJECTS_FAQS = [
 ]
 
 export default function SpecialProjectsPage() {
+  const serviceJsonLd = createServiceJsonLd({
+    url: absoluteUrl("/special-projects"),
+    name: "Custom & Specialty Tile Projects",
+    description:
+      "Custom tile projects including mosaics, feature walls, medallions, and outdoor installations crafted for Central Florida homes.",
+    serviceType: "Custom Tile Installation",
+    areaServed: ["Groveland, FL", "Clermont, FL", "Minneola, FL", "Winter Garden, FL", "Orlando, FL"],
+  })
+
   return (
-    <div className="space-y-24 pb-24">
-      <HeroSection />
-      <MainContentSection />
-      <ProjectsAndMaterialsSection />
-      <ProcessSection />
-      <CallToActionSection />
-      <FaqSection />
-    </div>
+    <>
+      <div className="space-y-24 pb-24">
+        <HeroSection />
+        <MainContentSection />
+        <ProjectsAndMaterialsSection />
+        <ProcessSection />
+        <CallToActionSection />
+        <FaqSection />
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
+    </>
   )
 }
 
