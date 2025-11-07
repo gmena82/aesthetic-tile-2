@@ -192,7 +192,7 @@ function PrepAndBenefitsSection() {
           <p className="mt-3 text-lg text-slate-600">Prep technology, designer pairings, and Florida-tested assemblies</p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <div className="relative overflow-hidden rounded-[32px] bg-slate-900 p-10 text-slate-100 shadow-2xl shadow-teal-500/10">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-teal-500/40 to-emerald-500/30 blur-2xl" aria-hidden />
             <div className="absolute -left-24 bottom-[-40px] h-48 w-48 rounded-full bg-gradient-to-br from-slate-700/40 to-slate-900/0 blur-3xl" aria-hidden />
@@ -296,22 +296,112 @@ function PrepAndBenefitsSection() {
 }
 
 function ProcessSection() {
+  const steps = [
+    {
+      number: 1,
+      title: "Consultation",
+      description: "Site visit to measure, inspect existing conditions, and discuss design preferences and materials.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+        </svg>
+      ),
+    },
+    {
+      number: 2,
+      title: "Substrate Preparation",
+      description: "Surface corrections, moisture testing, grinding, and patching for a perfectly level foundation.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+        </svg>
+      ),
+    },
+    {
+      number: 3,
+      title: "Membrane Installation",
+      description: "Uncoupling membrane or crack isolation systems installed where required for long-term protection.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      ),
+    },
+    {
+      number: 4,
+      title: "Layout Planning",
+      description: "Dry-fit focal areas and plan cuts to minimize waste and ensure balanced, professional appearance.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 9h18M9 3v18" />
+        </svg>
+      ),
+    },
+    {
+      number: 5,
+      title: "Tile Setting",
+      description: "Precise installation with lippage control systems and alignment tools for flawless results.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+        </svg>
+      ),
+    },
+    {
+      number: 6,
+      title: "Grouting & Sealing",
+      description: "Professional grouting, cleanup, and sealer application to protect your investment.",
+      icon: (
+        <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+      ),
+    },
+  ]
+
   return (
-    <section className="mx-auto max-w-6xl px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-        <h2 className="text-center text-3xl font-semibold text-slate-900">Our Installation Process</h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base text-slate-600">
-          Every project begins with a site visit to measure, inspect existing conditions, and discuss design
-          preferences.
-        </p>
-        <ol className="mx-auto mt-6 max-w-3xl list-decimal space-y-2 pl-6 text-base text-slate-700">
-          <li>Consultation and materials planning for your home renovation</li>
-          <li>Substrate preparation and surface corrections</li>
-          <li>Membrane installation where required for crack prevention</li>
-          <li>Layout planning to minimize awkward cuts and transitions</li>
-          <li>Setting and alignment with lippage control methods</li>
-          <li>Grout sealing and final detailing</li>
-        </ol>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50/20 to-slate-50 py-16">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(20,184,166,0.06),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_85%,rgba(148,163,184,0.04),transparent_50%)]" />
+      
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-teal-600 ring-1 ring-teal-500/20">
+            Our Process
+          </div>
+          <h2 className="mt-6 text-3xl font-semibold text-slate-900 sm:text-4xl">Our Installation Process</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600">
+            Every flooring project begins with a site visit to measure, inspect existing conditions, and discuss design preferences.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="group relative overflow-hidden rounded-2xl border-2 border-white bg-white p-6 shadow-lg shadow-slate-900/5 transition-all hover:-translate-y-1 hover:border-teal-100 hover:shadow-xl hover:shadow-teal-500/10"
+            >
+              {/* Decorative gradient */}
+              <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br from-teal-400/10 to-teal-600/10 blur-2xl transition-transform group-hover:scale-150" />
+              
+              <div className="relative">
+                {/* Number badge */}
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 text-lg font-bold text-white shadow-lg shadow-teal-500/30">
+                    {step.number}
+                  </div>
+                  <div className="rounded-xl bg-slate-50 p-2 text-teal-600 ring-1 ring-slate-200 transition-all group-hover:bg-teal-50 group-hover:ring-teal-200">
+                    {step.icon}
+                  </div>
+                </div>
+
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">{step.title}</h3>
+                <p className="text-sm leading-6 text-slate-600">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
