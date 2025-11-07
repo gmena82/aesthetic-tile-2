@@ -24,6 +24,7 @@ export const serviceNav: NavItem[] = [
   { label: "Bathroom & Shower", href: "/bathroom-shower" },
   { label: "Floor Tile Installation", href: "/floor-tile-installation" },
   { label: "Fireplaces", href: "/fireplaces" },
+  { label: "Outside Projects", href: "/outside-projects" },
   { label: "Special Projects", href: "/special-projects" },
 ]
 

@@ -269,8 +269,9 @@ function ServicesSection() {
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {SERVICE_CARDS.map((service) => (
-          <article
+          <Link
             key={service.href}
+            href={service.href}
             className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl"
           >
             <div className="relative h-64 overflow-hidden">
@@ -288,7 +289,7 @@ function ServicesSection() {
               </div>
             </div>
             <div className="flex items-center justify-between gap-3 px-5 py-4 text-sm font-medium text-teal-600">
-              <Link href={service.href} className="inline-flex items-center gap-2">
+              <span className="inline-flex items-center gap-2">
                 <span>{service.cta}</span>
                 <svg className="size-4" viewBox="0 0 20 20" aria-hidden>
                   <path
@@ -296,9 +297,9 @@ function ServicesSection() {
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                   />
                 </svg>
-              </Link>
+              </span>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
 
