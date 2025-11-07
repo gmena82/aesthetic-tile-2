@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -47,6 +49,11 @@ export function Header() {
   const { isOpen: mobileOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useMobileMenu()
   const hasShadow = useScrollShadow()
   const pathname = usePathname()
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
+
+  useEffect(() => {
+    setServicesDropdownOpen(false)
+  }, [pathname])
 
   const servicePaths = serviceNav.map((service) => service.href)
   const isLinkActive = (href: string) => {
@@ -150,10 +157,22 @@ export function Header() {
                 }
 
                 return (
-                  <div key={item.href} className="group relative">
+                  <div
+                    key={item.href}
+                    className="relative"
+                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                    onFocusCapture={() => setServicesDropdownOpen(true)}
+                    onBlurCapture={(event) => {
+                      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                        setServicesDropdownOpen(false)
+                      }
+                    }}
+                  >
                     <Link
                       href={item.href}
                       className={`${navButtonBase} ${servicesActive ? navButtonActive : ""}`}
+                      onClick={() => setServicesDropdownOpen((prev) => !prev)}
                     >
                       {item.label}
                       <svg className="size-3" viewBox="0 0 20 20" aria-hidden>
@@ -164,15 +183,12 @@ export function Header() {
                       </svg>
                     </Link>
                     <span aria-hidden className="absolute left-0 right-0 top-full h-3" />
-                    <div 
-                      className="pointer-events-none absolute left-1/2 top-full hidden min-w-[16rem] -translate-x-1/2 translate-y-2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition duration-150 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto"
-                      onMouseLeave={(e) => {
-                        // Force the group to lose hover state by triggering a blur
-                        const parent = e.currentTarget.parentElement
-                        if (parent) {
-                          parent.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
-                        }
-                      }}
+                    <div
+                      className={`absolute left-1/2 top-full min-w-[16rem] -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-3 shadow-xl transition-all duration-150 ${
+                        servicesDropdownOpen
+                          ? "pointer-events-auto translate-y-2 opacity-100"
+                          : "pointer-events-none -translate-y-1 opacity-0"
+                      }`}
                     >
                       <ul className="space-y-1 text-sm">
                         {serviceNav.map((service) => (
@@ -182,13 +198,7 @@ export function Header() {
                               className={`${dropdownLinkBase} ${
                                 pathname && pathname.startsWith(service.href) ? dropdownLinkActive : ""
                               }`}
-                              onClick={(e) => {
-                                // Close dropdown when link is clicked
-                                const dropdown = e.currentTarget.closest('.group')
-                                if (dropdown) {
-                                  dropdown.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
-                                }
-                              }}
+                              onClick={() => setServicesDropdownOpen(false)}
                             >
                               {service.label}
                             </Link>
