@@ -36,12 +36,23 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     return () => clearInterval(timer)
   }, [isAutoPlaying])
 
-  // Reset to start seamlessly when we reach the end
+  // Seamlessly loop back when reaching the end
   useEffect(() => {
+    // When we've scrolled past the first copy of testimonials, instantly jump back without transition
     if (currentIndex >= testimonials.length * 2) {
-      setTimeout(() => {
-        setCurrentIndex(testimonials.length)
-      }, 500) // Wait for transition to complete
+      // Disable transition briefly
+      const timer = setTimeout(() => {
+        const container = document.querySelector('[data-carousel-track]') as HTMLElement
+        if (container) {
+          container.style.transition = 'none'
+          setCurrentIndex(testimonials.length)
+          // Re-enable transition after jump
+          setTimeout(() => {
+            container.style.transition = 'transform 500ms ease-out'
+          }, 50)
+        }
+      }, 0)
+      return () => clearTimeout(timer)
     }
   }, [currentIndex, testimonials.length])
 
@@ -61,6 +72,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     <div className="relative">
       <div className="overflow-hidden">
         <div
+          data-carousel-track
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(calc(-${currentIndex * (100 / 3)}% - ${currentIndex * 0.5}rem))` }}
         >
@@ -108,10 +120,10 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
                   setIsAutoPlaying(false)
                   setTimeout(() => setIsAutoPlaying(true), 10000)
                 }}
-                className={`size-3 rounded-full transition-all ${
+                className={`size-3 transition-all ${
                   isActive
-                    ? "w-8 bg-teal-600"
-                    : "bg-slate-300 hover:bg-slate-400"
+                    ? "border-2 border-teal-600 bg-transparent"
+                    : "border-2 border-slate-300 bg-transparent hover:border-slate-400"
                 }`}
                 aria-label={`Go to testimonial set ${index + 1}`}
                 aria-current={isActive}
