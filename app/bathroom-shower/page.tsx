@@ -217,6 +217,34 @@ function WaterproofingAndServicesSection() {
                   </div>
                 </div>
               </div>
+
+              <div className="mt-6 space-y-3 rounded-xl bg-gradient-to-r from-teal-50/50 to-transparent p-4">
+                <h4 className="font-semibold text-slate-900">Waterproofing Systems We Use</h4>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Schluter®-KERDI systems
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Wedi® building panels
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    RedGard® liquid membranes
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-teal-500">✓</span>
+                    Custom steam shower enclosures
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-slate-500/10 p-4">
+                <p className="text-center text-sm font-medium text-slate-700">
+                  💧 Florida humidity requires expert waterproofing—we've got it covered
+                </p>
+              </div>
             </div>
           </div>
 
