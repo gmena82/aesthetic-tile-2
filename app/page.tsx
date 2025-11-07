@@ -254,14 +254,16 @@ function ServicesSection() {
             key={service.href}
             className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl"
           >
-            <div className="relative h-64">
-              <Image
-                src={service.image}
-                alt={service.label}
-                fill
-                className="object-cover transition duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+            <div className="relative h-64 overflow-hidden">
+              <div className="relative h-full w-full transition duration-300 group-hover:scale-105">
+                <Image
+                  src={service.image}
+                  alt={service.label}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+              </div>
               <div className="absolute bottom-4 left-4 right-4 text-lg font-semibold text-white">
                 {service.label}
               </div>
