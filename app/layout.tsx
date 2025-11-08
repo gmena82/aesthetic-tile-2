@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 
+import { BackToTop } from "./_components/BackToTop"
 import { Footer } from "./_components/Footer"
 import { Header } from "./_components/Header"
 import { socialLinks } from "./_components/navigation"
@@ -83,6 +84,7 @@ export default function RootLayout({
         <Header />
         <main className="grow">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   )
