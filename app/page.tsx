@@ -159,7 +159,7 @@ function HeroSection() {
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/50 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur shadow-lg shadow-teal-400/20">
           <span>Aesthetic Tile</span>
           <span className="text-white/60">•</span>
-          <span>Claremont & nearby</span>
+          <span>Clermont & nearby</span>
         </div>
 
         <div className="max-w-3xl space-y-6">
