@@ -7,15 +7,26 @@ export function BackToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 500) {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      const scrollPosition = window.scrollY
+      const threshold = scrollHeight * 0.75
+
+      if (scrollPosition > threshold) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
       }
     }
 
+    // Initial check
+    toggleVisibility()
+
     window.addEventListener("scroll", toggleVisibility)
-    return () => window.removeEventListener("scroll", toggleVisibility)
+    window.addEventListener("resize", toggleVisibility)
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility)
+      window.removeEventListener("resize", toggleVisibility)
+    }
   }, [])
 
   const scrollToTop = () => {
@@ -29,7 +40,7 @@ export function BackToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-50 flex size-14 items-center justify-center rounded-2xl border-2 border-teal-400/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-teal-400 shadow-2xl shadow-teal-500/30 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-teal-300 hover:shadow-teal-500/50 ${
+      className={`group fixed bottom-8 right-8 z-50 flex size-14 items-center justify-center rounded-2xl border-2 border-teal-400/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-teal-400 shadow-2xl shadow-teal-500/30 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-teal-300 hover:shadow-teal-500/50 animate-quote-pulse ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 pointer-events-none"
       }`}
       aria-label="Back to top"
@@ -52,7 +63,7 @@ export function BackToTop() {
       </svg>
 
       {/* Ripple effect on hover */}
-      <span className="absolute inset-0 rounded-2xl border-2 border-teal-400/40 opacity-0 transition-all duration-500 hover:scale-150 hover:opacity-100" />
+      <span className="absolute inset-0 rounded-2xl border-2 border-teal-400/40 opacity-0 transition-all duration-500 group-hover:scale-150 group-hover:opacity-100" />
     </button>
   )
 }
