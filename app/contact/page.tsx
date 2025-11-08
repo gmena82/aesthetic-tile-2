@@ -6,7 +6,7 @@ import { absoluteUrl, buildMetadata, createFaqJsonLd } from "../_lib/seo"
 
 const CONTACT_FAQS = [
   {
-    question: "Do you offer free estimates in Clermont (\"Claremont\")?",
+    question: "Do you offer free estimates in Clermont?",
     answer:
       "Yes—submit the form with photos; we'll confirm scope and schedule a site visit.",
   },

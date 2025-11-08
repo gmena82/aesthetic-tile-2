@@ -117,12 +117,9 @@ function HeroSection() {
       </div>
 
       <div className="relative mx-auto flex min-h-[55vh] max-w-5xl flex-col justify-center gap-6 px-6 py-24 text-center text-white">
-        <h1 className="text-4xl font-semibold sm:text-5xl">Outdoor Tile Projects Built <br />for Florida Living</h1>
-        <p className="text-lg text-white/80">
-          Patios, lanais, and pool decks installed across Groveland, Clermont, Winter Garden, and surrounding Central Florida communities.
-        </p>
-        <p className="text-lg text-white/70">
-          We handle drainage, waterproofing, and slip resistance so your outdoor space looks incredible and performs through rainstorms, humidity, and year-round entertaining.
+        <h1 className="text-4xl font-semibold sm:text-5xl">Outdoor Tile Installation in Clermont & Groveland, FL</h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile installs outdoor tile for patios, lanais, pool decks, and outdoor kitchens across Clermont, Groveland, and Lake County. Florida's sun, rain, and humidity demand tile that can handle thermal expansion, proper drainage, and slip resistance. We use porcelain rated for exteriors, install anti-fracture membranes, plan movement joints, and coordinate slope to prevent standing water. Whether you're extending your indoor aesthetic outdoors or refreshing an existing concrete slab, our owner-led crew delivers installations designed to perform beautifully through years of Central Florida weather.
         </p>
       </div>
     </section>

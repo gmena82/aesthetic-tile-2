@@ -88,16 +88,10 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Custom Bathroom and Shower Installation in Central Florida
+          Bathroom & Shower Tile Installation in Clermont & Groveland, FL
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
-          Aesthetic Tile provides expert bathroom remodeling and shower installation services across Lake County and the
-          greater Orlando area, including Groveland, Clermont, Minneola, and Winter Garden. We transform master baths,
-          guest baths, and showers with precision installations built to last.
-        </p>
-        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
-          We understand the challenges of Florida humidity. Our installation and waterproofing methods ensure your
-          bathroom remains durable, beautiful, and mold-free.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile delivers expert bathroom and shower installations across Clermont, Groveland, and Lake County. Whether you're remodeling a master bath or building a new walk-in shower, we prioritize waterproofing, proper slope, and clean tile layouts that perform beautifully for decades. Our owner-led crew uses Schluter and Wedi systems to prevent leaks, coordinates niche placement and trim details, and installs tile with precision cuts around fixtures. Florida humidity demands robust prep—we deliver installations built to last in Central Florida's climate.
         </p>
         <div className="mt-6 flex justify-center">
           <Link

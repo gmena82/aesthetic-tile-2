@@ -18,7 +18,7 @@ const CTA_FEATURES = ["Free Estimates", "Licensed & Insured", "Quality Guarantee
 
 const KITCHEN_FAQS = [
   {
-    question: "Do you install kitchen backsplashes in Clermont/\"Claremont\"?",
+    question: "Do you install kitchen backsplashes in Clermont?",
     answer:
       "Yes—Clermont homeowners often schedule 1–2‑day backsplash projects with minimal disruption.",
   },
@@ -89,13 +89,10 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Expert Kitchen Backsplash Installation <br />in Central Florida
+          Kitchen Backsplash Installation in Clermont & Groveland, FL
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
-          Aesthetic Tile specializes in custom kitchen backsplash installations across Groveland, Clermont, Winter Garden, Minneola, and the greater Orlando area. A well-planned backsplash ties together countertops, cabinetry, and flooring—delivering both protection and standout design.
-        </p>
-        <p className="mx-auto mt-3 max-w-2xl text-lg leading-7 text-white/90">
-          We understand the demands of Florida homes, from ensuring robust waterproofing against humidity to selecting durable, stain-resistant materials that perform beautifully.
+          Aesthetic Tile installs custom kitchen backsplashes for homeowners in Clermont, Groveland, and throughout Lake County. A professionally installed backsplash protects walls from splashes and stains while adding lasting style to your kitchen. We work with ceramic, porcelain, glass, and natural stone tile—coordinating patterns, grout colors, and trim to match your countertops and cabinetry. From classic subway tile to intricate mosaics, our owner-led team ensures precise cuts around outlets, clean grout lines, and a seamless finish that elevates your space.
         </p>
         <div className="mt-6 flex justify-center">
           <Link

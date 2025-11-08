@@ -88,15 +88,10 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Professional Tile Flooring Installation in Central Florida
+          Floor Tile Installation in Clermont & Groveland, FL
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
-          Aesthetic Tile provides comprehensive floor tile installation services across Central Florida, serving
-          homeowners in Groveland, Clermont, Winter Garden, Minneola, and the greater Orlando area.
-        </p>
-        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
-          We deliver durable, long-lasting floors with precise layouts, clean grout joints, and careful transitions
-          from one room to the next.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile provides professional floor tile installation for homes in Clermont, Groveland, and Central Florida. We install porcelain, ceramic, and natural stone floors with meticulous attention to lippage control, level surfaces, and seamless transitions between rooms. From kitchens and entryways to whole-home flooring projects, our owner-led team ensures proper substrate preparation, movement joints where needed, and durable finishes that stand up to daily wear. Expect clean grout lines, precision cuts, and floors that enhance your home's value and comfort.
         </p>
         <div className="mt-6 flex justify-center">
           <Link

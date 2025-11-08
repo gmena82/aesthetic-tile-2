@@ -87,16 +87,10 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Custom Fireplace Tile Installation in Central Florida
+          Fireplace Tile Installation in Clermont & Groveland, FL
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
-          Aesthetic Tile designs and installs stunning tiled fireplaces for homeowners across Central Florida,
-          including Groveland, Clermont, Winter Garden, Minneola, and the greater Orlando area. From clean modern
-          surrounds to statement feature walls, we build focal points that elevate your space.
-        </p>
-        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
-          While Florida winters are mild, a beautifully tiled fireplace provides year-round ambiance and a dramatic
-          centerpiece for your Lake County home.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile designs and installs custom fireplace surrounds for homeowners in Clermont, Groveland, and Lake County. Whether you envision a modern porcelain feature wall, a classic stone hearth, or a statement mosaic focal point, our owner-led team transforms your fireplace into a centerpiece that complements your home's style. We handle heat-rated materials, precise layout planning around gas or electric inserts, and seamless integration with mantels and trim. Even in mild Florida winters, a beautifully tiled fireplace adds year-round ambiance and lasting elegance to your living space.
         </p>
         <div className="mt-6 flex justify-center">
           <Link

@@ -88,16 +88,10 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[62vh] max-w-6xl flex-col justify-center px-6 py-32 text-center text-white">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Custom Special Projects in Central Florida
+          Custom Tile Projects in Clermont & Groveland, FL
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-white/90">
-          Aesthetic Tile brings unique tile ideas to life across Central Florida, including Groveland, Clermont, Winter
-          Garden, Minneola, and the greater Orlando area. From one-of-a-kind mosaics and floor medallions to exterior
-          patios and signature feature walls, we turn concepts into precise, lasting installations.
-        </p>
-        <p className="mx-auto mt-3 max-w-3xl text-lg leading-7 text-white/90">
-          Complex layouts, mixed materials, and specialty environments are handled with care so your creative vision
-          performs beautifully indoors or outdoors.
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-white/90">
+          Aesthetic Tile brings unique tile visions to life across Clermont, Groveland, and Central Florida. From custom floor medallions and intricate mosaics to exterior accents and specialty feature walls, we handle complex layouts and mixed materials with precision. Our owner-led approach ensures creative designs are installed with the same technical rigor as standard projects—proper waterproofing, expansion joints, and substrate prep so your one-of-a-kind installation performs beautifully indoors or outdoors. If you have a tile idea that requires extra planning and craftsmanship, we're ready to collaborate.
         </p>
         <div className="mt-6 flex justify-center">
           <Link
