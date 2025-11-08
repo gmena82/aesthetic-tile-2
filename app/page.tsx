@@ -164,7 +164,7 @@ function HeroSection() {
 
         <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Professional Tile Installation in Groveland and Central Florida
+            Professional Tile Installation in Clermont and Central Florida
           </h1>
           <p className="text-lg leading-7 text-white/90">
             Serving homeowners across Central Florida, including Groveland, Clermont, Minneola, Winter Garden, and the greater Orlando
