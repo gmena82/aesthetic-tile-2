@@ -52,7 +52,7 @@ export default function MythBreakersEpisode1() {
           <div className="my-8 overflow-hidden rounded-2xl">
             <Image
               src="/images/Tile-Shop-Photoshoot.webp"
-              alt="Brad presenting tile selections during a photoshoot at The Tile Shop in Orlando"
+              alt="Brad from Aesthetic Tile presenting tile selections during a photoshoot at The Tile Shop in Orlando, FL"
               width={800}
               height={533}
               className="w-full"

@@ -78,7 +78,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Contemporary tile fireplace feature wall installation in Clermont, FL"
+          alt="Contemporary tile fireplace feature wall installation in Clermont, FL living room by Aesthetic Tile"
           fill
           priority
           className="object-cover"
@@ -112,7 +112,7 @@ function MainContentSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/gallery/fireplace-project-square-tile.webp"
-            alt="Custom porcelain fireplace surround installation in Groveland, FL living room"
+            alt="Custom porcelain fireplace surround tile installation in Groveland, FL living room by Aesthetic Tile"
             width={720}
             height={480}
             className="h-full w-full object-cover"
@@ -339,7 +339,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Beautiful dark wood kitchen with tile backsplash"
+          alt="Beautiful dark wood kitchen with porcelain tile backsplash in Central Florida home"
           fill
           className="object-cover"
         />

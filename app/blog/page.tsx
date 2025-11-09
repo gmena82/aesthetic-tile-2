@@ -31,7 +31,7 @@ const BLOG_POSTS = [
       "Learn when pre mixed grout outperforms cement grout, where to be cautious, and how to get flawless results with pro-tested installation tips.",
     date: "September 20, 2025",
     image: "/images/Premixed-grout.webp",
-    imageAlt: "Installer applying pre mixed grout to a mosaic backsplash",
+    imageAlt: "Professional installer applying pre-mixed grout to a mosaic kitchen backsplash tile installation in Central Florida",
     cta: "Read Our Pre Mixed Grout Guide",
   },
   {
@@ -41,7 +41,7 @@ const BLOG_POSTS = [
       "We're thrilled to share how our investment in professional marketing and video content creation is transforming our business and attracting higher-quality projects.",
     date: "September 15, 2025",
     image: "/images/Tile-Shop-Feature.png",
-    imageAlt: "Professional video production set inside the Aesthetic Tile shop",
+    imageAlt: "Professional video production set inside the Aesthetic Tile showroom in Groveland, FL",
     cta: "Read Our Marketing Success Story",
   },
   {
@@ -51,7 +51,7 @@ const BLOG_POSTS = [
       "We're opening our second location in Groveland, Florida, and inviting our newest neighbors to stop by, share their projects, and grow with us.",
     date: "August 15, 2025",
     image: "/images/Groveland.webp",
-    imageAlt: "Aesthetic Tile team celebrating the Groveland location announcement",
+    imageAlt: "Aesthetic Tile team celebrating the new Groveland, FL location announcement",
     cta: "Read About Our Groveland Expansion",
   },
 ]
@@ -109,7 +109,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/Tile-Shop-Feature.png"
-          alt="Feature display inside the Aesthetic Tile showroom"
+          alt="Tile selection display inside the Aesthetic Tile showroom in Groveland, FL"
           fill
           priority
           className="object-cover"
@@ -182,7 +182,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Beautiful dark wood kitchen with tile backsplash"
+          alt="Beautiful dark wood kitchen with porcelain tile backsplash installation in Central Florida home"
           fill
           className="object-cover"
         />

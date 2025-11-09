@@ -47,7 +47,7 @@ export default function PreMixedGroutPage() {
           <div className="my-8 overflow-hidden rounded-2xl">
             <Image
               src="/images/Premixed-grout.webp"
-              alt="Installer applying pre mixed grout to a mosaic backsplash"
+              alt="Professional installer applying pre-mixed grout to a mosaic kitchen backsplash tile installation in Central Florida"
               width={800}
               height={533}
               className="w-full"

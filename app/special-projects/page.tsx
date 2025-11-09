@@ -79,7 +79,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Custom tile feature project in Groveland, Florida"
+          alt="Custom tile feature project installation in Groveland, FL home by Aesthetic Tile"
           fill
           priority
           className="object-cover"
@@ -113,7 +113,7 @@ function MainContentSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/gallery/fireplace-tile-stone.webp"
-            alt="Custom fireplace tile installation in Clermont, Florida"
+            alt="Custom chevron marble fireplace tile installation in Clermont, FL living room by Aesthetic Tile"
             width={720}
             height={480}
             className="h-full w-full object-cover"
@@ -446,7 +446,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Luxury kitchen tile backsplash installation in Orlando, Florida"
+          alt="Luxury porcelain kitchen tile backsplash installation in Orlando, FL home by Aesthetic Tile"
           fill
           className="object-cover"
         />

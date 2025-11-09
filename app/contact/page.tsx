@@ -102,7 +102,7 @@ function ContactHero() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Contact Aesthetic Tile for a free quote"
+          alt="Contact Aesthetic Tile for a free tile installation quote in Clermont and Groveland, FL"
           fill
           priority
           className="object-cover"
@@ -156,7 +156,7 @@ function QualitySection() {
         <div className="relative overflow-hidden rounded-3xl shadow-lg">
           <Image
             src="/images/admiring-backsplash.webp"
-            alt="Homeowner admiring a newly installed tile backsplash"
+            alt="Homeowner admiring a newly installed kitchen tile backsplash in Central Florida home"
             width={800}
             height={640}
             className="h-full w-full object-cover"

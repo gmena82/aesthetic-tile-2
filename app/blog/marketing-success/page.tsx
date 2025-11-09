@@ -48,7 +48,7 @@ export default function MarketingSuccessPage() {
             <div className="my-8 overflow-hidden rounded-2xl">
               <Image
                 src="/images/Tile-Shop-Feature.png"
-                alt="Professional video production set inside the Aesthetic Tile shop"
+                alt="Professional video production set inside the Aesthetic Tile showroom in Groveland, FL"
                 width={800}
                 height={533}
                 className="w-full"

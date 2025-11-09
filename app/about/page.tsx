@@ -112,7 +112,7 @@ function AboutHero() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Aesthetic Tile team installing a backsplash"
+          alt="Aesthetic Tile team installing a kitchen backsplash tile in Central Florida home"
           fill
           priority
           className="object-cover"
@@ -168,7 +168,7 @@ function AboutStory() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl shadow-slate-900/50 ring-2 ring-teal-500/30">
             <Image
               src="/images/Brad.webp"
-              alt="Brad from Aesthetic Tile installing tile"
+              alt="Brad from Aesthetic Tile installing bathroom tile in Groveland, FL home"
               fill
               className="object-cover"
             />
@@ -349,7 +349,7 @@ function CraftsmanshipShowcase() {
         <figure className="group relative overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10 ring-4 ring-slate-100 transition-all hover:ring-teal-200">
           <Image
             src="/images/tile-installer-2.webp"
-            alt="Tile installer carefully working on a project"
+            alt="Professional tile installer carefully working on a bathroom tile installation project in Central Florida"
             width={1200}
             height={800}
             className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
@@ -404,7 +404,7 @@ function AboutCta() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Modern kitchen backsplash in Groveland, Florida"
+          alt="Modern porcelain kitchen backsplash tile installation in Groveland, FL home by Aesthetic Tile"
           fill
           className="object-cover"
         />

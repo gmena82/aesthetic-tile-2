@@ -79,7 +79,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Floor tile installation project for a Central Florida home renovation"
+          alt="Porcelain floor tile installation project for a Central Florida home renovation in Clermont and Groveland, FL"
           fill
           priority
           className="object-cover"
@@ -113,7 +113,7 @@ function MainContentSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/gallery/bathroom-floor-tile-checkered.webp"
-            alt="Checkered porcelain floor tile installation in Clermont, FL"
+            alt="Black and white checkered porcelain floor tile installation in Clermont, FL bathroom by Aesthetic Tile"
             width={720}
             height={480}
             className="h-full w-full object-cover"
@@ -455,7 +455,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Floor tile installation enhancing a dark wood kitchen in Orlando, FL"
+          alt="Porcelain floor tile installation enhancing a dark wood kitchen in Orlando, FL home"
           fill
           className="object-cover"
         />

@@ -107,7 +107,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/services/outside-projects.webp"
-          alt="Outdoor tiled patio with brick exterior in Central Florida"
+          alt="Porcelain outdoor patio tile installation with brick exterior in Central Florida home by Aesthetic Tile"
           fill
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 100vw"
@@ -133,7 +133,7 @@ function IntroSection() {
         <div className="relative h-80 overflow-hidden rounded-2xl">
           <Image
             src="/images/services/outside-projects.webp"
-            alt="Large-format porcelain tile on an outdoor patio"
+            alt="Large-format porcelain tile installation on an outdoor patio in Clermont and Groveland, FL"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 50vw"
@@ -289,7 +289,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Contact Aesthetic Tile for outdoor projects"
+          alt="Contact Aesthetic Tile for outdoor patio and lanai tile installation projects in Clermont and Groveland, FL"
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 100vw"

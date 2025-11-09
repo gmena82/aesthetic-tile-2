@@ -244,7 +244,7 @@ function ExpertiseSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/Tile-Collage.webp"
-            alt="Tile flooring installation details in Groveland FL by Aesthetic Tile"
+            alt="Porcelain and ceramic tile installation collage showcasing kitchen backsplashes, bathroom showers, and floor tile projects in Groveland and Clermont, FL"
             width={720}
             height={560}
             className="h-full w-full object-cover"
@@ -295,7 +295,7 @@ function ServicesSection() {
               <div className="relative h-full w-full transition duration-300 group-hover:scale-105">
                 <Image
                   src={service.image}
-                  alt={service.label}
+                  alt={`${service.label} tile installation service in Clermont and Groveland, FL by Aesthetic Tile`}
                   fill
                   className="object-cover"
                 />
@@ -364,7 +364,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Luxury kitchen tile backsplash installation in Clermont FL by Aesthetic Tile"
+          alt="Porcelain kitchen backsplash tile installation in Clermont, FL home by Aesthetic Tile"
           fill
           className="object-cover"
         />

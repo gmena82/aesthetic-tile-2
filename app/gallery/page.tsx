@@ -133,7 +133,7 @@ function GalleryHero() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Gallery of beautiful tile projects by Aesthetic Tile"
+          alt="Gallery of beautiful tile installation projects by Aesthetic Tile in Clermont, Groveland, and Central Florida"
           fill
           priority
           className="object-cover"
@@ -176,7 +176,7 @@ function GalleryFormCta() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Dark wood kitchen backsplash"
+          alt="Dark wood kitchen with porcelain tile backsplash installation in Central Florida home"
           fill
           className="object-cover"
         />

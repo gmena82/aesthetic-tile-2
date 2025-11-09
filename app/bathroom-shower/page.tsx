@@ -79,7 +79,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="Custom walk-in shower installation with built-in niche in Clermont, FL"
+          alt="Custom walk-in shower tile installation with built-in niche in Clermont, FL bathroom by Aesthetic Tile"
           fill
           priority
           className="object-cover"
@@ -113,7 +113,7 @@ function MainContentSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/gallery/bathroom-remodel-tile.webp"
-            alt="Waterproofing membrane system installed before tiling a shower in Groveland, FL"
+            alt="Waterproofing membrane system installed before bathroom shower tile installation in Groveland, FL home"
             width={720}
             height={480}
             className="h-full w-full object-cover"
@@ -497,7 +497,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Bathroom and shower tile installation consultation backdrop in Groveland, FL"
+          alt="Bathroom and shower tile installation service consultation backdrop in Groveland, FL"
           fill
           className="object-cover"
         />

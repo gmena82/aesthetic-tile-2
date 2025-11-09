@@ -94,7 +94,7 @@ function ServicesHero() {
       <div className="absolute inset-0">
         <Image
           src="/images/img/hero-backsplash.png"
-          alt="Tile installation services highlighting a kitchen backsplash"
+          alt="Professional tile installation services including kitchen backsplash, bathroom shower, and floor tile in Clermont and Groveland, FL"
           fill
           priority
           className="object-cover"
@@ -192,7 +192,7 @@ function ServiceContent({ service }: { service: (typeof SERVICE_SECTIONS)[number
 function ServiceImage({ service }: { service: (typeof SERVICE_SECTIONS)[number] }) {
   return (
     <div className="relative aspect-square overflow-hidden rounded-3xl shadow-lg">
-      <Image src={service.image} alt={service.label} fill className="object-cover" />
+      <Image src={service.image} alt={`${service.label} tile installation in Clermont and Groveland, FL`} fill className="object-cover" />
     </div>
   )
 }
@@ -203,7 +203,7 @@ function ServicesCta() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Custom kitchen backsplash installation in Clermont, Florida"
+          alt="Porcelain kitchen backsplash tile installation service in Clermont and Groveland, FL"
           fill
           className="object-cover"
         />

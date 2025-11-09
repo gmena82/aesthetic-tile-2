@@ -80,7 +80,7 @@ function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/AboutUs-NoText.png"
-          alt="White ceramic subway tile backsplash installation in Clermont, FL by Aesthetic Tile"
+          alt="White ceramic subway tile kitchen backsplash installation in Clermont, FL home by Aesthetic Tile"
           fill
           priority
           className="object-cover"
@@ -114,7 +114,7 @@ function MainContentSection() {
         <div className="relative overflow-hidden rounded-2xl">
           <Image
             src="/images/gallery/kitchen-backsplash-stone-lock.webp"
-            alt="Natural stone mosaic kitchen backsplash installation in Groveland, FL by Aesthetic Tile"
+            alt="Natural stone mosaic kitchen backsplash tile installation in Groveland, FL home by Aesthetic Tile"
             width={720}
             height={480}
             className="h-full w-full object-cover"
@@ -210,7 +210,7 @@ function CallToActionSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/contact-bg.webp"
-          alt="Dark stone mosaic kitchen backsplash installation in Groveland, FL by Aesthetic Tile"
+          alt="Dark stone mosaic kitchen backsplash tile installation in Groveland, FL home by Aesthetic Tile"
           fill
           className="object-cover"
         />

@@ -48,7 +48,7 @@ export default function GrovelandLocationAnnouncementPage() {
             <div className="my-8 overflow-hidden rounded-2xl">
               <Image
                 src="/images/Groveland.webp"
-                alt="Aesthetic Tile team celebrating the Groveland location announcement"
+                alt="Aesthetic Tile team celebrating the new Groveland, FL location announcement for tile installation services"
                 width={800}
                 height={533}
                 className="w-full"
