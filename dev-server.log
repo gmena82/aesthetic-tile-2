@@ -1,0 +1,13 @@
+
+> aesthetic-tile-website-next@0.1.0 dev C:\Users\gerar\OneDrive\Desktop\Growvia\Website building\AT\GitHub\aesthetic-tile-website-next
+> next dev
+
+   ▲ Next.js 16.0.1 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.245:3000
+
+ ✓ Starting...
+ ✓ Ready in 1186ms
+ GET / 200 in 2.3s (compile: 1910ms, render: 433ms)
+ GET / 200 in 247ms (compile: 20ms, render: 227ms)
+ ELIFECYCLE  Command failed with exit code 3221225786.

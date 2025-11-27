@@ -15,6 +15,16 @@ export const metadata = buildMetadata({
 
 const BLOG_POSTS = [
   {
+    slug: "thanksgiving-never-saw-coming",
+    title: "A Thanksgiving I Never Saw Coming",
+    excerpt:
+      "From three generations of tile craftsmanship to being featured by The Tile Shop—this Thanksgiving, we're reflecting on trust, growth, and what it means to do right by our clients.",
+    date: "November 27, 2025",
+    image: "/images/brad-aesthetic-tile-tile-shop-featured-contractor.jpg",
+    imageAlt: "Brad from Aesthetic Tile featured contractor at The Tile Shop Orlando Central Florida tile installation expert",
+    cta: "Read Brad's Thanksgiving Story",
+  },
+  {
     slug: "myth-breakers-episode-1",
     title: "Myth Breakers Ep. 1 — Are Tile Remodels Too Expensive?",
     excerpt:

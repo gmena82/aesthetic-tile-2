@@ -4,6 +4,7 @@ import Link from "next/link"
 import { CheckIcon } from "./_components/CheckIcon"
 import { ContactForm } from "./_components/ContactForm"
 import { TestimonialsCarousel } from "./_components/TestimonialsCarousel"
+import { YouTubeEmbed } from "./_components/YouTubeEmbed"
 import { serviceNav } from "./_components/navigation"
 import { absoluteUrl, buildMetadata, createFaqJsonLd, createServiceJsonLd } from "./_lib/seo"
 
@@ -221,16 +222,12 @@ function VideoSection() {
           <h2 className="text-3xl font-semibold text-slate-900">See Our Craftsmanship in Action</h2>
           <p className="mt-3 text-lg font-semibold text-slate-700">Watch our expert tile installation process and attention to detail.</p>
         </div>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
-          <div className="relative aspect-video">
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/ac9uGE7bIVg"
-              title="Aesthetic Tile Installation Process"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+        <div className="mt-8 border border-slate-200 shadow-lg">
+          <YouTubeEmbed
+            videoId="ac9uGE7bIVg"
+            title="Aesthetic Tile Installation Process"
+            thumbnailUrl="/images/Tile-Collage.webp"
+          />
         </div>
       </div>
     </section>
