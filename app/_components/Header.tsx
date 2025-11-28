@@ -224,7 +224,7 @@ export function Header() {
         <div
           className={`md:hidden ${mobileOpen ? "block" : "hidden"}`}
         >
-          <div className="space-y-6 border-t border-slate-200 bg-white px-6 py-6 text-sm text-slate-700">
+          <div className="max-h-[calc(100vh-180px)] overflow-y-auto space-y-6 border-t border-slate-200 bg-white px-6 py-6 text-sm text-slate-700">
             <nav aria-label="Mobile primary" className="space-y-4">
               {primaryNav.map((item) => (
                 <div key={item.href}>
