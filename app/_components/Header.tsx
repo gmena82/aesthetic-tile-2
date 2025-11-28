@@ -50,10 +50,19 @@ export function Header() {
   const hasShadow = useScrollShadow()
   const pathname = usePathname()
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
 
   useEffect(() => {
     setServicesDropdownOpen(false)
+    setMobileServicesOpen(false)
   }, [pathname])
+
+  // Reset mobile services dropdown when mobile menu closes
+  useEffect(() => {
+    if (!mobileOpen) {
+      setMobileServicesOpen(false)
+    }
+  }, [mobileOpen])
 
   const servicePaths = serviceNav.map((service) => service.href)
   const isLinkActive = (href: string) => {
@@ -225,12 +234,60 @@ export function Header() {
           className={`md:hidden ${mobileOpen ? "block" : "hidden"}`}
         >
           <div className="max-h-[calc(100vh-180px)] overflow-y-auto space-y-6 border-t border-slate-200 bg-white px-6 py-6 text-sm text-slate-700">
-            <nav aria-label="Mobile primary" className="space-y-4">
-              {primaryNav.map((item) => (
-                <div key={item.href}>
+            <nav aria-label="Mobile primary" className="space-y-2">
+              {primaryNav.map((item) => {
+                if (item.label === "Services") {
+                  return (
+                    <div key={item.href}>
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((prev) => !prev)}
+                        className={`flex w-full items-center justify-between rounded-lg border border-slate-700/40 px-3 py-2 text-base font-semibold transition-[color,border-color,box-shadow] ${
+                          servicesActive
+                            ? "border-slate-800 text-teal-700"
+                            : "text-slate-800 hover:text-teal-700 hover:border-teal-400 hover:shadow-[0_0_10px_rgba(20,184,166,0.25)]"
+                        }`}
+                      >
+                        {item.label}
+                        <svg
+                          className={`size-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                      {mobileServicesOpen && (
+                        <ul className="mt-2 space-y-1 pl-4 text-sm">
+                          {serviceNav.map((service) => (
+                            <li key={service.href}>
+                              <Link
+                                href={service.href}
+                                className={`block rounded-lg border border-slate-700/30 px-3 py-2 text-slate-600 transition-[color,border-color,box-shadow] hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700 hover:shadow-[0_0_10px_rgba(20,184,166,0.2)] ${
+                                  pathname && pathname.startsWith(service.href) ? "border-teal-300 bg-teal-50 text-teal-700" : ""
+                                }`}
+                                onClick={closeMobileMenu}
+                              >
+                                {service.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )
+                }
+
+                return (
                   <Link
+                    key={item.href}
                     href={item.href}
-                    className={`block rounded-lg border border-slate-700/40 px-3 py-1.5 text-base font-semibold transition-[color,border-color,box-shadow] ${
+                    className={`block rounded-lg border border-slate-700/40 px-3 py-2 text-base font-semibold transition-[color,border-color,box-shadow] ${
                       isLinkActive(item.href)
                         ? "border-slate-800 text-teal-700"
                         : "text-slate-800 hover:text-teal-700 hover:border-teal-400 hover:shadow-[0_0_10px_rgba(20,184,166,0.25)]"
@@ -239,25 +296,8 @@ export function Header() {
                   >
                     {item.label}
                   </Link>
-                  {item.label === "Services" && (
-                    <ul className="mt-2 space-y-2 pl-4 text-sm">
-                      {serviceNav.map((service) => (
-                        <li key={service.href}>
-                          <Link
-                            href={service.href}
-                            className={`block rounded-lg border border-slate-700/30 px-2 py-1 text-slate-600 transition-[color,border-color,box-shadow] hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700 hover:shadow-[0_0_10px_rgba(20,184,166,0.2)] ${
-                              pathname && pathname.startsWith(service.href) ? "border-teal-300 bg-teal-50 text-teal-700" : ""
-                            }`}
-                            onClick={closeMobileMenu}
-                          >
-                            {service.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
+                )
+              })}
             </nav>
             <div className="space-y-3">
               <Link
