@@ -92,7 +92,7 @@ export default function ThanksgivingNeverSawComingPage() {
             <p>
               And honestly? Grateful for the long days and late nights too. Because that's what it takes to honor three
               generations of craftsmanship—what my grandfather started, what my family kept alive, and{" "}
-              <a href="https://aesthetictile-florida.com/about" target="_blank" rel="noopener noreferrer">what we're still building on today</a>.
+              <a href="https://www.aesthetictile-florida.com/about" target="_blank" rel="noopener noreferrer">what we're still building on today</a>.
             </p>
 
             <h3>This year we:</h3>
@@ -100,7 +100,7 @@ export default function ThanksgivingNeverSawComingPage() {
             <ul>
               <li>
                 <strong>Took on bigger, more ambitious projects</strong>—those "dream bathroom" and{" "}
-                <a href="https://aesthetictile-florida.com/fireplaces" target="_blank" rel="noopener noreferrer">"showpiece fireplace"</a>{" "}
+                <a href="https://www.aesthetictile-florida.com/fireplaces" target="_blank" rel="noopener noreferrer">"showpiece fireplace"</a>{" "}
                 installs that push us creatively and technically.
               </li>
               <li>
