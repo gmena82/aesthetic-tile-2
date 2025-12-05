@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const BASE_URL = "https://aesthetictile-florida.com"
+export const BASE_URL = "https://www.aesthetictile-florida.com"
 export const SITE_NAME = "Aesthetic Tile"
 const DEFAULT_OG_IMAGE = "/images/img/hero-backsplash.png"
 
