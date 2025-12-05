@@ -88,6 +88,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog posts - medium priority, monthly change frequency
   const blogPosts: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/blog/featured-contractor-for-the-tile-shop`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/thanksgiving-never-saw-coming`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/blog/groveland-location-announcement`,
       lastModified: new Date(),
       changeFrequency: "monthly",

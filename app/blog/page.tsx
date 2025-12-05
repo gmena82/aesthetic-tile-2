@@ -15,6 +15,16 @@ export const metadata = buildMetadata({
 
 const BLOG_POSTS = [
   {
+    slug: "featured-contractor-for-the-tile-shop",
+    title: "Featured Contractor for The Tile Shop!",
+    excerpt:
+      "Brad Fleitz shares his experience being named a Featured Contractor by The Tile Shop—national recognition for Clermont and Groveland's trusted tile installer.",
+    date: "December 4, 2025",
+    image: "/images/tile-shop-feature-hero.webp",
+    imageAlt: "Brad Fleitz Aesthetic Tile Featured Contractor The Tile Shop professional tile installer Clermont Groveland Central Florida",
+    cta: "Read the Tile Shop Feature",
+  },
+  {
     slug: "thanksgiving-never-saw-coming",
     title: "A Thanksgiving I Never Saw Coming",
     excerpt:
@@ -252,4 +262,3 @@ function FaqSection() {
     </>
   )
 }
-

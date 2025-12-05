@@ -56,6 +56,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.aesthetictile-florida.com/blog/featured-contractor-for-the-tile-shop</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.aesthetictile-florida.com/blog/myth-breakers-episode-1</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -72,6 +77,11 @@
   </url>
   <url>
     <loc>https://www.aesthetictile-florida.com/blog/marketing-success</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.aesthetictile-florida.com/blog/thanksgiving-never-saw-coming</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -298,6 +298,41 @@ const imageSitemapData: ImageSitemapEntry[] = [
     ],
   },
   {
+    loc: `${BASE_URL}/blog/thanksgiving-never-saw-coming`,
+    images: [
+      {
+        loc: `${BASE_URL}/images/brad-aesthetic-tile-tile-shop-featured-contractor.jpg`,
+        caption: "Brad from Aesthetic Tile featured by The Tile Shop",
+        title: "A Thanksgiving I Never Saw Coming",
+      },
+      {
+        loc: `${BASE_URL}/images/thanksgiving-2025-aesthetic-tile-turkey.png`,
+        caption: "Thanksgiving gratitude from the Aesthetic Tile team",
+        title: "Aesthetic Tile Thanksgiving 2025",
+      },
+    ],
+  },
+  {
+    loc: `${BASE_URL}/blog/featured-contractor-for-the-tile-shop`,
+    images: [
+      {
+        loc: `${BASE_URL}/images/tile-shop-feature-hero.webp`,
+        caption: "Brad filmed for The Tile Shop featured contractor interview in Orlando",
+        title: "Featured Contractor for The Tile Shop",
+      },
+      {
+        loc: `${BASE_URL}/images/tile-shop-feature-secondary.webp`,
+        caption: "Behind the scenes during the Tile Shop featured contractor shoot",
+        title: "Tile Shop Feature Behind the Scenes",
+      },
+      {
+        loc: `${BASE_URL}/images/Tile-Shop-Feature.png`,
+        caption: "Aesthetic Tile and The Tile Shop collaboration for feature content",
+        title: "Aesthetic Tile x The Tile Shop Feature",
+      },
+    ],
+  },
+  {
     loc: `${BASE_URL}/blog/pre-mixed-grout`,
     images: [
       {
